@@ -1,0 +1,7 @@
+--------- beginning of crash
+10-30 18:12:27.913   895   895 E AndroidRuntime: FATAL EXCEPTION: main
+10-30 18:12:27.913   895   895 E AndroidRuntime: Process: com.android.systemui, PID: 895
+10-30 18:12:27.913   895   895 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause
+10-30 18:12:28.498   905  1250 E AndroidRuntime: FATAL EXCEPTION: RoleControllerService
+10-30 18:12:28.498   905  1250 E AndroidRuntime: Process: com.android.permissioncontroller, PID: 905
+10-30 18:12:28.498   905  1250 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause

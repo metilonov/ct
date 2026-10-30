@@ -2,6 +2,8 @@
 
 Android Kotlin/Compose + единый FastAPI/libtorrent backend + aiogram 3. Исходный утверждённый HTML и логотип: `reference/`. Это первая проверяемая инженерная версия; готовность production и визуальное 1:1 не заявлены. Точный статус испытаний и ограничения — `docs/TEST-REPORT.md`.
 
+Дизайн Android обновлён до эталона от 30.10.2026, версия APK 0.2.0. Детали переноса, скриншоты и ограничения новых пунктов: `docs/REDESIGN.md`. Прежние снимки вне `artifacts/redesign/` относятся к 0.1.0.
+
 ## Состав
 
 - `android/`: minSdk 26, compile/target SDK 36, MVVM, Hilt, Retrofit/OkHttp, StateFlow, DataStore+Keystore, Room, WorkManager, SAF.

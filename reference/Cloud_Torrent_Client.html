@@ -2,13 +2,14 @@
 <title>Cloud Torrent Client</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
-:root{--bg:#000;--card:#10141b;--row:#1a212c;--text:#fff;--muted:#9aa3b2;--blue:#6cb0ff;--purple:#8b8cf5;--green:#7fe0a0;--btn:#263a63;--track:#363c4a;--chip:#252a33;color-scheme:dark}
+:root{--bg:#10141b;--card:#10141b;--row:#1a212c;--text:#fff;--muted:#9aa3b2;--blue:#6cb0ff;--purple:#8b8cf5;--green:#7fe0a0;--btn:#263a63;--track:#363c4a;--chip:#252a33;color-scheme:dark}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--card:#10141b}}
 :root[data-theme="dark"]{--bg:#000}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:Roboto,"Segoe UI",system-ui,-apple-system,Arial,sans-serif}
-body{display:flex;justify-content:center;align-items:center;padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.app{width:100%;max-width:430px;height:100%;max-height:860px;background:var(--card);border-radius:26px;padding:32px 20px 14px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--card)}
+body{display:block;padding:0}
+.app{width:100%;max-width:none;height:100%;max-height:none;background:var(--card);border-radius:0;padding:20px max(20px,env(safe-area-inset-left,0px)) 14px max(20px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;position:relative;overflow:hidden}
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
 svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .top{display:flex;justify-content:space-between;align-items:flex-start}
@@ -177,6 +178,17 @@ nav button.on{color:#fff}
 
 /* мягкое растворение контента под шапкой и над меню */
 .view{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 var(--ft,0px),#000 calc(100% - var(--fb,0px)),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 var(--ft,0px),#000 calc(100% - var(--fb,0px)),transparent 100%)}
+
+/* subscription only */
+#planModal .sheet{background:var(--card);border:1px solid rgba(255,255,255,.06);border-bottom:0}
+#planModal .plan{background:var(--row);border:1px solid rgba(255,255,255,.06)}
+#planModal #plPrem{background:var(--row);border:1px solid rgba(255,255,255,.06);box-shadow:none}
+#planModal .plan .pill{background:var(--chip);color:#cfd4dd}
+#planModal .plan .pill.b{background:#16304f;color:#4da3ff}
+#planModal .plan li::before{color:var(--green)}
+#planModal .pb{background:var(--chip)}
+#planModal .pb.ok{background:var(--chip);color:#fff}
+#planModal .plan .d{min-height:calc(2*1.35em);line-height:1.35}
 </style>
 <div class="app" id="app">
 
@@ -215,6 +227,8 @@ nav button.on{color:#fff}
     <button class="row-btn" id="sync"><span>Автосинхронизация<br><small>Загружать завершённые в облако</small></span><span class="sw on"></span></button>
     <button class="row-btn" id="optAuto"><span>Автопередача на Android<br><small>Сразу после загрузки в облако</small></span><span class="sw on"></span></button>
     <button class="row-btn" id="optDel"><span>Автоудаление из облака<br><small>Освобождать место после передачи</small></span><span class="sw"></span></button>
+    <button class="row-btn" id="optVerify"><span>Проверка целостности<br><small>Сверять хеш после загрузки</small></span><span class="sw on"></span></button>
+    <button class="row-btn" id="optUnzip"><span>Автораспаковка архивов<br><small>Распаковывать .zip и .rar в облаке</small></span><span class="sw"></span></button>
     <div class="grp">Управление</div>
     <button class="row-btn" id="limRow"><span>Одновременные загрузки<br><small>Остальные ждут в очереди</small></span><span class="val" id="limVal">2</span></button>
     <button class="row-btn act-row" id="cleanCloud"><span>Очистить облако<br><small>Удалить завершённые загрузки</small></span><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l.8 12a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4l.8-12M10 11v5M14 11v5"/></svg></button>
@@ -224,20 +238,25 @@ nav button.on{color:#fff}
 <!-- Настройки -->
 <section class="view" id="v-settings">
   <div class="list">
-    <div class="grp" style="margin-top:0">Google Cloud</div>
-    <button class="row-btn" id="gcApiRow"><span>Подключение по API<br><small id="gcApiSub">Не подключён</small></span><svg width="20" height="20" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
-    <div class="grp">Подписка</div>
+    <div class="grp" style="margin-top:0">Подписка</div>
     <button class="row-btn" id="planRow"><span>Тариф<br><small id="planSub"></small></span><span class="val" id="planVal">Free</span></button>
-    <div class="grp">Сеть и питание</div>
-    <button class="row-btn"><span>Только Wi-Fi</span><span class="sw on"></span></button>
-    <button class="row-btn" id="optSpeed"><span>Ограничить скорость</span><span class="sw"></span></button>
-    <button class="row-btn" id="spdRow"><span>Лимит скорости<br><small>Действует при включённом ограничении</small></span><span class="val" id="spdVal">10 МБ/с</span></button>
-    <button class="row-btn" id="optChg"><span>Только при зарядке<br><small>Приостанавливать при разрядке</small></span><span class="sw"></span></button>
+    <div class="grp">Google Cloud</div>
+    <button class="row-btn" id="gcApiRow"><span>Подключение по API<br><small id="gcApiSub">Не подключён</small></span><svg width="20" height="20" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
     <div class="grp">Загрузки</div>
+    <button class="row-btn"><span>Папка загрузок<br><small>/Downloads/Torrents</small></span><svg width="20" height="20" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
     <button class="row-btn" id="optStart"><span>Автозапуск новых<br><small>Начинать сразу после добавления</small></span><span class="sw on"></span></button>
     <button class="row-btn act-row" id="pauseAll"><span id="pauseTxt">Приостановить все<br><small>Для всех активных загрузок</small></span><svg width="20" height="20" viewBox="0 0 24 24"><path d="M9 5.5v13M15 5.5v13"/></svg></button>
+    <div class="grp">Сеть и питание</div>
+    <button class="row-btn"><span>Только Wi-Fi</span><span class="sw on"></span></button>
+    <button class="row-btn" id="mobLim"><span>Лимит мобильного трафика<br><small>Действует вне Wi-Fi</small></span><span class="val" id="mobLimV">Без лимита</span></button>
+    <button class="row-btn" id="optSpeed"><span>Ограничить скорость</span><span class="sw"></span></button>
+    <button class="row-btn" id="spdRow"><span>Лимит скорости<br><small>Действует при включённом<br>ограничении</small></span><span class="val" id="spdVal">10 МБ/с</span></button>
+    <button class="row-btn" id="optChg"><span>Только при зарядке<br><small>Приостанавливать при разрядке</small></span><span class="sw"></span></button>
+    <button class="row-btn" id="optNight"><span>Ночной режим<br><small>Загружать с 01:00 до 07:00</small></span><span class="sw"></span></button>
+    <div class="grp">Уведомления</div>
     <button class="row-btn"><span>Уведомления</span><span class="sw on"></span></button>
-    <button class="row-btn"><span>Папка загрузок<br><small>/Downloads/Torrents</small></span><svg width="20" height="20" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+    <div class="grp">Безопасность</div>
+    <button class="row-btn" id="optLock"><span>Защита приложения<br><small>Вход по отпечатку или PIN-коду</small></span><span class="sw"></span></button>
   </div>
 </section>
 
@@ -511,4 +530,10 @@ setGc(1);render();renderPlan();document.querySelectorAll('.view.on').forEach(fad
 </script>
 
 
+<script>
+(()=>{const q=s=>document.querySelector(s),opts=['Без лимита','1 ГБ/день','5 ГБ/день','20 ГБ/день'];let i=0;
+q('#mobLim').addEventListener('click',()=>{i=(i+1)%opts.length;q('#mobLimV').textContent=opts[i];toast('Лимит: '+opts[i].toLowerCase())});
+const m={optVerify:['Проверка целостности включена','Проверка целостности выключена'],optUnzip:['Автораспаковка включена','Автораспаковка выключена'],optNight:['Ночной режим включён','Ночной режим выключен'],optLock:['Защита приложения включена','Защита приложения выключена']};
+Object.keys(m).forEach(k=>q('#'+k).addEventListener('click',()=>toast(m[k][q('#'+k+' .sw').classList.contains('on')?0:1])))})();
+</script>
 </body></html>

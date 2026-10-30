@@ -1,0 +1,17 @@
+{
+  "same_signing_certificate_as_v1": true,
+  "version_code": 2,
+  "version_name": "0.2.0",
+  "lint": {
+    "Error": 0,
+    "Fatal": 0,
+    "Warning": 38
+  },
+  "original_html_sha256": "40ab82919ab882dd17264485c815d1971d97902c8ca2b9b1b856a2631c0c1e35",
+  "backend_tests": "18 passed",
+  "visual_acceptance_complete": false,
+  "native_screenshots_for_v2": [],
+  "android_14_check": "Blocked before app installation: system watchdog restarts and netd boot loop; earlier attempt also hit the environment memory limit. A blank boot frame is not an application screenshot.",
+  "apk_sha256": "a3514e0e79206b901afc90c1e33b11a6c4893aa52a12c34d007103a350c9bebb",
+  "build_log": "artifacts/redesign/build-current.log"
+}

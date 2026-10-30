@@ -1,0 +1,2570 @@
+[
+  {
+    "index": 0,
+    "tag": "HTML",
+    "id": "",
+    "cls": null,
+    "parent": null,
+    "text": null
+  },
+  {
+    "index": 1,
+    "tag": "HEAD",
+    "id": "",
+    "cls": null,
+    "parent": "HTML",
+    "text": null
+  },
+  {
+    "index": 2,
+    "tag": "META",
+    "id": "",
+    "cls": null,
+    "parent": "HEAD",
+    "text": ""
+  },
+  {
+    "index": 3,
+    "tag": "META",
+    "id": "",
+    "cls": null,
+    "parent": "HEAD",
+    "text": ""
+  },
+  {
+    "index": 4,
+    "tag": "STYLE",
+    "id": "",
+    "cls": null,
+    "parent": "HEAD",
+    "text": ":root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}"
+  },
+  {
+    "index": 6,
+    "tag": "BODY",
+    "id": "",
+    "cls": null,
+    "parent": "HTML",
+    "text": null
+  },
+  {
+    "index": 7,
+    "tag": "TITLE",
+    "id": "",
+    "cls": null,
+    "parent": "BODY",
+    "text": "Cloud Torrent Client"
+  },
+  {
+    "index": 8,
+    "tag": "META",
+    "id": "",
+    "cls": null,
+    "parent": "BODY",
+    "text": ""
+  },
+  {
+    "index": 9,
+    "tag": "STYLE",
+    "id": "",
+    "cls": null,
+    "parent": "BODY",
+    "text": "\n:root{--bg:#10141b;--card:#10141b;--row:#1a212c;--text:#fff;--muted:#9aa3b2;--blue:#6cb0ff;--purple:#8b8cf5;--green:#7fe0a0;--btn:#263a63;--track:#363c4a;--chip:#252a33;color-scheme:dark}\n@media (prefers-color-scheme:dark){:root:not([data-theme=\"light\"]){--bg:#000;--card:#10141b}}\n:root[data-theme=\"dark\"]{--bg:#000}\n*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}\nhtml,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:Roboto,\"Segoe UI\",system-ui,-apple-system,Arial,sans-serif}\nhtml,body{width:100%;height:100%;overflow:hidden;background:var(--card)}\nbody{display:block;padding:0}\n.app{width:100%;max-width:none;height:100%;max-height:none;background:var(--card);border-radius:0;padding:20px max(20px,env(safe-area-inset-left,0px)) 14px max(20px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;position:relative;overflow:hidden}\nbutton{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}\nsvg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}\n.top{display:flex;justify-content:space-between;align-items:flex-start}\n.eyebrow{font-size:14px;letter-spacing:.2px;color:#c3c9d4;text-transform:uppercase}\nh1{margin:2px 0 0;font-size:29px;font-weight:700;line-height:1.2}\n.round{width:40px;height:40px;border-radius:50%;background:#1d2430;display:grid;place-items:center;color:var(--blue);transition:.15s}\n.round:active,.row-btn:active,.dl:active,.add:active{transform:scale(.97)}\n.round svg{width:22px;height:22px}\n.view{flex:1;min-height:0;display:none;flex-direction:column;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:none}\n.view::-webkit-scrollbar{display:none}\n.view>*{flex-shrink:0}\n.view.on{display:flex}\n.cloud-row{margin-top:22px;background:var(--row);border-radius:20px;height:51px;padding:0 17px 0 15px;display:flex;align-items:center;justify-content:space-between;width:100%}\n.cloud-row .l{display:flex;align-items:center;gap:12px;font-size:19px}\n.cloud-row .l svg{width:24px;height:24px;color:var(--blue)}\n.status{display:flex;align-items:center;gap:8px;font-size:16px;color:var(--green)}\n.status svg{width:21px;height:21px}\n.status.off{color:var(--muted)}\n.sec{display:flex;justify-content:space-between;align-items:center;margin:26px 0 12px}\n.sec h2{margin:0;font-size:21px;font-weight:700}\n.badge{min-width:26px;height:26px;border-radius:13px;background:var(--chip);display:grid;place-items:center;font-size:15px;color:#e5e7ec}\n.dl{display:block;width:100%;text-align:left;background:var(--row);border-radius:22px;padding:16px 16px 14px;margin-bottom:11px;transition:.15s}\n.dl .h{display:flex;justify-content:space-between;align-items:center;gap:14px;font-size:19px;font-weight:600}\n.dl .h>span{flex:none;min-width:48px;text-align:right}\n.dl .n{display:flex;align-items:center;gap:10px;min-width:0;flex:1}\n.dl .n svg{width:22px;height:22px;color:#c9ced8;flex:none}\n.dl .n span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.bar{height:7px;border-radius:4px;background:var(--track);margin:14px 0 11px;overflow:hidden}\n.bar i{display:block;height:100%;border-radius:4px;transition:width .4s}\n.dl .f{display:flex;justify-content:space-between;color:var(--muted);font-size:16px}\n.dl.paused{opacity:.65}\n.note{color:#8e97a6;font-size:17px;line-height:1.4;margin:14px 0 18px}\n.add{margin-top:auto;width:100%;display:flex;align-items:center;gap:14px;text-align:left;background:var(--row);border-radius:22px;padding:14px 16px;transition:.15s}\n.add .ic{flex:none;width:auto;height:auto;background:none;color:var(--blue);display:grid;place-items:center}\n.add .ic svg{width:22px;height:22px;color:#c9ced8}\n.add .tx{flex:1;min-width:0}\n.add b{display:block;font-size:19px;font-weight:600}\n.add small{display:block;margin-top:6px;font-size:16px;color:var(--muted)}\n.add .chev{flex:none;width:20px;height:20px;color:var(--muted)}\nnav{flex:none;display:flex;justify-content:space-between;padding:12px 4px 2px;margin-top:6px;background:var(--card);position:relative;z-index:2}\nnav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:14px;color:#8c93a1;transition:.15s}\nnav button svg{width:25px;height:25px}\nnav button.on{color:#fff}\n.list{display:flex;flex-direction:column;gap:10px;margin-top:22px}\n.row-btn{display:flex;align-items:center;justify-content:space-between;background:var(--row);border-radius:18px;padding:15px 16px;font-size:17px;width:100%;text-align:left;transition:.15s}\n.row-btn small{color:var(--muted);font-size:14px}\n.sw{width:42px;height:24px;border-radius:12px;background:var(--track);position:relative;transition:.2s;flex:none}\n.sw::after{content:\"\";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}\n.sw.on{background:var(--blue)}.sw.on::after{left:21px}\n.back{display:flex;align-items:center;gap:6px;margin-top:18px;color:var(--blue);font-size:16px}.back svg{width:20px;height:20px}.sh{font-size:21px;font-weight:700;margin:20px 0 10px}.st{background:var(--row);border-radius:22px;padding:16px}.st .h{display:flex;justify-content:space-between;align-items:center}.st .t{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:600}.st .t svg{width:22px;height:22px}.pill{font-size:14px;padding:5px 12px;border-radius:14px;background:#2a303a;color:#cfd4dd}.pill.b{background:#16304f;color:#4da3ff}.st .nm{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:18px}.st .nm b{font-size:21px}.st p{margin:10px 0 0;color:#8e97a6;font-size:14px;line-height:1.4}.act{margin-top:16px;width:100%;background:var(--btn);border-radius:18px;padding:13px;font-size:17px;font-weight:600}\n.st .f{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:16px}.st .bar{margin:14px 0 12px}.st p{margin:14px 0 0}\n.seg{display:flex;margin:16px 0 12px}.seg button{flex:1;padding:14px 0;border-radius:26px;font-size:18px;font-weight:600;color:#8c8f96;transition:.2s}.seg button.on{background:#2a2b2e;color:#fff}\n.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.stat{background:var(--row);border-radius:20px;padding:14px 16px 15px}.stat svg{width:22px;height:22px;color:#7db4ff;display:block}.stat b{display:block;font-size:28px;font-weight:700;margin:10px 0 8px;line-height:1}.stat span{color:var(--muted);font-size:15px}\n.pill.p{background:#2a2a52;color:#a9a8ff}.pill.g{background:#173a2a;color:var(--green)}.dl .n .pill{flex:none;font-size:12px;padding:3px 9px;overflow:visible}.act2{margin-top:16px;width:100%;background:#3b3a7a;border-radius:18px;padding:13px;font-size:17px;font-weight:600}\n.modal{position:absolute;inset:0;background:rgba(0,0,0,.6);display:none;align-items:flex-end;z-index:5}\n.modal.on{display:flex}\n.sheet{width:100%;background:#161c26;border-radius:26px 26px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px))}\n.sheet h3{margin:0 0 14px;font-size:20px}\n.sheet input{width:100%;background:var(--row);border:1px solid #2b3342;border-radius:14px;padding:14px;color:#fff;font:inherit;font-size:16px;outline:0}\n.sheet input:focus{border-color:var(--blue)}\n.sheet .acts{display:flex;gap:10px;margin-top:14px}\n.sheet .acts button{flex:1;padding:13px;border-radius:14px;font-size:16px;font-weight:600;background:var(--chip)}\n.sheet .acts .ok{background:var(--btn)}\n.sheet .step{display:none}.sheet .step.on{display:block}\n.grp{margin:12px 4px 0;font-size:13px;letter-spacing:.3px;text-transform:uppercase;color:var(--muted)}\n.row-btn .val{flex:none;font-size:16px;font-weight:600;color:var(--blue)}\n.row-btn>svg{flex:none;color:var(--muted)}\n.row-btn.act-row>svg{color:var(--blue)}\n.choice{display:flex;align-items:center;gap:14px;width:100%;height:78px;text-align:left;background:var(--row);border-radius:22px;padding:14px 16px;margin-bottom:11px;transition:.15s}\n.choice:active{transform:scale(.97)}\n.choice svg{width:22px;height:22px;color:#c9ced8;flex:none}\n.choice .tx{flex:1;min-width:0}\n.choice b{display:block;font-size:19px;font-weight:600}\n.choice small{display:block;margin-top:5px;font-size:16px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}\n.choice .chev{width:20px;height:20px;color:var(--muted)}\n.sheet .cancel-full{width:100%;padding:13px;border-radius:14px;font-size:16px;font-weight:600;background:var(--chip);margin-top:3px}\n.toast{position:absolute;left:50%;bottom:92px;transform:translate(-50%,20px);background:#2b3342;padding:10px 16px;border-radius:14px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:6;white-space:nowrap}\n.toast.on{opacity:1;transform:translate(-50%,0)}\n.sheet.tall{max-height:90%;overflow-y:auto;scrollbar-width:none}\n.plan{background:var(--row);border-radius:22px;padding:16px;margin-bottom:11px;border:1px solid transparent}\n.plan.cur{border-color:#3b5f99}\n.plan .pr{font-size:26px;font-weight:700;margin:10px 0 0}.plan .pr small{font-size:14px;color:var(--muted);font-weight:500}\n.plan ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:16px}\n.plan li::before{content:\"\\2713\";color:var(--green);margin-right:10px}\n.ad{display:block;width:100%;text-align:left;background:#1a1d24;border:1px dashed #3a4150;border-radius:18px;padding:12px 14px;margin-bottom:14px;color:var(--muted);font-size:13px}\n.plans{display:grid;grid-template-columns:1fr 1fr;gap:10px}.plan{margin-bottom:0;padding:14px 12px;display:flex;flex-direction:column}.plan .pr{font-size:24px}.plan .d{color:var(--muted);font-size:14px;margin-top:6px;min-height:36px}.plan ul{font-size:14px;gap:10px;flex:1}.plan li::before{margin-right:8px}.pb{margin-top:16px;width:100%;padding:12px 4px;border-radius:14px;font-size:15px;font-weight:600;background:var(--chip)}.pb.ok{background:var(--btn)}.pb:disabled{opacity:.5}\n.plans{gap:8px}\n#planModal .plan{background:#000;border:1.5px solid #252a33;border-radius:20px;padding:16px 13px 14px}\n#planModal #plPrem{background:#172338;border-color:#42689f}\n#planModal .plan .pill{display:inline-block;font-size:13px;font-weight:600;padding:7px 13px;border-radius:15px;background:#262626;color:#d4d4d4}\n#planModal .plan .pill.b{background:#15355c;color:#3d9bff}\n#planModal .plan .pr{font-size:30px;font-weight:700;line-height:1;margin:18px 0 0}\n#planModal .plan .pr small{font-size:13px;font-weight:600;color:#9a9ea6}\n#planModal .plan .d{font-size:14px;line-height:1.35;color:#8d9097;margin-top:16px;min-height:0}\n.dv{height:1px;background:rgba(255,255,255,.09);margin:16px 0 18px}\n#planModal .plan ul{font-size:15px;line-height:1.3;gap:14px;margin:0}\n#planModal .plan li::before{color:#2fc15f;margin-right:8px}\n#planModal .sheet{padding-left:8px;padding-right:8px}\n#planModal .plan{padding:14px 11px 12px;border-radius:18px}\n#planModal .plan .pill{align-self:flex-start;font-size:12px;padding:6px 12px}\n#planModal .plan .pr{font-size:26px;margin-top:16px}\n#planModal .plan .pr small{font-size:12px}\n#planModal .plan .d{font-size:13px;margin-top:14px}\n.dv{margin:14px 0 16px}\n#planModal .plan ul{font-size:13px;gap:12px}\n#planModal .plan li::before{margin-right:6px}\n.pb{font-size:14px;padding:11px 4px}\n\n/* ===== Файлы ===== */\n.fsum{margin-top:20px;background:var(--row);border-radius:24px;padding:18px 18px 16px}\n.fsum .big{font-size:34px;font-weight:700;line-height:1;letter-spacing:-.5px}\n.fsum .sub{margin-top:8px;font-size:15px;color:var(--muted)}\n.fs-bar{display:flex;gap:3px;height:10px;margin:18px 0 16px}\n.fs-bar i{display:block;min-width:6px;border-radius:5px;background:var(--c);transform-origin:left center;animation:fsgrow .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k)*80ms)}\n@keyframes fsgrow{from{transform:scaleX(0)}}\n.fs-leg{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}\n@media (max-width:380px){.fsum{padding:16px 14px 14px}.fs-leg div,.fs-leg b{font-size:13px}.fs-leg div{gap:6px}}\n.fs-leg div{white-space:nowrap;display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);min-width:0}\n.fs-leg i{width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}\n.fs-leg b{margin-left:auto;font-weight:600;color:var(--text);font-size:14px}\n.fsearch{position:relative;margin-top:14px}\n.fsearch svg{position:absolute;left:15px;top:50%;width:20px;height:20px;margin-top:-10px;color:var(--muted);pointer-events:none}\n.fsearch input{width:100%;height:46px;border:1px solid transparent;border-radius:16px;background:var(--row);color:#fff;font:inherit;font-size:16px;padding:0 14px 0 44px;outline:0;transition:.15s}\n.fsearch input::placeholder{color:#7d8696}\n.fsearch input:focus{border-color:#3b5f99}\n.chips{display:flex;gap:8px;margin:12px 0 4px;padding:0 24px 0 0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent)}\n.chips::-webkit-scrollbar{display:none}\n.chips button{flex:none;height:36px;padding:0 15px;border-radius:18px;background:var(--row);color:#b5bcc9;font-size:15px;font-weight:600;transition:.15s}\n.chips button.on{background:#fff;color:#0b0e13}\n.fgh{margin:22px 4px 9px;font-size:15px;font-weight:600;color:var(--muted)}\n.fgrp{background:var(--row);border-radius:22px;overflow:hidden}\n.fr{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:12px 14px 12px 12px;transition:background .15s}\n.fr+.fr{border-top:1px solid rgba(255,255,255,.06)}\n.fr:active{background:#222b39}\n.ft{width:46px;height:46px;border-radius:15px;background:var(--cb);color:var(--c);display:grid;place-items:center;flex:none}\n.ft svg{width:23px;height:23px}\n.fr .tx{flex:1;min-width:0}\n.fr .nm2{font-size:17px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.fr .lc{display:flex;align-items:center;gap:7px;margin-top:5px;font-size:14px;color:var(--muted)}\n.fr .lc{white-space:nowrap}.fr .lc .pi{width:15px;height:15px;color:var(--purple);flex:none;margin-left:1px}\n.fr .lc b{color:#c9ced8;font-weight:600;margin-right:3px}\n.fr .lc i{width:6px;height:6px;border-radius:50%;background:var(--blue);flex:none}\n.fr .lc i.ph{background:var(--purple)}\n.fr .sz{flex:none;font-size:16px;font-weight:600;text-align:right}\n.fr .chev{flex:none;width:18px;height:18px;color:#5d6676}\n.fempty{text-align:center;padding:48px 24px 24px;color:var(--muted);line-height:1.45}\n.fempty svg{width:34px;height:34px;color:#4a5363;margin-bottom:10px}\n.fempty b{display:block;color:var(--text);font-size:18px;margin-bottom:6px}\n.t-iso{--c:#6cb0ff;--cb:rgba(108,176,255,.14)}\n.t-archive{--c:#9d9ef7;--cb:rgba(139,140,245,.16)}\n.t-video{--c:#f0b86e;--cb:rgba(240,184,110,.14)}\n.t-audio{--c:#7fe0a0;--cb:rgba(127,224,160,.13)}\n.t-other{--c:#aab2c0;--cb:rgba(170,178,192,.13)}\n.fhead{display:flex;align-items:center;gap:14px;margin-bottom:16px}\n.fhead .tx{min-width:0;flex:1}\n.fhead b{display:block;font-size:19px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.fhead small{display:block;margin-top:4px;font-size:15px;color:var(--muted)}\n.fa{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--row);border-radius:18px;padding:15px 16px;margin-bottom:9px;font-size:17px;font-weight:600;transition:.15s}\n.fa:active{transform:scale(.98)}\n.fa svg{width:22px;height:22px;color:var(--blue);flex:none}\n.fa small{display:block;margin-top:3px;font-size:14px;font-weight:400;color:var(--muted)}\n.fa.ph svg{color:var(--purple)}\n.fa.del{color:#ff8f8f}.fa.del svg{color:#ff8f8f}\n.fa.dis{opacity:.6}.fa.dis svg{color:var(--green)}\n@media (prefers-reduced-motion:reduce){.fs-bar i{animation:none}}\n\n/* мягкое растворение контента под шапкой и над меню */\n.view{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 var(--ft,0px),#000 calc(100% - var(--fb,0px)),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 var(--ft,0px),#000 calc(100% - var(--fb,0px)),transparent 100%)}\n\n/* subscription only */\n#planModal .sheet{background:var(--card);border:1px solid rgba(255,255,255,.06);border-bottom:0}\n#planModal .plan{background:var(--row);border:1px solid rgba(255,255,255,.06)}\n#planModal #plPrem{background:var(--row);border:1px solid rgba(255,255,255,.06);box-shadow:none}\n#planModal .plan .pill{background:var(--chip);color:#cfd4dd}\n#planModal .plan .pill.b{background:#16304f;color:#4da3ff}\n#planModal .plan li::before{color:var(--green)}\n#planModal .pb{background:var(--chip)}\n#planModal .pb.ok{background:var(--chip);color:#fff}\n#planModal .plan .d{min-height:calc(2*1.35em);line-height:1.35}\n"
+  },
+  {
+    "index": 10,
+    "tag": "DIV",
+    "id": "app",
+    "cls": "app",
+    "parent": "BODY",
+    "text": null
+  },
+  {
+    "index": 11,
+    "tag": "DIV",
+    "id": "",
+    "cls": "top",
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 12,
+    "tag": "DIV",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 13,
+    "tag": "DIV",
+    "id": "",
+    "cls": "eyebrow",
+    "parent": "DIV",
+    "text": "Cloud Torrent Client"
+  },
+  {
+    "index": 14,
+    "tag": "H1",
+    "id": "title",
+    "cls": null,
+    "parent": "DIV",
+    "text": "Настройки"
+  },
+  {
+    "index": 15,
+    "tag": "BUTTON",
+    "id": "cloudTop",
+    "cls": "round",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 16,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "cloudTop",
+    "text": null
+  },
+  {
+    "index": 17,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 18,
+    "tag": "SECTION",
+    "id": "v-downloads",
+    "cls": "view",
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 19,
+    "tag": "BUTTON",
+    "id": "gcRow",
+    "cls": "cloud-row",
+    "parent": "v-downloads",
+    "text": null
+  },
+  {
+    "index": 20,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "l",
+    "parent": "gcRow",
+    "text": null
+  },
+  {
+    "index": 21,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": null
+  },
+  {
+    "index": 22,
+    "tag": "rect",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 23,
+    "tag": "rect",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 24,
+    "tag": "circle",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 25,
+    "tag": "circle",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 26,
+    "tag": "SPAN",
+    "id": "gcStatus",
+    "cls": "status off",
+    "parent": "gcRow",
+    "text": null
+  },
+  {
+    "index": 27,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "gcStatus",
+    "text": null
+  },
+  {
+    "index": 28,
+    "tag": "circle",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 29,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 30,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "gcStatus",
+    "text": "Не подключён"
+  },
+  {
+    "index": 31,
+    "tag": "DIV",
+    "id": "",
+    "cls": "stats",
+    "parent": "v-downloads",
+    "text": null
+  },
+  {
+    "index": 32,
+    "tag": "DIV",
+    "id": "",
+    "cls": "stat",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 33,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 34,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 35,
+    "tag": "B",
+    "id": "stA",
+    "cls": null,
+    "parent": "DIV",
+    "text": "0"
+  },
+  {
+    "index": 36,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "Активные"
+  },
+  {
+    "index": 37,
+    "tag": "DIV",
+    "id": "",
+    "cls": "stat",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 38,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 39,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 40,
+    "tag": "rect",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 41,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 42,
+    "tag": "B",
+    "id": "stS",
+    "cls": null,
+    "parent": "DIV",
+    "text": "0 ГБ"
+  },
+  {
+    "index": 43,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "Объём торрентов"
+  },
+  {
+    "index": 44,
+    "tag": "DIV",
+    "id": "",
+    "cls": "sec",
+    "parent": "v-downloads",
+    "text": null
+  },
+  {
+    "index": 45,
+    "tag": "H2",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "Активные загрузки"
+  },
+  {
+    "index": 46,
+    "tag": "SPAN",
+    "id": "count",
+    "cls": "badge",
+    "parent": "DIV",
+    "text": "0"
+  },
+  {
+    "index": 47,
+    "tag": "DIV",
+    "id": "dls",
+    "cls": null,
+    "parent": "v-downloads",
+    "text": ""
+  },
+  {
+    "index": 48,
+    "tag": "P",
+    "id": "",
+    "cls": "note",
+    "parent": "v-downloads",
+    "text": "Укажите HTTPS-адрес BotHost"
+  },
+  {
+    "index": 49,
+    "tag": "BUTTON",
+    "id": "addBtn",
+    "cls": "add",
+    "parent": "v-downloads",
+    "text": null
+  },
+  {
+    "index": 50,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "ic",
+    "parent": "addBtn",
+    "text": null
+  },
+  {
+    "index": 51,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": null
+  },
+  {
+    "index": 52,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 53,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "tx",
+    "parent": "addBtn",
+    "text": null
+  },
+  {
+    "index": 54,
+    "tag": "B",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Добавить торрент"
+  },
+  {
+    "index": 55,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Magnet / .torrent / URL"
+  },
+  {
+    "index": 56,
+    "tag": "svg",
+    "id": "",
+    "cls": "chev",
+    "parent": "addBtn",
+    "text": null
+  },
+  {
+    "index": 57,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 58,
+    "tag": "SECTION",
+    "id": "v-files",
+    "cls": "view",
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 59,
+    "tag": "DIV",
+    "id": "fSum",
+    "cls": "fsum",
+    "parent": "v-files",
+    "text": null
+  },
+  {
+    "index": 60,
+    "tag": "DIV",
+    "id": "",
+    "cls": "big",
+    "parent": "fSum",
+    "text": "0 ГБ"
+  },
+  {
+    "index": 61,
+    "tag": "DIV",
+    "id": "",
+    "cls": "sub",
+    "parent": "fSum",
+    "text": "0 файлов в облаке"
+  },
+  {
+    "index": 62,
+    "tag": "DIV",
+    "id": "",
+    "cls": "fs-bar",
+    "parent": "fSum",
+    "text": ""
+  },
+  {
+    "index": 63,
+    "tag": "DIV",
+    "id": "",
+    "cls": "fs-leg",
+    "parent": "fSum",
+    "text": ""
+  },
+  {
+    "index": 64,
+    "tag": "LABEL",
+    "id": "",
+    "cls": "fsearch",
+    "parent": "v-files",
+    "text": null
+  },
+  {
+    "index": 65,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "LABEL",
+    "text": null
+  },
+  {
+    "index": 66,
+    "tag": "circle",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 67,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 68,
+    "tag": "INPUT",
+    "id": "fQ",
+    "cls": null,
+    "parent": "LABEL",
+    "text": ""
+  },
+  {
+    "index": 69,
+    "tag": "DIV",
+    "id": "fChips",
+    "cls": "chips",
+    "parent": "v-files",
+    "text": null
+  },
+  {
+    "index": 70,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "on",
+    "parent": "fChips",
+    "text": "Все"
+  },
+  {
+    "index": 71,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": null,
+    "parent": "fChips",
+    "text": "Образы"
+  },
+  {
+    "index": 72,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": null,
+    "parent": "fChips",
+    "text": "Архивы"
+  },
+  {
+    "index": 73,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": null,
+    "parent": "fChips",
+    "text": "Видео"
+  },
+  {
+    "index": 74,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": null,
+    "parent": "fChips",
+    "text": "Аудио"
+  },
+  {
+    "index": 75,
+    "tag": "DIV",
+    "id": "fList",
+    "cls": null,
+    "parent": "v-files",
+    "text": null
+  },
+  {
+    "index": 76,
+    "tag": "DIV",
+    "id": "",
+    "cls": "fempty",
+    "parent": "fList",
+    "text": null
+  },
+  {
+    "index": 77,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 78,
+    "tag": "circle",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 79,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 80,
+    "tag": "B",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "Ничего не найдено"
+  },
+  {
+    "index": 81,
+    "tag": "SECTION",
+    "id": "v-cloud",
+    "cls": "view",
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 82,
+    "tag": "DIV",
+    "id": "",
+    "cls": "list",
+    "parent": "v-cloud",
+    "text": null
+  },
+  {
+    "index": 83,
+    "tag": "BUTTON",
+    "id": "gcToggle",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 84,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "gcToggle",
+    "text": null
+  },
+  {
+    "index": 85,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 86,
+    "tag": "SMALL",
+    "id": "gcSub",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Не подключён"
+  },
+  {
+    "index": 87,
+    "tag": "SPAN",
+    "id": "gcSw",
+    "cls": "sw",
+    "parent": "gcToggle",
+    "text": ""
+  },
+  {
+    "index": 88,
+    "tag": "DIV",
+    "id": "quota",
+    "cls": "st",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 89,
+    "tag": "DIV",
+    "id": "",
+    "cls": "h",
+    "parent": "quota",
+    "text": null
+  },
+  {
+    "index": 90,
+    "tag": "DIV",
+    "id": "",
+    "cls": "t",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 91,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 92,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 93,
+    "tag": "SPAN",
+    "id": "qPct",
+    "cls": "pill b",
+    "parent": "DIV",
+    "text": "47%"
+  },
+  {
+    "index": 94,
+    "tag": "DIV",
+    "id": "",
+    "cls": "bar",
+    "parent": "quota",
+    "text": null
+  },
+  {
+    "index": 95,
+    "tag": "I",
+    "id": "qBar",
+    "cls": null,
+    "parent": "DIV",
+    "text": ""
+  },
+  {
+    "index": 96,
+    "tag": "DIV",
+    "id": "",
+    "cls": "f",
+    "parent": "quota",
+    "text": null
+  },
+  {
+    "index": 97,
+    "tag": "SPAN",
+    "id": "qTxt",
+    "cls": null,
+    "parent": "DIV",
+    "text": "940 ГБ из 2 ТБ"
+  },
+  {
+    "index": 98,
+    "tag": "SPAN",
+    "id": "qFree",
+    "cls": null,
+    "parent": "DIV",
+    "text": "свободно 1,1 ТБ"
+  },
+  {
+    "index": 99,
+    "tag": "DIV",
+    "id": "",
+    "cls": "grp",
+    "parent": "DIV",
+    "text": "Автоматизация"
+  },
+  {
+    "index": 100,
+    "tag": "BUTTON",
+    "id": "sync",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 101,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "sync",
+    "text": null
+  },
+  {
+    "index": 102,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 103,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Загружать завершённые в облако"
+  },
+  {
+    "index": 104,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw on",
+    "parent": "sync",
+    "text": ""
+  },
+  {
+    "index": 105,
+    "tag": "BUTTON",
+    "id": "optAuto",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 106,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "optAuto",
+    "text": null
+  },
+  {
+    "index": 107,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 108,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Сразу после загрузки в облако"
+  },
+  {
+    "index": 109,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw on",
+    "parent": "optAuto",
+    "text": ""
+  },
+  {
+    "index": 110,
+    "tag": "BUTTON",
+    "id": "optDel",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 111,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "optDel",
+    "text": null
+  },
+  {
+    "index": 112,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 113,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Освобождать место после передачи"
+  },
+  {
+    "index": 114,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw",
+    "parent": "optDel",
+    "text": ""
+  },
+  {
+    "index": 115,
+    "tag": "BUTTON",
+    "id": "optVerify",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 116,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "optVerify",
+    "text": null
+  },
+  {
+    "index": 117,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 118,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Сверять хеш после загрузки"
+  },
+  {
+    "index": 119,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw on",
+    "parent": "optVerify",
+    "text": ""
+  },
+  {
+    "index": 120,
+    "tag": "BUTTON",
+    "id": "optUnzip",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 121,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "optUnzip",
+    "text": null
+  },
+  {
+    "index": 122,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 123,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Распаковывать .zip и .rar в облаке"
+  },
+  {
+    "index": 124,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw",
+    "parent": "optUnzip",
+    "text": ""
+  },
+  {
+    "index": 125,
+    "tag": "DIV",
+    "id": "",
+    "cls": "grp",
+    "parent": "DIV",
+    "text": "Управление"
+  },
+  {
+    "index": 126,
+    "tag": "BUTTON",
+    "id": "limRow",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 127,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "limRow",
+    "text": null
+  },
+  {
+    "index": 128,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 129,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Остальные ждут в очереди"
+  },
+  {
+    "index": 130,
+    "tag": "SPAN",
+    "id": "limVal",
+    "cls": "val",
+    "parent": "limRow",
+    "text": "1"
+  },
+  {
+    "index": 131,
+    "tag": "BUTTON",
+    "id": "cleanCloud",
+    "cls": "row-btn act-row",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 132,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "cleanCloud",
+    "text": null
+  },
+  {
+    "index": 133,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 134,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Удалить завершённые загрузки"
+  },
+  {
+    "index": 135,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "cleanCloud",
+    "text": null
+  },
+  {
+    "index": 136,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 137,
+    "tag": "SECTION",
+    "id": "v-settings",
+    "cls": "view on",
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 138,
+    "tag": "DIV",
+    "id": "",
+    "cls": "list",
+    "parent": "v-settings",
+    "text": null
+  },
+  {
+    "index": 139,
+    "tag": "DIV",
+    "id": "",
+    "cls": "grp",
+    "parent": "DIV",
+    "text": "Подписка"
+  },
+  {
+    "index": 140,
+    "tag": "BUTTON",
+    "id": "planRow",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 141,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "planRow",
+    "text": null
+  },
+  {
+    "index": 142,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 143,
+    "tag": "SMALL",
+    "id": "planSub",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Бесплатно, с ограничениями"
+  },
+  {
+    "index": 144,
+    "tag": "SPAN",
+    "id": "planVal",
+    "cls": "val",
+    "parent": "planRow",
+    "text": "Free"
+  },
+  {
+    "index": 145,
+    "tag": "DIV",
+    "id": "",
+    "cls": "grp",
+    "parent": "DIV",
+    "text": "BotHost"
+  },
+  {
+    "index": 146,
+    "tag": "BUTTON",
+    "id": "gcApiRow",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 147,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "gcApiRow",
+    "text": null
+  },
+  {
+    "index": 148,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 149,
+    "tag": "SMALL",
+    "id": "gcApiSub",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Не подключён"
+  },
+  {
+    "index": 150,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "gcApiRow",
+    "text": null
+  },
+  {
+    "index": 151,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 152,
+    "tag": "DIV",
+    "id": "",
+    "cls": "grp",
+    "parent": "DIV",
+    "text": "Загрузки"
+  },
+  {
+    "index": 153,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 154,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "BUTTON",
+    "text": null
+  },
+  {
+    "index": 155,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 156,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "/Downloads/Torrents"
+  },
+  {
+    "index": 157,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "BUTTON",
+    "text": null
+  },
+  {
+    "index": 158,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 159,
+    "tag": "BUTTON",
+    "id": "optStart",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 160,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "optStart",
+    "text": null
+  },
+  {
+    "index": 161,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 162,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Начинать сразу после добавления"
+  },
+  {
+    "index": 163,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw on",
+    "parent": "optStart",
+    "text": ""
+  },
+  {
+    "index": 164,
+    "tag": "BUTTON",
+    "id": "pauseAll",
+    "cls": "row-btn act-row",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 165,
+    "tag": "SPAN",
+    "id": "pauseTxt",
+    "cls": null,
+    "parent": "pauseAll",
+    "text": null
+  },
+  {
+    "index": 166,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "pauseTxt",
+    "text": ""
+  },
+  {
+    "index": 167,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "pauseTxt",
+    "text": "Продолжить все загрузки"
+  },
+  {
+    "index": 168,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "pauseAll",
+    "text": null
+  },
+  {
+    "index": 169,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 170,
+    "tag": "DIV",
+    "id": "",
+    "cls": "grp",
+    "parent": "DIV",
+    "text": "Сеть и питание"
+  },
+  {
+    "index": 171,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 172,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "BUTTON",
+    "text": "Только Wi-Fi"
+  },
+  {
+    "index": 173,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw on",
+    "parent": "BUTTON",
+    "text": ""
+  },
+  {
+    "index": 174,
+    "tag": "BUTTON",
+    "id": "mobLim",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 175,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "mobLim",
+    "text": null
+  },
+  {
+    "index": 176,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 177,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Действует вне Wi-Fi"
+  },
+  {
+    "index": 178,
+    "tag": "SPAN",
+    "id": "mobLimV",
+    "cls": "val",
+    "parent": "mobLim",
+    "text": "Без лимита"
+  },
+  {
+    "index": 179,
+    "tag": "BUTTON",
+    "id": "optSpeed",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 180,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "optSpeed",
+    "text": "Ограничить скорость"
+  },
+  {
+    "index": 181,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw",
+    "parent": "optSpeed",
+    "text": ""
+  },
+  {
+    "index": 182,
+    "tag": "BUTTON",
+    "id": "spdRow",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 183,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "spdRow",
+    "text": null
+  },
+  {
+    "index": 184,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 185,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": null
+  },
+  {
+    "index": 186,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SMALL",
+    "text": ""
+  },
+  {
+    "index": 187,
+    "tag": "SPAN",
+    "id": "spdVal",
+    "cls": "val",
+    "parent": "spdRow",
+    "text": "10 МБ/с"
+  },
+  {
+    "index": 188,
+    "tag": "BUTTON",
+    "id": "optChg",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 189,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "optChg",
+    "text": null
+  },
+  {
+    "index": 190,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 191,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Приостанавливать при разрядке"
+  },
+  {
+    "index": 192,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw",
+    "parent": "optChg",
+    "text": ""
+  },
+  {
+    "index": 193,
+    "tag": "BUTTON",
+    "id": "optNight",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 194,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "optNight",
+    "text": null
+  },
+  {
+    "index": 195,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 196,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Загружать с 01:00 до 07:00"
+  },
+  {
+    "index": 197,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw",
+    "parent": "optNight",
+    "text": ""
+  },
+  {
+    "index": 198,
+    "tag": "DIV",
+    "id": "",
+    "cls": "grp",
+    "parent": "DIV",
+    "text": "Уведомления"
+  },
+  {
+    "index": 199,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 200,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "BUTTON",
+    "text": "Уведомления"
+  },
+  {
+    "index": 201,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw on",
+    "parent": "BUTTON",
+    "text": ""
+  },
+  {
+    "index": 202,
+    "tag": "DIV",
+    "id": "",
+    "cls": "grp",
+    "parent": "DIV",
+    "text": "Безопасность"
+  },
+  {
+    "index": 203,
+    "tag": "BUTTON",
+    "id": "optLock",
+    "cls": "row-btn",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 204,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "optLock",
+    "text": null
+  },
+  {
+    "index": 205,
+    "tag": "BR",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": ""
+  },
+  {
+    "index": 206,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Вход по отпечатку или PIN-коду"
+  },
+  {
+    "index": 207,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "sw",
+    "parent": "optLock",
+    "text": ""
+  },
+  {
+    "index": 208,
+    "tag": "SECTION",
+    "id": "v-detail",
+    "cls": "view",
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 209,
+    "tag": "BUTTON",
+    "id": "back",
+    "cls": "back",
+    "parent": "v-detail",
+    "text": null
+  },
+  {
+    "index": 210,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "back",
+    "text": null
+  },
+  {
+    "index": 211,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 212,
+    "tag": "DIV",
+    "id": "detailBody",
+    "cls": null,
+    "parent": "v-detail",
+    "text": null
+  },
+  {
+    "index": 213,
+    "tag": "DIV",
+    "id": "",
+    "cls": "seg",
+    "parent": "detailBody",
+    "text": null
+  },
+  {
+    "index": 214,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "on",
+    "parent": "DIV",
+    "text": "Cloud"
+  },
+  {
+    "index": 215,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "",
+    "parent": "DIV",
+    "text": "Android"
+  },
+  {
+    "index": 216,
+    "tag": "DIV",
+    "id": "",
+    "cls": "st",
+    "parent": "detailBody",
+    "text": null
+  },
+  {
+    "index": 217,
+    "tag": "DIV",
+    "id": "",
+    "cls": "nm",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 218,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "Game_Archive.iso"
+  },
+  {
+    "index": 219,
+    "tag": "B",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "68%"
+  },
+  {
+    "index": 220,
+    "tag": "DIV",
+    "id": "",
+    "cls": "bar",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 221,
+    "tag": "I",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": ""
+  },
+  {
+    "index": 222,
+    "tag": "DIV",
+    "id": "",
+    "cls": "f",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 223,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "85 МБ/с"
+  },
+  {
+    "index": 224,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "148,2 / 218 ГБ"
+  },
+  {
+    "index": 225,
+    "tag": "DIV",
+    "id": "",
+    "cls": "f",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 226,
+    "tag": "SPAN",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "Осталось ~2 мин"
+  },
+  {
+    "index": 227,
+    "tag": "P",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 228,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "P",
+    "text": null
+  },
+  {
+    "index": 229,
+    "tag": "rect",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 230,
+    "tag": "rect",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 231,
+    "tag": "circle",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 232,
+    "tag": "circle",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 233,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "act",
+    "parent": "detailBody",
+    "text": "Приостановить"
+  },
+  {
+    "index": 234,
+    "tag": "NAV",
+    "id": "",
+    "cls": null,
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 235,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "",
+    "parent": "NAV",
+    "text": null
+  },
+  {
+    "index": 236,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "BUTTON",
+    "text": null
+  },
+  {
+    "index": 237,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 238,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "",
+    "parent": "NAV",
+    "text": null
+  },
+  {
+    "index": 239,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "BUTTON",
+    "text": null
+  },
+  {
+    "index": 240,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 241,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 242,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "",
+    "parent": "NAV",
+    "text": null
+  },
+  {
+    "index": 243,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "BUTTON",
+    "text": null
+  },
+  {
+    "index": 244,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 245,
+    "tag": "BUTTON",
+    "id": "",
+    "cls": "on",
+    "parent": "NAV",
+    "text": null
+  },
+  {
+    "index": 246,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "BUTTON",
+    "text": null
+  },
+  {
+    "index": 247,
+    "tag": "circle",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 248,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 249,
+    "tag": "DIV",
+    "id": "modal",
+    "cls": "modal",
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 250,
+    "tag": "DIV",
+    "id": "",
+    "cls": "sheet",
+    "parent": "modal",
+    "text": null
+  },
+  {
+    "index": 251,
+    "tag": "DIV",
+    "id": "stepChoice",
+    "cls": "step",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 252,
+    "tag": "H3",
+    "id": "",
+    "cls": null,
+    "parent": "stepChoice",
+    "text": "Добавить торрент"
+  },
+  {
+    "index": 253,
+    "tag": "BUTTON",
+    "id": "pickFile",
+    "cls": "choice",
+    "parent": "stepChoice",
+    "text": null
+  },
+  {
+    "index": 254,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "pickFile",
+    "text": null
+  },
+  {
+    "index": 255,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 256,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 257,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "tx",
+    "parent": "pickFile",
+    "text": null
+  },
+  {
+    "index": 258,
+    "tag": "B",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Файлом"
+  },
+  {
+    "index": 259,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Выбрать .torrent"
+  },
+  {
+    "index": 260,
+    "tag": "svg",
+    "id": "",
+    "cls": "chev",
+    "parent": "pickFile",
+    "text": null
+  },
+  {
+    "index": 261,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 262,
+    "tag": "BUTTON",
+    "id": "pickLink",
+    "cls": "choice",
+    "parent": "stepChoice",
+    "text": null
+  },
+  {
+    "index": 263,
+    "tag": "svg",
+    "id": "",
+    "cls": null,
+    "parent": "pickLink",
+    "text": null
+  },
+  {
+    "index": 264,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 265,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 266,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "tx",
+    "parent": "pickLink",
+    "text": null
+  },
+  {
+    "index": 267,
+    "tag": "B",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Ссылкой"
+  },
+  {
+    "index": 268,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "SPAN",
+    "text": "Magnet или URL"
+  },
+  {
+    "index": 269,
+    "tag": "svg",
+    "id": "",
+    "cls": "chev",
+    "parent": "pickLink",
+    "text": null
+  },
+  {
+    "index": 270,
+    "tag": "path",
+    "id": "",
+    "cls": null,
+    "parent": "svg",
+    "text": ""
+  },
+  {
+    "index": 271,
+    "tag": "BUTTON",
+    "id": "cancel",
+    "cls": "cancel-full",
+    "parent": "stepChoice",
+    "text": "Отмена"
+  },
+  {
+    "index": 272,
+    "tag": "DIV",
+    "id": "stepLink",
+    "cls": "step on",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 273,
+    "tag": "H3",
+    "id": "",
+    "cls": null,
+    "parent": "stepLink",
+    "text": "Добавить по ссылке"
+  },
+  {
+    "index": 274,
+    "tag": "INPUT",
+    "id": "src",
+    "cls": null,
+    "parent": "stepLink",
+    "text": ""
+  },
+  {
+    "index": 275,
+    "tag": "DIV",
+    "id": "",
+    "cls": "acts",
+    "parent": "stepLink",
+    "text": null
+  },
+  {
+    "index": 276,
+    "tag": "BUTTON",
+    "id": "linkBack",
+    "cls": null,
+    "parent": "DIV",
+    "text": "Назад"
+  },
+  {
+    "index": 277,
+    "tag": "BUTTON",
+    "id": "ok",
+    "cls": "ok",
+    "parent": "DIV",
+    "text": "Добавить"
+  },
+  {
+    "index": 278,
+    "tag": "INPUT",
+    "id": "fileIn",
+    "cls": null,
+    "parent": "DIV",
+    "text": ""
+  },
+  {
+    "index": 279,
+    "tag": "DIV",
+    "id": "gcModal",
+    "cls": "modal",
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 280,
+    "tag": "DIV",
+    "id": "",
+    "cls": "sheet",
+    "parent": "gcModal",
+    "text": null
+  },
+  {
+    "index": 281,
+    "tag": "H3",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "Google Cloud API"
+  },
+  {
+    "index": 282,
+    "tag": "INPUT",
+    "id": "gcProj",
+    "cls": null,
+    "parent": "DIV",
+    "text": ""
+  },
+  {
+    "index": 283,
+    "tag": "INPUT",
+    "id": "gcKey",
+    "cls": null,
+    "parent": "DIV",
+    "text": ""
+  },
+  {
+    "index": 284,
+    "tag": "P",
+    "id": "",
+    "cls": "note",
+    "parent": "DIV",
+    "text": "Ключ создаётся в Google Cloud Console: API и сервисы → Учётные данные. Для проекта должен быть включён Google Drive API."
+  },
+  {
+    "index": 285,
+    "tag": "DIV",
+    "id": "",
+    "cls": "acts",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 286,
+    "tag": "BUTTON",
+    "id": "gcCancel",
+    "cls": null,
+    "parent": "DIV",
+    "text": "Отмена"
+  },
+  {
+    "index": 287,
+    "tag": "BUTTON",
+    "id": "gcOk",
+    "cls": "ok",
+    "parent": "DIV",
+    "text": "Подключить"
+  },
+  {
+    "index": 288,
+    "tag": "BUTTON",
+    "id": "gcOff",
+    "cls": "cancel-full",
+    "parent": "DIV",
+    "text": "Отключить"
+  },
+  {
+    "index": 289,
+    "tag": "DIV",
+    "id": "planModal",
+    "cls": "modal",
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 290,
+    "tag": "DIV",
+    "id": "",
+    "cls": "sheet tall",
+    "parent": "planModal",
+    "text": null
+  },
+  {
+    "index": 291,
+    "tag": "DIV",
+    "id": "",
+    "cls": "plans",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 292,
+    "tag": "DIV",
+    "id": "plFree",
+    "cls": "plan cur",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 293,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "pill",
+    "parent": "plFree",
+    "text": "FREE"
+  },
+  {
+    "index": 294,
+    "tag": "DIV",
+    "id": "",
+    "cls": "pr",
+    "parent": "plFree",
+    "text": "$0"
+  },
+  {
+    "index": 295,
+    "tag": "DIV",
+    "id": "",
+    "cls": "d",
+    "parent": "plFree",
+    "text": "Бесплатно навсегда"
+  },
+  {
+    "index": 296,
+    "tag": "DIV",
+    "id": "",
+    "cls": "dv",
+    "parent": "plFree",
+    "text": ""
+  },
+  {
+    "index": 297,
+    "tag": "UL",
+    "id": "",
+    "cls": null,
+    "parent": "plFree",
+    "text": null
+  },
+  {
+    "index": 298,
+    "tag": "LI",
+    "id": "",
+    "cls": null,
+    "parent": "UL",
+    "text": "1 активный торрент"
+  },
+  {
+    "index": 299,
+    "tag": "LI",
+    "id": "",
+    "cls": null,
+    "parent": "UL",
+    "text": "До 20 ГБ на задачу"
+  },
+  {
+    "index": 300,
+    "tag": "LI",
+    "id": "",
+    "cls": null,
+    "parent": "UL",
+    "text": "Google Drive"
+  },
+  {
+    "index": 301,
+    "tag": "LI",
+    "id": "",
+    "cls": null,
+    "parent": "UL",
+    "text": "Базовая очередь"
+  },
+  {
+    "index": 302,
+    "tag": "LI",
+    "id": "",
+    "cls": null,
+    "parent": "UL",
+    "text": "Реклама"
+  },
+  {
+    "index": 303,
+    "tag": "BUTTON",
+    "id": "stay",
+    "cls": "pb",
+    "parent": "plFree",
+    "text": "Остаться"
+  },
+  {
+    "index": 304,
+    "tag": "DIV",
+    "id": "plPrem",
+    "cls": "plan",
+    "parent": "DIV",
+    "text": null
+  },
+  {
+    "index": 305,
+    "tag": "SPAN",
+    "id": "",
+    "cls": "pill b",
+    "parent": "plPrem",
+    "text": "PREMIUM"
+  },
+  {
+    "index": 306,
+    "tag": "DIV",
+    "id": "",
+    "cls": "pr",
+    "parent": "plPrem",
+    "text": null
+  },
+  {
+    "index": 307,
+    "tag": "SMALL",
+    "id": "",
+    "cls": null,
+    "parent": "DIV",
+    "text": "/ мес."
+  },
+  {
+    "index": 308,
+    "tag": "DIV",
+    "id": "",
+    "cls": "d",
+    "parent": "plPrem",
+    "text": "Расширенные возможности"
+  },
+  {
+    "index": 309,
+    "tag": "DIV",
+    "id": "",
+    "cls": "dv",
+    "parent": "plPrem",
+    "text": ""
+  },
+  {
+    "index": 310,
+    "tag": "UL",
+    "id": "",
+    "cls": null,
+    "parent": "plPrem",
+    "text": null
+  },
+  {
+    "index": 311,
+    "tag": "LI",
+    "id": "",
+    "cls": null,
+    "parent": "UL",
+    "text": "До 5 торрентов"
+  },
+  {
+    "index": 312,
+    "tag": "LI",
+    "id": "",
+    "cls": null,
+    "parent": "UL",
+    "text": "До 500 ГБ на задачу"
+  },
+  {
+    "index": 313,
+    "tag": "LI",
+    "id": "",
+    "cls": null,
+    "parent": "UL",
+    "text": "Google Drive + телефон"
+  },
+  {
+    "index": 314,
+    "tag": "LI",
+    "id": "",
+    "cls": null,
+    "parent": "UL",
+    "text": "Приоритет в очереди"
+  },
+  {
+    "index": 315,
+    "tag": "LI",
+    "id": "",
+    "cls": null,
+    "parent": "UL",
+    "text": "Без рекламы"
+  },
+  {
+    "index": 316,
+    "tag": "BUTTON",
+    "id": "buy",
+    "cls": "pb ok",
+    "parent": "plPrem",
+    "text": "Подписаться"
+  },
+  {
+    "index": 317,
+    "tag": "DIV",
+    "id": "fileModal",
+    "cls": "modal",
+    "parent": "app",
+    "text": null
+  },
+  {
+    "index": 318,
+    "tag": "DIV",
+    "id": "fileSheet",
+    "cls": "sheet",
+    "parent": "fileModal",
+    "text": ""
+  },
+  {
+    "index": 319,
+    "tag": "DIV",
+    "id": "toast",
+    "cls": "toast",
+    "parent": "app",
+    "text": ""
+  },
+  {
+    "index": 320,
+    "tag": "SCRIPT",
+    "id": "",
+    "cls": null,
+    "parent": "BODY",
+    "text": "\nconst ico='<svg viewBox=\"0 0 24 24\"><path d=\"M14 3H7.5A2 2 0 0 0 5.5 5v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7.5z\"/><path d=\"M14 3v4.5h4.5\"/><path d=\"M9.5 9.5h1.5M9.5 12h1.5\"/><circle cx=\"10\" cy=\"16.5\" r=\"1.3\"/></svg>';\nconst $=s=>document.querySelector(s);\nconst opt={auto:true,autoDel:false,limit:2,speedOn:false,speed:10,autoStart:true};\nlet plan='free';\nconst LIM={free:{n:1,gb:20,phone:false},prem:{n:5,gb:500,phone:true}};\nconst lim=()=>Math.min(opt.limit,LIM[plan].n);\nconst ev=v=>opt.speedOn?Math.min(v,opt.speed):v;\nconst names={downloads:'Загрузки',files:'Файлы',cloud:'Облако',settings:'Настройки'};\nlet dls=[\n  {n:'Game_Archive.iso',p:68,ph:25,pv:12,phOn:true,s:'218 ГБ',v:85,c:'var(--blue)',on:true},\n  {n:'Project_Assets.zip',p:34,ph:10,pv:8,phOn:true,s:'42 ГБ',v:21,c:'var(--purple)',on:true}\n];\nfunction render(){\n  $('#dls').innerHTML=dls.map((d,i)=>`<button class=\"dl ${d.on?'':'paused'}\" data-i=\"${i}\">\n    <div class=\"h\"><div class=\"n\">${ico}<span>${d.n}</span><span class=\"pill pl ${stat(d)[1]}\">${stat(d)[0]}</span></div><span class=\"pc\">${Math.floor(prog(d)[0])}%</span></div>\n    <div class=\"bar\"><i style=\"width:${prog(d)[0]}%;background:${prog(d)[1]}\"></i></div>\n    <div class=\"f\"><span>${d.s} · <span class=\"eta\">${etaT(d)}</span></span><span class=\"spd\">${spdT(d)}</span></div></button>`).join('');\n  renderCloud();renderPause();$('#count').textContent=dls.length;$('#stA').textContent=dls.length;$('#stS').textContent=Math.round(dls.reduce((a,d)=>a+parseFloat(d.s),0))+' ГБ';\n  renderFiles();\n}\nfunction toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1800)}\nfunction tab(t){\n  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+t));\n  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));\n  $('#title').textContent=names[t];\n  if(t==='files')renderFiles();\n}\ndocument.querySelectorAll('nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));\n$('#cloudTop').onclick=()=>tab('cloud');\nlet cur=null,dtab='server';\nfunction fmt(s){s=Math.ceil(s);if(s<60)return s+' с';const m=Math.ceil(s/60);if(m<60)return m+' мин';return Math.floor(m/60)+' ч '+(m%60)+' мин'}\nconst qList=()=>dls.filter(d=>d.on&&d.p<100);\nconst queued=d=>d.on&&d.p<100&&qList().indexOf(d)>=lim();\nfunction stat(d){if(!d.on)return['Пауза',''];if(queued(d))return['Очередь',''];if(d.p<100)return['Cloud','b'];if(d.ph<100)return['Android','p'];return['Готово','g']}\nfunction etaT(d){if(!d.on)return 'приостановлено';if(queued(d))return 'в очереди';if(d.p<100)return 'ещё ~'+fmt((100-d.p)/(ev(d.v)/200));if(d.ph<100)return d.phOn?'ещё ~'+fmt((100-d.ph)/(ev(d.pv)/200)):'ожидание';return 'готово'}\nfunction spdT(d){if(!d.on)return 'Пауза';if(queued(d))return '—';if(d.p<100)return ev(d.v)+' МБ/с';if(d.ph<100&&d.phOn)return ev(d.pv)+' МБ/с';return d.ph>=100?'Готово':'—'}\nfunction prog(d){return d.p<100?[d.p,'var(--blue)']:[d.ph,'var(--purple)']}\nfunction updList(){document.querySelectorAll('.dl').forEach((el,i)=>{const d=dls[i];if(!d)return;const s=stat(d),pl=el.querySelector('.pl'),pg=prog(d);pl.textContent=s[0];pl.className='pill pl '+s[1];el.querySelector('.pc').textContent=Math.floor(pg[0])+'%';const b=el.querySelector('.bar i');b.style.width=pg[0]+'%';b.style.background=pg[1];el.querySelector('.eta').textContent=etaT(d);el.querySelector('.spd').textContent=spdT(d);el.classList.toggle('paused',!d.on)})}names.detail='Загрузка';\nconst nf=n=>n.toFixed(1).replace('.',',');\nfunction renderDetail(){\n const d=dls[cur];if(!d)return;\n const tot=parseFloat(d.s.replace(',','.'));\n const card=(ttl,icon,pill,blue,pct,col,spd,note)=>`<div class=\"st\"><div class=\"h\"><div class=\"t\">${icon}<span>${ttl}</span></div><span class=\"pill ${blue?'b':''}\">${pill}</span></div><div class=\"nm\"><span>${d.n}</span><b>${Math.floor(pct)}%</b></div><div class=\"bar\"><i style=\"width:${pct}%;background:${col}\"></i></div><div class=\"f\"><span>${nf(tot*pct/100)} / ${tot} ГБ</span><span>${pct>=100?'Готово':d.on?spd+' МБ/с':'Пауза'}</span></div><p>${note}</p></div>`;\n const cl='<svg viewBox=\"0 0 24 24\" style=\"color:var(--blue)\"><path d=\"M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.2 4.2 0 0 1-.5 8.5\"/><path d=\"M12 11v6m-2.5-2.5L12 17l2.5-2.5\"/></svg>';\n const ph='<svg viewBox=\"0 0 24 24\" style=\"color:var(--purple)\"><rect x=\"6.5\" y=\"2.5\" width=\"11\" height=\"19\" rx=\"2.5\"/><path d=\"M11 18.5h2\"/></svg>';\n const sv='<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" style=\"color:var(--blue);flex:none\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"7.5\" rx=\"2.2\"/><rect x=\"3\" y=\"13.5\" width=\"18\" height=\"7.5\" rx=\"2.2\"/><circle cx=\"7\" cy=\"6.8\" r=\".6\"/><circle cx=\"7\" cy=\"17.3\" r=\".6\"/></svg>';\n const pi='<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" style=\"color:var(--purple);flex:none\"><rect x=\"6.5\" y=\"2.5\" width=\"11\" height=\"19\" rx=\"2.5\"/><path d=\"M11 18.5h2\"/></svg>';\n const mk=(pct,col,spd,icon,txt)=>`<div class=\"st\"><div class=\"nm\" style=\"margin-top:0\"><span style=\"font-size:20px;font-weight:600\">${d.n}</span><b style=\"color:${col}\">${Math.floor(pct)}%</b></div><div class=\"bar\"><i style=\"width:${pct}%;background:${col}\"></i></div><div class=\"f\"><span>${pct>=100?'Готово':d.on?spd+' МБ/с':'Пауза'}</span><span>${nf(tot*pct/100)} / ${tot} ГБ</span></div><div class=\"f\" style=\"margin-top:6px\"><span>${pct>=100?'':d.on?'Осталось ~'+fmt((100-pct)/(spd/200)):''}</span></div><p style=\"display:flex;align-items:center;gap:8px;font-size:16px;color:#aab2c0\">${icon}${txt}</p></div>`;\n $('#detailBody').innerHTML=`<div class=\"seg\"><button data-dt=\"server\" class=\"${dtab==='server'?'on':''}\">Cloud</button><button data-dt=\"phone\" class=\"${dtab==='phone'?'on':''}\">Android</button></div>`+(dtab==='server'?mk(d.p,'var(--blue)',ev(d.v),sv,'Скачивается на облачный сервер'):(d.phOn||d.ph>=100?mk(d.ph,'var(--purple)',ev(d.pv),pi,'Скачивается на Android-устройство'):`<div class=\"st\"><div class=\"nm\" style=\"margin-top:0\"><span style=\"font-size:20px;font-weight:600\">${d.n}</span><b style=\"color:var(--purple)\">0%</b></div><div class=\"bar\"><i style=\"width:0\"></i></div><p style=\"display:flex;align-items:center;gap:8px;font-size:16px;color:#aab2c0;margin:0\">${pi}Автозапуск после завершения на сервере</p><button class=\"act2\" data-start>Скачать на Android</button></div>`))+`<button class=\"act\">${d.on?'Приостановить':'Возобновить'}</button>`;\n}\n$('#dls').onclick=e=>{const b=e.target.closest('.dl');if(!b)return;cur=+b.dataset.i;renderDetail();tab('detail');document.querySelector('nav [data-tab=downloads]').classList.add('on')};\n$('#back').onclick=()=>tab('downloads');\n$('#detailBody').addEventListener('click',e=>{const b=e.target.closest('[data-dt]');if(b){dtab=b.dataset.dt;renderDetail()}if(e.target.closest('[data-start]')){if(!LIM[plan].phone){openPlans(true);return}dls[cur].phOn=true;renderDetail();updList();toast('Передача на Android запущена')}});\n$('#detailBody').onclick=e=>{if(e.target.closest('.act')){const d=dls[cur];d.on=!d.on;render();renderDetail();toast(d.on?'Загрузка возобновлена':'Загрузка приостановлена')}};\nsetInterval(()=>{dls.forEach(d=>{if(d.p>=100&&d.ph<100&&opt.auto&&LIM[plan].phone)d.phOn=true;if(d.on&&d.phOn&&LIM[plan].phone&&d.ph<d.p)d.ph=Math.min(d.p,d.ph+ev(d.pv)/200);if(opt.autoDel&&d.ph>=100)d.cloudDel=true});updList();if($('#v-detail').classList.contains('on'))renderDetail()},1000);\nlet gc=false,gcKey='',gcProj='';\nfunction setGc(q){\n  $('#gcStatus').className='status'+(gc?'':' off');\n  $('#gcStatus').lastElementChild.textContent=gc?'Подключён':'Не подключён';\n  $('#gcSw').classList.toggle('on',gc);$('#gcSub').textContent=gc?'Подключён':'Не подключён';$('#gcApiSub').textContent=gc?'Подключён · '+gcProj:'Не подключён';\n  if(!q)toast(gc?'Google Cloud подключён':'Google Cloud отключён');\n}\n$('#gcRow').onclick=()=>{gc?tab('settings'):openGc(true)};\n$('#gcToggle').onclick=()=>{if(gc){gc=false;setGc()}else openGc(true)};\ndocument.querySelectorAll('.row-btn').forEach(b=>{const s=b.querySelector('.sw');if(s&&b.id!=='gcToggle')b.addEventListener('click',()=>s.classList.toggle('on'))});\nconst step=n=>{$('#stepChoice').classList.toggle('on',n==='choice');$('#stepLink').classList.toggle('on',n==='link')};\nconst open=v=>{$('#modal').classList.toggle('on',v);if(v){step('choice');$('#src').value='';$('#fileIn').value=''}};\nconst addTorrent=n=>{\n  const gb=Math.floor(Math.random()*50+1);\n  if(gb>LIM[plan].gb){open(false);toast('Торрент '+gb+' ГБ: на Free лимит '+LIM[plan].gb+' ГБ');setTimeout(()=>openPlans(true),1200);return}\n  dls.push({n:n.slice(0,24),p:0,ph:0,pv:10,phOn:false,s:gb+' ГБ',v:Math.floor(Math.random()*60+10),c:'var(--blue)',on:opt.autoStart});\n  open(false);render();toast('Торрент добавлен');\n};\n$('#addBtn').onclick=()=>open(true);\n$('#cancel').onclick=()=>open(false);\n$('#modal').onclick=e=>{if(e.target.id==='modal')open(false)};\n$('#pickFile').onclick=()=>$('#fileIn').click();\n$('#fileIn').onchange=e=>{const f=e.target.files[0];if(f)addTorrent(f.name.replace(/\\.torrent$/i,'')||'New_Torrent')};\n$('#pickLink').onclick=()=>{step('link');setTimeout(()=>$('#src').focus(),50)};\n$('#linkBack').onclick=()=>step('choice');\n$('#ok').onclick=()=>{\n  const v=$('#src').value.trim();\n  if(!v){toast('Вставьте ссылку');return}\n  addTorrent(v.startsWith('magnet')?'New_Torrent':v.split('/').pop().split('?')[0]||'New_Torrent');\n};\n$('#src').addEventListener('keydown',e=>{if(e.key==='Enter')$('#ok').click()});\nconst fmtGB=g=>g>=1000?nf(g/1000)+' ТБ':Math.round(g)+' ГБ';\nfunction renderCloud(){\n  const used=940+dls.filter(d=>!d.cloudDel).reduce((a,d)=>a+parseFloat(String(d.s).replace(',','.')),0);\n  const pct=Math.min(100,used/2000*100);\n  $('#qTxt').textContent=fmtGB(used)+' из 2 ТБ';$('#qFree').textContent='свободно '+fmtGB(Math.max(0,2000-used));\n  $('#qPct').textContent=Math.round(pct)+'%';$('#qBar').style.width=pct+'%';\n  $('#qBar').style.background=pct>90?'#ff7a7a':'var(--blue)';\n}\nfunction renderPause(){\n  const any=dls.some(d=>d.on);\n  $('#pauseTxt').innerHTML=(any?'Приостановить все':'Возобновить все')+'<br><small>'+(any?'Для всех активных загрузок':'Продолжить все загрузки')+'</small>';\n}\nconst bind=(id,k)=>$('#'+id).addEventListener('click',()=>{opt[k]=$('#'+id+' .sw').classList.contains('on')});\nbind('optAuto','auto');bind('optDel','autoDel');bind('optStart','autoStart');\n$('#optSpeed').addEventListener('click',()=>{opt.speedOn=$('#optSpeed .sw').classList.contains('on');updList()});\n$('#limRow').onclick=()=>{const a=[1,2,3,5];opt.limit=a[(a.indexOf(opt.limit)+1)%a.length];$('#limVal').textContent=opt.limit;updList();toast('Одновременно: '+opt.limit)};\n$('#spdRow').onclick=()=>{const a=[5,10,25,50,100];opt.speed=a[(a.indexOf(opt.speed)+1)%a.length];$('#spdVal').textContent=opt.speed+' МБ/с';updList();toast('Лимит: '+opt.speed+' МБ/с')};\n$('#cleanCloud').onclick=()=>{const l=dls.filter(d=>d.p>=100&&!d.cloudDel);if(!l.length){toast('Нет завершённых загрузок');return}l.forEach(d=>d.cloudDel=true);renderCloud();toast('Удалено из облака: '+l.length)};\n$('#pauseAll').onclick=()=>{const any=dls.some(d=>d.on);dls.forEach(d=>d.on=!any);render();updList();toast(any?'Все загрузки приостановлены':'Все загрузки возобновлены')};\nsetInterval(()=>{dls.forEach(d=>{if(d.on&&d.p<100&&!queued(d))d.p=Math.min(100,d.p+ev(d.v)/200)});updList();renderCloud()},1000);\nfunction renderPlan(){\n  const p=plan==='prem';\n  \n  \n  \n  $('#planVal').textContent=p?'Premium':'Free';$('#planSub').textContent=p?'$4.99 / мес':'Бесплатно, с ограничениями';\n  $('#limVal').textContent=lim();\n  $('#plFree').classList.toggle('cur',!p);$('#plPrem').classList.toggle('cur',p);\n  $('#buy').textContent=p?'Подписка активна':'Подписаться';$('#buy').disabled=p;$('#stay').textContent=p?'Перейти на Free':'Остаться';\n  updList();renderCloud();\n}\nconst openPlans=(v=true)=>$('#planModal').classList.toggle('on',v);\n$('#planModal').onclick=e=>{if(e.target.id==='planModal')openPlans(false)};\n$('#planRow').onclick=()=>openPlans(true);\n$('#stay').onclick=()=>{if(plan==='prem'){plan='free';renderPlan();toast('Вы перешли на Free')}openPlans(false)};\n$('#buy').onclick=()=>{\n  /* TODO: здесь вызвать платёжный провайдер (например, Google Play Billing) и менять plan только после подтверждения оплаты */\n  if(plan==='prem')return;plan='prem';openPlans(false);renderPlan();\n  toast('Premium активирован (демо)');\n};\n$('#v-cloud').addEventListener('click',e=>{if(plan==='free'&&e.target.closest('#optAuto,#limRow')){e.stopPropagation();openPlans(true)}},true);\nfunction openGc(v){\n  $('#gcModal').classList.toggle('on',v);\n  if(v){$('#gcProj').value=gcProj;$('#gcKey').value=gcKey;$('#gcOk').textContent=gc?'Сохранить':'Подключить';$('#gcOff').hidden=!gc}\n}\n$('#gcModal').onclick=e=>{if(e.target.id==='gcModal')openGc(false)};\n$('#gcCancel').onclick=()=>openGc(false);\n$('#gcApiRow').onclick=()=>openGc(true);\n$('#gcOk').onclick=()=>{\n  const p=$('#gcProj').value.trim(),k=$('#gcKey').value.trim();\n  if(!p||!k){toast('Заполните Project ID и API-ключ');return}\n  if(k.length<20){toast('API-ключ слишком короткий');return}\n  /* TODO: отправить ключ на ваш сервер и проверить запросом к Google API; в клиенте ключ не хранить */\n  gcProj=p;gcKey=k;gc=true;openGc(false);setGc();\n};\n$('#gcOff').onclick=()=>{gc=false;gcKey='';openGc(false);setGc()};\n\n/* ===== Файлы ===== */\nconst esc=t=>String(t).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));\nconst FT={\n iso:{n:'Образы',i:'<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><circle cx=\"12\" cy=\"12\" r=\"2.4\"/>'},\n archive:{n:'Архивы',i:'<rect x=\"4.5\" y=\"3.5\" width=\"15\" height=\"17\" rx=\"2.5\"/><path d=\"M12 3.5v3.5m0 3v2m0 2.5v1.5\"/><rect x=\"10.3\" y=\"15.5\" width=\"3.4\" height=\"3\" rx=\"1\"/>'},\n video:{n:'Видео',i:'<rect x=\"3.5\" y=\"5.5\" width=\"17\" height=\"13\" rx=\"3\"/><path d=\"m10.4 9.4 4.2 2.6-4.2 2.6z\"/>'},\n audio:{n:'Аудио',i:'<path d=\"M9 17.5V6.5l9-2v11\"/><circle cx=\"6.5\" cy=\"17.5\" r=\"2.5\"/><circle cx=\"15.5\" cy=\"15.5\" r=\"2.5\"/>'},\n other:{n:'Прочее',i:'<path d=\"M14 3H7.5A2 2 0 0 0 5.5 5v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7.5z\"/><path d=\"M14 3v4.5h4.5\"/>'}\n};\nconst ftype=n=>/\\.(iso|img|dmg)$/i.test(n)?'iso':/\\.(zip|rar|7z|tar|gz|tgz)$/i.test(n)?'archive':/\\.(mkv|mp4|avi|mov|webm)$/i.test(n)?'video':/\\.(flac|mp3|wav|aac|ogg)$/i.test(n)?'audio':'other';\nconst fg=g=>g>=1000?nf(g/1000)+' ТБ':g<10&&g%1?nf(g)+' ГБ':Math.round(g)+' ГБ';\nconst fsvg=t=>'<svg viewBox=\"0 0 24 24\">'+FT[t].i+'</svg>';\nconst chevS='<svg class=\"chev\" viewBox=\"0 0 24 24\"><path d=\"m9 6 6 6-6 6\"/></svg>';\nlet fStatic=[\n {id:'s1',n:'Backup_2026.zip',gb:12,g:0,ph:true},\n {id:'s2',n:'Soundtrack.flac',gb:1.4,g:0,ph:false},\n {id:'s3',n:'Documentary_4K.mkv',gb:58,g:1,ph:false},\n {id:'s4',n:'Ubuntu_24.04.iso',gb:6,g:1,ph:true},\n {id:'s5',n:'Photos_Archive.rar',gb:34,g:2,ph:false},\n {id:'s6',n:'Lecture_Series.mp4',gb:9,g:2,ph:true}\n];\nlet fFilter='all',fQuery='',fSel=null;\nconst FG=['Сегодня','Вчера','Ранее'];\nconst plural=(n,a,b,c)=>{const m=n%100,k=n%10;return m>10&&m<20?c:k===1?a:k>1&&k<5?b:c};\nfunction allFiles(){\n  const fromDl=dls.map((d,i)=>({d,i})).filter(x=>x.d.p>=100&&!x.d.cloudDel).map(x=>({id:'d'+x.i,n:x.d.n,gb:parseFloat(String(x.d.s).replace(',','.')),g:0,ph:x.d.ph>=100,d:x.d}));\n  return fromDl.concat(fStatic).map(f=>({...f,t:ftype(f.n)}));\n}\nfunction renderFiles(){\n  if(!$('#fSum'))return;\n  const all=allFiles(),total=all.reduce((a,f)=>a+f.gb,0);\n  const by={};all.forEach(f=>by[f.t]=(by[f.t]||0)+f.gb);\n  const keys=Object.keys(FT).filter(k=>by[k]>0).sort((a,b)=>by[b]-by[a]);\n  $('#fSum').innerHTML=`<div class=\"big\">${fg(total)}</div><div class=\"sub\">${all.length} ${plural(all.length,'файл','файла','файлов')} в облаке</div>\n   <div class=\"fs-bar\">${keys.map((k,j)=>`<i class=\"t-${k}\" style=\"flex:${by[k]} 1 0;--k:${j}\"></i>`).join('')}</div>\n   <div class=\"fs-leg\">${keys.map(k=>`<div class=\"t-${k}\"><i></i>${FT[k].n}<b>${fg(by[k])}</b></div>`).join('')}</div>`;\n  const q=fQuery.trim().toLowerCase();\n  const list=all.filter(f=>(fFilter==='all'||f.t===fFilter)&&(!q||f.n.toLowerCase().includes(q)));\n  if(!list.length){\n    $('#fList').innerHTML=`<div class=\"fempty\"><svg viewBox=\"0 0 24 24\"><circle cx=\"11\" cy=\"11\" r=\"6.5\"/><path d=\"m16 16 4 4\"/></svg><b>Ничего не найдено</b>Измените запрос или выберите другой тип файлов.</div>`;return;\n  }\n  $('#fList').innerHTML=FG.map((g,gi)=>{\n    const items=list.filter(f=>f.g===gi);if(!items.length)return'';\n    return `<div class=\"fgh\">${g}</div><div class=\"fgrp\">`+items.map(f=>`<button class=\"fr t-${f.t}\" data-id=\"${f.id}\"><span class=\"ft\">${fsvg(f.t)}</span><span class=\"tx\"><div class=\"nm2\">${esc(f.n)}</div><div class=\"lc\"><b>${fg(f.gb)}</b><i></i>Cloud${f.ph?'<svg class=\"pi\" viewBox=\"0 0 24 24\" aria-label=\"Android\"><rect x=\"6.5\" y=\"2.5\" width=\"11\" height=\"19\" rx=\"2.5\"/><path d=\"M11 18.5h2\"/></svg>':''}</div></span>${chevS}</button>`).join('')+'</div>';\n  }).join('');\n}\nfunction openFile(id){\n  const f=allFiles().find(x=>x.id===id);if(!f)return;fSel=id;\n  $('#fileSheet').innerHTML=`<div class=\"fhead t-${f.t}\"><span class=\"ft\">${fsvg(f.t)}</span><span class=\"tx\"><b>${esc(f.n)}</b><small>${fg(f.gb)}, ${FT[f.t].n.toLowerCase()}</small></span></div>\n   ${f.ph?`<div class=\"fa dis\" style=\"pointer-events:none\"><svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9.5\"/><path d=\"m7.8 12.3 3 3 5.4-6\"/></svg><span>Уже на Android<small>Файл скачан на устройство</small></span></div>`\n   :`<button class=\"fa ph\" data-a=\"phone\"><svg viewBox=\"0 0 24 24\"><rect x=\"6.5\" y=\"2.5\" width=\"11\" height=\"19\" rx=\"2.5\"/><path d=\"M12 8v6m-2.5-2.5L12 14l2.5-2.5\"/></svg><span>Скачать на Android<small>${LIM[plan].phone?'Передача начнётся сразу':'Доступно в Premium'}</small></span></button>`}\n   <button class=\"fa\" data-a=\"share\"><svg viewBox=\"0 0 24 24\"><path d=\"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1\"/><path d=\"M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1\"/></svg><span>Скопировать ссылку</span></button>\n   <button class=\"fa del\" data-a=\"del\"><svg viewBox=\"0 0 24 24\"><path d=\"M4.5 7h15M9.5 7V4.5h5V7M6.5 7l.8 12a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4l.8-12M10 11v5M14 11v5\"/></svg><span>Удалить из облака</span></button>\n   <button class=\"cancel-full\" data-a=\"close\">Закрыть</button>`;\n  $('#fileModal').classList.add('on');\n}\nconst closeFile=()=>{$('#fileModal').classList.remove('on');fSel=null};\n$('#fList').onclick=e=>{const b=e.target.closest('.fr');if(b)openFile(b.dataset.id)};\n$('#fileModal').onclick=e=>{\n  if(e.target.id==='fileModal')return closeFile();\n  const a=e.target.closest('[data-a]');if(!a)return;\n  const id=fSel,f=allFiles().find(x=>x.id===id),k=a.dataset.a;\n  if(k==='close')return closeFile();\n  if(!f)return closeFile();\n  if(k==='phone'){\n    if(!LIM[plan].phone){closeFile();openPlans(true);return}\n    if(f.d)f.d.ph=100;else fStatic.find(x=>x.id===id).ph=true;\n    closeFile();renderFiles();toast('Передача на Android запущена');\n  }\n  if(k==='share'){closeFile();toast('Ссылка скопирована (демо)')}\n  if(k==='del'){\n    if(f.d)f.d.cloudDel=true;else fStatic=fStatic.filter(x=>x.id!==id);\n    closeFile();render();toast('Удалено из облака');\n  }\n};\n$('#fQ').addEventListener('input',e=>{fQuery=e.target.value;renderFiles()});\n$('#fChips').onclick=e=>{const b=e.target.closest('button');if(!b)return;fFilter=b.dataset.f;document.querySelectorAll('#fChips button').forEach(x=>x.classList.toggle('on',x===b));renderFiles()};\n\nfunction fade(v){const m=36,t=v.scrollTop,b=v.scrollHeight-v.clientHeight-t;v.style.setProperty('--ft',Math.max(0,Math.min(t,m))+'px');v.style.setProperty('--fb',Math.max(0,Math.min(b,m))+'px')}\ndocument.querySelectorAll('.view').forEach(v=>v.addEventListener('scroll',()=>fade(v),{passive:true}));\nnew MutationObserver(()=>document.querySelectorAll('.view.on').forEach(fade)).observe($('#app'),{subtree:true,childList:true,attributes:true,attributeFilter:['class']});\naddEventListener('resize',()=>document.querySelectorAll('.view.on').forEach(fade));\nsetGc(1);render();renderPlan();document.querySelectorAll('.view.on').forEach(fade);\n"
+  },
+  {
+    "index": 321,
+    "tag": "SCRIPT",
+    "id": "",
+    "cls": null,
+    "parent": "BODY",
+    "text": "\n(()=>{const q=s=>document.querySelector(s),opts=['Без лимита','1 ГБ/день','5 ГБ/день','20 ГБ/день'];let i=0;\nq('#mobLim').addEventListener('click',()=>{i=(i+1)%opts.length;q('#mobLimV').textContent=opts[i];toast('Лимит: '+opts[i].toLowerCase())});\nconst m={optVerify:['Проверка целостности включена','Проверка целостности выключена'],optUnzip:['Автораспаковка включена','Автораспаковка выключена'],optNight:['Ночной режим включён','Ночной режим выключен'],optLock:['Защита приложения включена','Защита приложения выключена']};\nObject.keys(m).forEach(k=>q('#'+k).addEventListener('click',()=>toast(m[k][q('#'+k+' .sw').classList.contains('on')?0:1])))})();\n"
+  }
+]

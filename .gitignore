@@ -10,3 +10,5 @@ android/local.properties
 android/**/build/
 
 .ruff_cache/
+
+android/.kotlin/

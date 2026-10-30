@@ -41,10 +41,20 @@ val Blue = Color(0xff6cb0ff)
 val Purple = Color(0xff8b8cf5)
 val Green = Color(0xff7fe0a0)
 
-fun bytes(n: Long): String =
-    if (n >= 1073741824)
-        String.format(java.util.Locale.forLanguageTag("ru"), "%.1f ГиБ", n / 1073741824.0)
-    else if (n >= 1048576) "${n/1048576} МиБ" else "$n Б"
+fun bytes(n: Long): String {
+    val format =
+        java.text.NumberFormat.getNumberInstance(java.util.Locale.forLanguageTag("ru")).apply {
+            maximumFractionDigits = 1
+        }
+    return when {
+        n == 0L -> "0 ГБ"
+        n >= 1_000_000_000_000L -> format.format(n / 1_000_000_000_000.0) + " ТБ"
+        n >= 1_000_000_000L -> format.format(n / 1_000_000_000.0) + " ГБ"
+        n >= 1_000_000L -> format.format(n / 1_000_000.0) + " МБ"
+        n >= 1_000L -> format.format(n / 1_000.0) + " КБ"
+        else -> "$n Б"
+    }
+}
 
 fun status(s: String) =
     mapOf(
@@ -61,8 +71,10 @@ fun status(s: String) =
 class MainActivity : ComponentActivity() {
     override fun onCreate(b: Bundle?) {
         super.onCreate(b)
-        window.statusBarColor = android.graphics.Color.BLACK
-        window.navigationBarColor = android.graphics.Color.BLACK
+        window.statusBarColor = android.graphics.Color.rgb(16, 20, 27)
+        window.navigationBarColor = android.graphics.Color.rgb(16, 20, 27)
+        androidx.core.view.WindowCompat.setDecorFitsSystemWindows(window, false)
+        if (android.os.Build.VERSION.SDK_INT >= 29) window.isNavigationBarContrastEnforced = false
         setContent {
             MaterialTheme(
                 colorScheme =
@@ -95,7 +107,12 @@ fun Txt(
         s,
         color = color,
         fontSize = size.sp,
-        lineHeight = (size * (if (size in listOf(28, 34)) 1.0 else 1.2)).sp,
+        lineHeight = referenceLineHeight(size),
+        style =
+            androidx.compose.ui.text.TextStyle(
+                platformStyle =
+                    androidx.compose.ui.text.PlatformTextStyle(includeFontPadding = false)
+            ),
         letterSpacing = (if (s == "CLOUD TORRENT CLIENT") 0.2 else 0.0).sp,
         fontWeight =
             if (bold && size in listOf(20, 21, 26, 28, 29, 34)) FontWeight.Bold
@@ -155,7 +172,7 @@ fun Action(s: String, onClick: () -> Unit) {
         Modifier.fillMaxWidth()
             .clip(RoundedCornerShape(18.dp))
             .background(Color(0xff263a63))
-            .clickable(onClick = onClick)
+            .referenceClick(onClick = onClick)
             .padding(13.dp),
         contentAlignment = Alignment.Center,
     ) {
@@ -165,31 +182,44 @@ fun Action(s: String, onClick: () -> Unit) {
 
 @Composable
 fun Bar(p: Double, color: Color = Blue) {
+    val progress by
+        androidx.compose.animation.core.animateFloatAsState(
+            p.toFloat().coerceIn(0f, 1f),
+            androidx.compose.animation.core.tween(400),
+            label = "referenceProgress",
+        )
     Box(
         Modifier.fillMaxWidth()
             .height(7.dp)
             .clip(RoundedCornerShape(4.dp))
             .background(Color(0xff363c4a))
     ) {
-        Box(Modifier.fillMaxWidth(p.toFloat().coerceIn(0f, 1f)).fillMaxHeight().background(color))
+        Box(Modifier.fillMaxWidth(progress).fillMaxHeight().background(color))
     }
 }
 
 @Composable
-fun Setting(title: String, sub: String? = null, value: String? = null, onClick: () -> Unit) {
+fun Setting(
+    title: String,
+    sub: String? = null,
+    value: String? = null,
+    icon: Int = 6,
+    onClick: () -> Unit,
+) {
     Row(
         Modifier.fillMaxWidth()
             .clip(RoundedCornerShape(18.dp))
             .background(RowColor)
-            .clickable(onClick = onClick)
+            .referenceClick(onClick = onClick)
             .padding(16.dp, 15.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Column(Modifier.weight(1f)) {
             Txt(title)
-            if (sub != null) Txt(sub, 14, Muted)
+            if (sub != null) SettingSubtitle(sub)
         }
-        if (value != null) Txt(value, 16, Blue, true) else IconSvg(6, 20, Muted)
+        if (value != null) Txt(value, 16, Blue, true)
+        else IconSvg(icon, 20, if (icon == 6) Muted else Blue)
     }
 }
 
@@ -203,7 +233,7 @@ fun Toggle(title: String, key: String, default: Boolean = false, sub: String? = 
         Modifier.fillMaxWidth()
             .clip(RoundedCornerShape(18.dp))
             .background(RowColor)
-            .clickable {
+            .referenceClick {
                 scope.launch {
                     ctx.settings.edit { it[booleanPreferencesKey(key)] = !on }
                     if (key in listOf("wifi", "charging", "speed_on"))
@@ -215,21 +245,9 @@ fun Toggle(title: String, key: String, default: Boolean = false, sub: String? = 
     ) {
         Column(Modifier.weight(1f)) {
             Txt(title)
-            if (sub != null) Txt(sub, 14, Muted)
+            if (sub != null) SettingSubtitle(sub)
         }
-        Box(
-            Modifier.size(42.dp, 24.dp)
-                .clip(RoundedCornerShape(12.dp))
-                .background(if (on) Blue else Color(0xff363c4a))
-                .padding(3.dp)
-        ) {
-            Box(
-                Modifier.align(if (on) Alignment.CenterEnd else Alignment.CenterStart)
-                    .size(18.dp)
-                    .clip(RoundedCornerShape(9.dp))
-                    .background(Color.White)
-            )
-        }
+        ReferenceSwitch(on)
     }
 }
 
@@ -245,6 +263,8 @@ fun Input(
         value,
         onChange,
         textStyle = androidx.compose.ui.text.TextStyle(color = Color.White, fontSize = 16.sp),
+        singleLine = true,
+        cursorBrush = androidx.compose.ui.graphics.SolidColor(Color.White),
         visualTransformation =
             if (password) PasswordVisualTransformation() else VisualTransformation.None,
         modifier =
@@ -320,19 +340,13 @@ fun App(vm: ClientViewModel = viewModel()) {
             "detail" to "Загрузка",
         )
     Box(
-        Modifier.fillMaxSize()
-            .background(Color.Black)
-            .systemBarsPadding()
-            .padding(horizontal = 16.dp, vertical = 12.dp),
+        Modifier.fillMaxSize().background(Bg).systemBarsPadding(),
         contentAlignment = Alignment.Center,
     ) {
         Column(
-            Modifier.widthIn(max = 430.dp)
-                .heightIn(max = 860.dp)
-                .fillMaxSize()
-                .clip(RoundedCornerShape(26.dp))
+            Modifier.fillMaxSize()
                 .background(Bg)
-                .padding(start = 20.dp, end = 20.dp, top = 32.dp, bottom = 14.dp)
+                .padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 14.dp)
         ) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                 Column {
@@ -344,7 +358,7 @@ fun App(vm: ClientViewModel = viewModel()) {
                     Modifier.size(40.dp)
                         .clip(RoundedCornerShape(20.dp))
                         .background(Color(0xff1d2430))
-                        .clickable { nav.navigate("cloud") },
+                        .referenceClick { nav.navigate("cloud") },
                     contentAlignment = Alignment.Center,
                 ) {
                     IconSvg(0)
@@ -360,7 +374,7 @@ fun App(vm: ClientViewModel = viewModel()) {
                                     .height(51.dp)
                                     .clip(RoundedCornerShape(20.dp))
                                     .background(RowColor)
-                                    .clickable { sheet = "connect" }
+                                    .referenceTap { sheet = "connect" }
                                     .padding(horizontal = 15.dp),
                                 verticalAlignment = Alignment.CenterVertically,
                             ) {
@@ -426,6 +440,7 @@ fun App(vm: ClientViewModel = viewModel()) {
                             Row(
                                 Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically,
                             ) {
                                 Txt("Активные загрузки", 21, bold = true)
                                 Box(
@@ -446,11 +461,20 @@ fun App(vm: ClientViewModel = viewModel()) {
                                 Spacer(Modifier.height(11.dp))
                             }
                             if (s.message.isNotEmpty()) {
-                                Txt(
+                                Text(
                                     s.message,
-                                    17,
-                                    Muted,
-                                    modifier = Modifier.padding(vertical = 14.dp),
+                                    color = Color(0xff8e97a6),
+                                    fontSize = 17.sp,
+                                    lineHeight = 23.8.sp,
+                                    letterSpacing = 0.sp,
+                                    style =
+                                        androidx.compose.ui.text.TextStyle(
+                                            platformStyle =
+                                                androidx.compose.ui.text.PlatformTextStyle(
+                                                    includeFontPadding = false
+                                                )
+                                        ),
+                                    modifier = Modifier.padding(top = 14.dp, bottom = 18.dp),
                                 )
                             }
                         }
@@ -458,7 +482,7 @@ fun App(vm: ClientViewModel = viewModel()) {
                             Modifier.fillMaxWidth()
                                 .clip(RoundedCornerShape(22.dp))
                                 .background(RowColor)
-                                .clickable { sheet = "add" }
+                                .referenceClick { sheet = "add" }
                                 .padding(16.dp, 14.dp),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
@@ -504,8 +528,12 @@ fun App(vm: ClientViewModel = viewModel()) {
                     )
                 }
                 composable("cloud") {
+                    val scroll = rememberScrollState()
                     Column(
-                        Modifier.verticalScroll(rememberScrollState()).padding(top = 22.dp),
+                        Modifier.fillMaxSize()
+                            .referenceFade(scroll)
+                            .verticalScroll(scroll)
+                            .padding(top = 22.dp),
                         verticalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
                         ServerToggle(
@@ -541,11 +569,7 @@ fun App(vm: ClientViewModel = viewModel()) {
                                 }
                             }
                             Spacer(Modifier.height(14.dp))
-                            Bar(
-                                if (s.storage.capacity_bytes > 0)
-                                    s.storage.used_bytes.toDouble() / s.storage.capacity_bytes
-                                else 0.0
-                            )
+                            Bar(ratio, if (ratio > .9) Color(0xffff7a7a) else Blue)
                             Spacer(Modifier.height(12.dp))
                             Row(
                                 Modifier.fillMaxWidth(),
@@ -560,21 +584,21 @@ fun App(vm: ClientViewModel = viewModel()) {
                                 )
                                 Txt(
                                     if (s.online) "свободно ${bytes(s.storage.free_bytes)}"
-                                    else "Backend недоступен",
+                                    else "Сервер недоступен",
                                     16,
                                     Muted,
                                 )
                             }
                         }
-                        Txt("АВТОМАТИЗАЦИЯ", 13, Muted)
+                        GroupLabel("Автоматизация")
                         ServerToggle(
                             "Автосинхронизация",
-                            "В Google Drive",
+                            "Загружать завершённые в облако",
                             s.online && s.automation.auto_drive,
                         ) {
-                            if (!s.online) {
-                                sheet = "connect"
-                            } else
+                            if (!s.online) sheet = "connect"
+                            else if (!s.drive) sheet = "drive"
+                            else
                                 vm.action {
                                     vm.repo
                                         .api()
@@ -583,15 +607,19 @@ fun App(vm: ClientViewModel = viewModel()) {
                                         )
                                 }
                         }
-                        Toggle("Автопередача на Android", "auto_phone", true)
+                        Toggle(
+                            "Автопередача на Android",
+                            "auto_phone",
+                            true,
+                            "Сразу после загрузки в облако",
+                        )
                         ServerToggle(
                             "Автоудаление с сервера",
-                            "После подтверждения Google Drive",
+                            "Освобождать место после передачи",
                             s.online && s.automation.auto_delete,
                         ) {
-                            if (!s.online) {
-                                sheet = "connect"
-                            } else
+                            if (!s.online) sheet = "connect"
+                            else
                                 vm.action {
                                     vm.repo
                                         .api()
@@ -602,35 +630,83 @@ fun App(vm: ClientViewModel = viewModel()) {
                                         )
                                 }
                         }
-                        Txt("УПРАВЛЕНИЕ", 13, Muted)
-                        Setting("Одновременные загрузки", "Безопасный пакетный режим", "1") {
+                        ServerToggle("Проверка целостности", "Сверять хеш после загрузки", true) {
                             vm.message(
-                                "В этой версии один пакет; тарифные лимиты определяет сервер"
+                                "Проверка pieces и контрольной суммы Drive обязательна и всегда включена"
                             )
                         }
-                        Setting("Очистить облако", "Удалить завершённые загрузки") {
+                        ServerToggle(
+                            "Автораспаковка архивов",
+                            "Распаковывать .zip и .rar в облаке",
+                            false,
+                        ) {
+                            vm.message("Сервер пока не поддерживает автораспаковку архивов")
+                        }
+                        GroupLabel("Управление")
+                        Setting("Одновременные загрузки", "Остальные ждут в очереди", "1") {
+                            vm.message("Сервер поддерживает один активный пакет")
+                        }
+                        Setting("Очистить облако", "Удалить завершённые загрузки", icon = 9) {
                             vm.action { vm.repo.api().cleanup() }
                         }
                     }
                 }
                 composable("settings") {
+                    val scroll = rememberScrollState()
                     Column(
-                        Modifier.verticalScroll(rememberScrollState()).padding(top = 22.dp),
+                        Modifier.fillMaxSize()
+                            .referenceFade(scroll)
+                            .verticalScroll(scroll)
+                            .padding(top = 22.dp),
                         verticalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
-                        Txt("BOTHOST", 13, Muted)
+                        GroupLabel("Подписка", first = true)
+                        Setting(
+                            "Тариф",
+                            if (s.plan.equals("premium", true)) "Расширенные возможности"
+                            else "Бесплатно, с ограничениями",
+                            s.plan,
+                        ) {
+                            sheet = "plans"
+                        }
+                        GroupLabel("BotHost")
                         Setting(
                             "Подключение по API",
                             if (s.online) "Подключён" else "Не подключён",
                         ) {
                             sheet = "connect"
                         }
-                        Txt("ПОДПИСКА", 13, Muted)
-                        Setting("Тариф", "Лимиты определяет backend", s.plan) { sheet = "plans" }
-                        Txt("СЕТЬ И ПИТАНИЕ", 13, Muted)
+                        GroupLabel("Загрузки")
+                        Setting(
+                            "Папка загрузок",
+                            preferences[stringPreferencesKey("folder")]?.let {
+                                Uri.decode(it).substringAfterLast(':')
+                            } ?: "/Downloads/Torrents",
+                        ) {
+                            folder.launch(null)
+                        }
+                        Toggle(
+                            "Автозапуск новых",
+                            "auto_start",
+                            true,
+                            "Начинать сразу после добавления",
+                        )
+                        Setting("Приостановить все", "Для всех активных загрузок", icon = 12) {
+                            vm.pauseAll()
+                        }
+                        GroupLabel("Сеть и питание")
                         Toggle("Только Wi-Fi", "wifi", true)
+                        Setting("Лимит мобильного трафика", "Действует вне Wi-Fi", "Без лимита") {
+                            vm.message(
+                                "Лимит мобильного трафика пока недоступен; используйте Только Wi-Fi"
+                            )
+                        }
                         Toggle("Ограничить скорость", "speed_on")
-                        Setting("Лимит скорости", "Для передачи на Android", "$speed МБ/с") {
+                        Setting(
+                            "Лимит скорости",
+                            "Действует при включённом\nограничении",
+                            "$speed МБ/с",
+                        ) {
                             scope.launch {
                                 val values = listOf(5, 10, 25, 50, 100)
                                 ctx.settings.edit {
@@ -639,11 +715,21 @@ fun App(vm: ClientViewModel = viewModel()) {
                                 }
                             }
                         }
-                        Toggle("Только при зарядке", "charging", sub = "Для передачи на Android")
-                        Txt("ЗАГРУЗКИ", 13, Muted)
-                        Toggle("Автозапуск новых", "auto_start", true)
-                        Setting("Приостановить все", "Серверные задачи") { vm.pauseAll() }
-                        Setting("Уведомления", "Системные настройки Android") {
+                        Toggle(
+                            "Только при зарядке",
+                            "charging",
+                            sub = "Приостанавливать при разрядке",
+                        )
+                        ServerToggle("Ночной режим", "Загружать с 01:00 до 07:00", false) {
+                            vm.message("Ночное расписание пока недоступно")
+                        }
+                        GroupLabel("Уведомления")
+                        ServerToggle(
+                            "Уведомления",
+                            null,
+                            androidx.core.app.NotificationManagerCompat.from(ctx)
+                                .areNotificationsEnabled(),
+                        ) {
                             if (android.os.Build.VERSION.SDK_INT >= 33)
                                 notificationPermission.launch(
                                     android.Manifest.permission.POST_NOTIFICATIONS
@@ -653,9 +739,11 @@ fun App(vm: ClientViewModel = viewModel()) {
                                     .putExtra(Settings.EXTRA_APP_PACKAGE, ctx.packageName)
                             )
                         }
-                        Setting("Папка загрузок", "Выбрать через Android") { folder.launch(null) }
-                        Setting("Google Drive", if (s.drive) "Подключён" else "Не подключён") {
-                            sheet = "drive"
+                        GroupLabel("Безопасность")
+                        ServerToggle("Защита приложения", "Вход по отпечатку или PIN-коду", false) {
+                            vm.message(
+                                "Блокировка входа пока недоступна; локальные секреты защищены Android Keystore"
+                            )
                         }
                     }
                 }
@@ -666,18 +754,31 @@ fun App(vm: ClientViewModel = viewModel()) {
                     }
                 }
             }
-            Spacer(Modifier.height(18.dp))
-            Row(Modifier.fillMaxWidth()) {
+            Spacer(Modifier.height(6.dp))
+            Row(
+                Modifier.fillMaxWidth()
+                    .padding(start = 4.dp, end = 4.dp, top = 12.dp, bottom = 2.dp)
+            ) {
                 listOf("downloads", "files", "cloud", "settings").forEachIndexed { i, t ->
                     Column(
-                        Modifier.weight(1f).clickable {
+                        Modifier.weight(1f).referenceTap {
                             nav.navigate(t) { launchSingleTop = true }
                         },
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
-                        IconSvg(listOf(14, 15, 16, 17)[i], 25, if (tab == t) Color.White else Muted)
+                        IconSvg(
+                            listOf(14, 15, 16, 17)[i],
+                            25,
+                            if (tab == t || tab == "detail" && t == "downloads") Color.White
+                            else Color(0xff8c93a1),
+                        )
                         Spacer(Modifier.height(5.dp))
-                        Txt(titles[t]!!, 14, if (tab == t) Color.White else Muted)
+                        Txt(
+                            titles[t]!!,
+                            14,
+                            if (tab == t || tab == "detail" && t == "downloads") Color.White
+                            else Color(0xff8c93a1),
+                        )
                     }
                 }
             }
@@ -685,33 +786,36 @@ fun App(vm: ClientViewModel = viewModel()) {
     }
     if (sheet.isNotEmpty() || s.metadata != null) {
         Box(
-            Modifier.fillMaxSize()
-                .systemBarsPadding()
-                .padding(horizontal = 16.dp, vertical = 12.dp),
+            Modifier.fillMaxSize().systemBarsPadding().imePadding(),
             contentAlignment = Alignment.Center,
         ) {
             Box(
-                Modifier.widthIn(max = 430.dp)
-                    .heightIn(max = 860.dp)
-                    .fillMaxSize()
-                    .clip(RoundedCornerShape(26.dp))
-                    .background(Color.Black.copy(alpha = .6f))
-                    .clickable { sheet = "" },
+                Modifier.fillMaxSize().background(Color.Black.copy(alpha = .6f)).referenceTap {
+                    sheet = ""
+                },
                 contentAlignment = Alignment.BottomCenter,
             ) {
                 Column(
                     Modifier.fillMaxWidth()
-                        .widthIn(max = 430.dp)
                         .clip(RoundedCornerShape(topStart = 26.dp, topEnd = 26.dp))
-                        .background(Color(0xff161c26))
-                        .clickable {}
+                        .background(if (sheet == "plans") Bg else Color(0xff161c26))
+                        .referenceTap {}
                         .padding(
-                            horizontal = if (sheet == "plans") 8.dp else 20.dp,
+                            horizontal = if (sheet == "plans") 9.dp else 20.dp,
                             vertical = 22.dp,
                         )
-                        .heightIn(max = 650.dp)
+                        .heightIn(
+                            max =
+                                (androidx.compose.ui.platform.LocalConfiguration.current
+                                        .screenHeightDp * .9f)
+                                    .dp
+                        )
                         .verticalScroll(rememberScrollState()),
-                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalArrangement =
+                        Arrangement.spacedBy(
+                            if (sheet in listOf("add", "link", "connect", "plans", "file")) 0.dp
+                            else 12.dp
+                        ),
                 ) {
                     if (s.metadata != null) {
                         val m = s.metadata!!
@@ -751,6 +855,7 @@ fun App(vm: ClientViewModel = viewModel()) {
                         when (sheet) {
                             "add" -> {
                                 Txt("Добавить торрент", 20, bold = true)
+                                Spacer(Modifier.height(14.dp))
                                 Choice("Файлом", "Выбрать .torrent", 18) {
                                     picker.launch(
                                         arrayOf(
@@ -760,12 +865,16 @@ fun App(vm: ClientViewModel = viewModel()) {
                                         )
                                     )
                                 }
+                                Spacer(Modifier.height(11.dp))
                                 Choice("Ссылкой", "Magnet или URL", 20) { sheet = "link" }
+                                Spacer(Modifier.height(14.dp))
                                 Cancel("Отмена") { sheet = "" }
                             }
                             "link" -> {
                                 Txt("Добавить по ссылке", 20, bold = true)
+                                Spacer(Modifier.height(14.dp))
                                 Input(source, "Magnet-ссылка или URL") { source = it }
+                                Spacer(Modifier.height(14.dp))
                                 Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                                     Box(Modifier.weight(1f)) { Cancel("Назад") { sheet = "add" } }
                                     Box(Modifier.weight(1f)) {
@@ -778,65 +887,49 @@ fun App(vm: ClientViewModel = viewModel()) {
                             }
                             "connect" -> {
                                 Txt("BotHost API", 20, bold = true)
-                                Input(url, "https://your-app.bothost.tech") { url = it }
-                                Input(token, "API token", true) { token = it }
-                                Txt("Токен приложения хранится через Android Keystore", 14, Muted)
-                                Action("Подключить") {
-                                    vm.connect(url, token)
-                                    token = ""
-                                    sheet = ""
+                                Spacer(Modifier.height(14.dp))
+                                Input(url, "HTTPS-адрес сервера") { url = it }
+                                Spacer(Modifier.height(10.dp))
+                                Input(token, "Пароль сервера (ADMIN_API_TOKEN)", true) {
+                                    token = it
+                                }
+                                Spacer(Modifier.height(10.dp))
+                                Txt(
+                                    "Адрес начинается с https://. Пароль — значение ADMIN_API_TOKEN в переменных проекта BotHost.",
+                                    14,
+                                    Muted,
+                                )
+                                Spacer(Modifier.height(14.dp))
+                                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                                    Box(Modifier.weight(1f)) { Cancel("Отмена") { sheet = "" } }
+                                    Box(Modifier.weight(1f)) {
+                                        SheetButton("Подключить", primary = true) {
+                                            vm.connect(url, token)
+                                            token = ""
+                                            sheet = ""
+                                        }
+                                    }
+                                }
+                                if (s.online) {
+                                    Spacer(Modifier.height(10.dp))
+                                    Cancel("Отключить") {
+                                        vm.disconnect()
+                                        sheet = ""
+                                    }
                                 }
                             }
                             "plans" -> {
-                                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                Row(
+                                    Modifier.fillMaxWidth().height(IntrinsicSize.Min),
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                ) {
                                     listOf(false, true).forEach { premium ->
-                                        Card(
-                                            Modifier.weight(1f)
-                                                .border(
-                                                    1.5.dp,
-                                                    if (premium) Color(0xff42689f)
-                                                    else Color(0xff252a33),
-                                                    RoundedCornerShape(18.dp),
-                                                ),
-                                            18,
-                                            if (premium) Color(0xff172338) else Color.Black,
-                                        ) {
-                                            Txt(if (premium) "PREMIUM" else "FREE", 12, Blue, true)
-                                            Spacer(Modifier.height(16.dp))
-                                            Txt(if (premium) "$4.99" else "$0", 26, bold = true)
-                                            Txt(
-                                                if (premium) "/ мес." else "Бесплатно навсегда",
-                                                13,
-                                                Muted,
-                                            )
-                                            Spacer(Modifier.height(16.dp))
-                                            (if (premium)
-                                                    listOf(
-                                                        "До 5 торрентов",
-                                                        "До 500 ГБ на задачу",
-                                                        "Google Drive + телефон",
-                                                        "Приоритет в очереди",
-                                                        "Без рекламы",
-                                                    )
-                                                else
-                                                    listOf(
-                                                        "1 активный торрент",
-                                                        "До 20 ГБ на задачу",
-                                                        "Google Drive",
-                                                        "Базовая очередь",
-                                                        "Реклама",
-                                                    ))
-                                                .forEach {
-                                                    Txt("✓ $it", 13)
-                                                    Spacer(Modifier.height(12.dp))
-                                                }
-                                            Action(if (premium) "Подписаться" else "Остаться") {
-                                                if (premium)
-                                                    vm.message(
-                                                        "Оплата пока не подключена. Premium не активирован"
-                                                    )
-                                                sheet = ""
-                                            }
+                                        PlanCard(premium, Modifier.weight(1f).fillMaxHeight()) {
+                                            if (premium)
+                                                vm.message(
+                                                    "Оплата пока не подключена. Premium не активирован"
+                                                )
+                                            sheet = ""
                                         }
                                     }
                                 }
@@ -889,8 +982,53 @@ fun App(vm: ClientViewModel = viewModel()) {
                             }
                             "file" ->
                                 file?.let { f ->
-                                    Txt(f.path.substringAfterLast('/'), 19, bold = true)
-                                    Txt(bytes(f.size) + " · " + status(f.state), 15, Muted)
+                                    Row(
+                                        Modifier.fillMaxWidth(),
+                                        verticalAlignment = Alignment.CenterVertically,
+                                    ) {
+                                        FileTypeIcon(category(f.path))
+                                        Spacer(Modifier.width(14.dp))
+                                        Column(
+                                            Modifier.weight(1f).referenceTap {
+                                                f.drive_id?.let {
+                                                    ctx.startActivity(
+                                                        Intent(
+                                                            Intent.ACTION_VIEW,
+                                                            Uri.parse(
+                                                                "https://drive.google.com/file/d/$it/view"
+                                                            ),
+                                                        )
+                                                    )
+                                                }
+                                            }
+                                        ) {
+                                            Text(
+                                                f.path.substringAfterLast('/'),
+                                                color = Color.White,
+                                                fontSize = 19.sp,
+                                                fontWeight = FontWeight.SemiBold,
+                                                maxLines = 1,
+                                                overflow =
+                                                    androidx.compose.ui.text.style.TextOverflow
+                                                        .Ellipsis,
+                                                style =
+                                                    androidx.compose.ui.text.TextStyle(
+                                                        platformStyle =
+                                                            androidx.compose.ui.text
+                                                                .PlatformTextStyle(
+                                                                    includeFontPadding = false
+                                                                )
+                                                    ),
+                                            )
+                                            Spacer(Modifier.height(4.dp))
+                                            Txt(
+                                                bytes(f.size) + ", " + category(f.path).lowercase(),
+                                                15,
+                                                Muted,
+                                            )
+                                        }
+                                    }
+                                    Spacer(Modifier.height(16.dp))
                                     val local = s.local.firstOrNull { it.fileId == f.id }
                                     val onPhone = local?.state == "ready"
                                     val active = local?.state in listOf("downloading", "queued")
@@ -920,23 +1058,7 @@ fun App(vm: ClientViewModel = viewModel()) {
                                         }
                                     }
 
-                                    if (s.files.any { it.id == f.id })
-                                        Setting(
-                                            "Google Drive",
-                                            if (f.drive_id != null) "Передача подтверждена"
-                                            else "Ожидает передачи",
-                                        ) {
-                                            f.drive_id?.let {
-                                                ctx.startActivity(
-                                                    Intent(
-                                                        Intent.ACTION_VIEW,
-                                                        Uri.parse(
-                                                            "https://drive.google.com/file/d/$it/view"
-                                                        ),
-                                                    )
-                                                )
-                                            }
-                                        }
+                                    Spacer(Modifier.height(9.dp))
                                     FileAction(
                                         if (local != null && s.files.none { it.id == f.id })
                                             "Поделиться файлом"
@@ -978,6 +1100,7 @@ fun App(vm: ClientViewModel = viewModel()) {
                                             }
                                         sheet = ""
                                     }
+                                    Spacer(Modifier.height(9.dp))
                                     val localOnly = local != null && s.files.none { it.id == f.id }
                                     FileAction(
                                         if (localOnly) "Удалить с Android" else "Удалить из облака",
@@ -999,6 +1122,7 @@ fun App(vm: ClientViewModel = viewModel()) {
                                         else vm.delete(f)
                                         sheet = ""
                                     }
+                                    Spacer(Modifier.height(12.dp))
                                     Cancel("Закрыть") { sheet = "" }
                                 }
                         }
@@ -1007,16 +1131,8 @@ fun App(vm: ClientViewModel = viewModel()) {
         }
     }
     if (toastVisible)
-        Box(
-            Modifier.fillMaxSize()
-                .systemBarsPadding()
-                .padding(horizontal = 16.dp, vertical = 12.dp),
-            contentAlignment = Alignment.Center,
-        ) {
-            Box(
-                Modifier.widthIn(max = 430.dp).heightIn(max = 860.dp).fillMaxSize(),
-                contentAlignment = Alignment.BottomCenter,
-            ) {
+        Box(Modifier.fillMaxSize().systemBarsPadding(), contentAlignment = Alignment.Center) {
+            Box(Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
                 Box(
                     Modifier.padding(bottom = 92.dp)
                         .clip(RoundedCornerShape(14.dp))
@@ -1038,7 +1154,10 @@ fun App(vm: ClientViewModel = viewModel()) {
 
 @Composable
 fun TorrentCard(t: Torrent, onClick: () -> Unit) {
-    Card(Modifier.alpha(if (t.state == "paused") 0.65f else 1f).clickable(onClick = onClick)) {
+    Card(
+        Modifier.alpha(if (t.state == "paused") 0.65f else 1f).referenceClick(onClick = onClick),
+        padding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 14.dp),
+    ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             IconSvg(22, 22, Color(0xffc9ced8))
             Spacer(Modifier.width(10.dp))
@@ -1055,7 +1174,7 @@ fun TorrentCard(t: Torrent, onClick: () -> Unit) {
             Box(
                 Modifier.clip(RoundedCornerShape(14.dp))
                     .background(if (t.state == "ready") Color(0xff173a2a) else Color(0xff16304f))
-                    .padding(8.dp, 3.dp)
+                    .padding(9.dp, 3.dp)
             ) {
                 Txt(
                     if (t.state == "downloading") "BotHost"
@@ -1065,7 +1184,9 @@ fun TorrentCard(t: Torrent, onClick: () -> Unit) {
                 )
             }
             Spacer(Modifier.width(14.dp))
-            Txt("${((t.phase_progress ?: t.progress)*100).toInt()}%", 19, bold = true)
+            Box(Modifier.widthIn(min = 48.dp), contentAlignment = Alignment.CenterEnd) {
+                Txt("${((t.phase_progress ?: t.progress)*100).toInt()}%", 19, bold = true)
+            }
         }
         Spacer(Modifier.height(14.dp))
         Bar((t.phase_progress ?: t.progress), if (t.state == "uploading") Purple else Blue)
@@ -1112,14 +1233,20 @@ fun FilesScreen(
 ) {
     var query by remember { mutableStateOf("") }
     var filter by remember { mutableStateOf("Все") }
-    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(top = 20.dp)) {
+    val filesScroll = rememberScrollState()
+    Column(
+        Modifier.fillMaxSize()
+            .referenceFade(filesScroll)
+            .verticalScroll(filesScroll)
+            .padding(top = 20.dp)
+    ) {
         Card(
             radius = 24,
             padding = PaddingValues(start = 18.dp, end = 18.dp, top = 18.dp, bottom = 16.dp),
         ) {
             Txt(bytes(files.sumOf { it.size }), 34, bold = true)
             Spacer(Modifier.height(8.dp))
-            Txt("${files.size} файлов", 15, Muted)
+            Txt("${files.size} ${fileCountWord(files.size)} в облаке", 15, Muted)
             Spacer(Modifier.height(18.dp))
             val groups =
                 files
@@ -1141,7 +1268,8 @@ fun FilesScreen(
                 }
             }
             Spacer(Modifier.height(16.dp))
-            groups.entries.chunked(2).forEach { pair ->
+            groups.entries.chunked(2).forEachIndexed { rowIndex, pair ->
+                if (rowIndex > 0) Spacer(Modifier.height(10.dp))
                 Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                     pair.forEach { (k, v) ->
                         Row(Modifier.weight(1f), horizontalArrangement = Arrangement.SpaceBetween) {
@@ -1156,24 +1284,28 @@ fun FilesScreen(
                             Txt(bytes(v.sumOf { it.size }), 14, bold = true)
                         }
                     }
-                    Spacer(Modifier.height(10.dp))
+                    if (pair.size == 1) Spacer(Modifier.weight(1f))
                 }
             }
         }
         Spacer(Modifier.height(14.dp))
         SearchField(query) { query = it }
         Row(
-            Modifier.horizontalScroll(rememberScrollState()).padding(vertical = 12.dp),
+            Modifier.fillMaxWidth()
+                .padding(top = 12.dp, bottom = 4.dp)
+                .referenceHorizontalFade()
+                .horizontalScroll(rememberScrollState())
+                .padding(end = 24.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            listOf("Все", "Образы", "Архивы", "Видео", "Аудио", "Прочее").forEach { c ->
+            listOf("Все", "Образы", "Архивы", "Видео", "Аудио").forEach { c ->
                 Box(
                     Modifier.clip(RoundedCornerShape(18.dp))
                         .background(if (c == filter) Color.White else RowColor)
-                        .clickable { filter = c }
+                        .referenceTap { filter = c }
                         .padding(15.dp, 9.dp)
                 ) {
-                    Txt(c, 15, if (c == filter) Color(0xff0b0e13) else Muted, true)
+                    Txt(c, 15, if (c == filter) Color(0xff0b0e13) else Color(0xffb5bcc9), true)
                 }
             }
         }
@@ -1237,32 +1369,13 @@ fun FilesScreen(
                                     .background(Color.White.copy(alpha = .06f))
                             )
                         Row(
-                            Modifier.fillMaxWidth().clickable { onFile(f) }.padding(12.dp),
+                            Modifier.fillMaxWidth()
+                                .referenceTap { onFile(f) }
+                                .padding(start = 12.dp, end = 14.dp, top = 12.dp, bottom = 12.dp),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
                             val cat = category(f.path)
-                            val color =
-                                when (cat) {
-                                    "Образы" -> Blue
-                                    "Архивы" -> Purple
-                                    "Видео" -> Color(0xfff0b86e)
-                                    "Аудио" -> Green
-                                    else -> Muted
-                                }
-                            Box(
-                                Modifier.size(46.dp)
-                                    .clip(RoundedCornerShape(15.dp))
-                                    .background(color.copy(alpha = .14f)),
-                                contentAlignment = Alignment.Center,
-                            ) {
-                                IconSvg(
-                                    if (cat == "Образы") 35
-                                    else if (cat == "Архивы") 36
-                                    else if (cat == "Видео") 37 else if (cat == "Аудио") 38 else 39,
-                                    23,
-                                    color,
-                                )
-                            }
+                            FileTypeIcon(cat)
                             Spacer(Modifier.width(13.dp))
                             Column(Modifier.weight(1f)) {
                                 Text(
@@ -1308,7 +1421,7 @@ fun Choice(title: String, sub: String, icon: Int, onClick: () -> Unit) {
             .height(78.dp)
             .clip(RoundedCornerShape(22.dp))
             .background(RowColor)
-            .clickable(onClick = onClick)
+            .referenceClick(onClick = onClick)
             .padding(16.dp, 14.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -1329,7 +1442,7 @@ fun Cancel(title: String, onClick: () -> Unit) {
         Modifier.fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
             .background(Color(0xff252a33))
-            .clickable(onClick = onClick)
+            .referenceClick(onClick = onClick)
             .padding(13.dp),
         contentAlignment = Alignment.Center,
     ) {
@@ -1368,7 +1481,7 @@ fun DetailScreen(
                     Modifier.weight(1f)
                         .clip(RoundedCornerShape(26.dp))
                         .background(if (phone == isPhone) Color(0xff2a2b2e) else Color.Transparent)
-                        .clickable { phone = isPhone }
+                        .referenceTap { phone = isPhone }
                         .padding(vertical = 14.dp),
                     contentAlignment = Alignment.Center,
                 ) {
@@ -1444,32 +1557,20 @@ fun DetailScreen(
 }
 
 @Composable
-fun ServerToggle(title: String, sub: String, on: Boolean, onClick: () -> Unit) {
+fun ServerToggle(title: String, sub: String?, on: Boolean, onClick: () -> Unit) {
     Row(
         Modifier.fillMaxWidth()
             .clip(RoundedCornerShape(18.dp))
             .background(RowColor)
-            .clickable(onClick = onClick)
+            .referenceClick(onClick = onClick)
             .padding(16.dp, 15.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Column(Modifier.weight(1f)) {
             Txt(title)
-            Txt(sub, 14, Muted)
+            if (sub != null) SettingSubtitle(sub)
         }
-        Box(
-            Modifier.size(42.dp, 24.dp)
-                .clip(RoundedCornerShape(12.dp))
-                .background(if (on) Blue else Color(0xff363c4a))
-                .padding(3.dp)
-        ) {
-            Box(
-                Modifier.align(if (on) Alignment.CenterEnd else Alignment.CenterStart)
-                    .size(18.dp)
-                    .clip(RoundedCornerShape(9.dp))
-                    .background(Color.White)
-            )
-        }
+        ReferenceSwitch(on)
     }
 }
 
@@ -1496,6 +1597,7 @@ fun SearchField(value: String, onChange: (String) -> Unit) {
             onChange,
             modifier = Modifier.weight(1f).onFocusChanged { focused = it.isFocused },
             singleLine = true,
+            cursorBrush = androidx.compose.ui.graphics.SolidColor(Color.White),
             textStyle =
                 androidx.compose.ui.text.TextStyle(
                     color = Color.White,

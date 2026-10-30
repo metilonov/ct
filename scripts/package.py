@@ -5,6 +5,8 @@ root = Path(__file__).resolve().parents[1]
 target = root / "artifacts/Cloud-Torrent-Client-project.zip"
 ignore = {
     ".gradle",
+    ".kotlin",
+    ".ruff_cache",
     "build",
     "data",
     ".pytest_cache",
