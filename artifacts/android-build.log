@@ -1,0 +1,245 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:checkDebugAarMetadata
+> Task :app:processDebugNavigationResources
+> Task :app:generateDebugResValues
+> Task :app:compileDebugNavigationResources
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:mergeDebugResources
+> Task :app:processDebugMainManifest
+> Task :app:packageDebugResources
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugManifest
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:desugarDebugFileDependencies
+         > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.1.20.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.1.20/kotlin-stdlib-2.1.20.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.1.20/kotlin-stdlib-2.1.20.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve androidx.compose:compose-bom:2025.04.01.
+     Required by:
+         project :app
+      > Could not resolve androidx.compose:compose-bom:2025.04.01.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/androidx/compose/compose-bom/2025.04.01/compose-bom-2025.04.01.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/androidx/compose/compose-bom/2025.04.01/compose-bom-2025.04.01.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve androidx.compose:compose-bom:2025.04.01.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/androidx/compose/compose-bom/2025.04.01/compose-bom-2025.04.01.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/androidx/compose/compose-bom/2025.04.01/compose-bom-2025.04.01.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve androidx.activity:activity-compose:1.10.1.
+     Required by:
+         project :app
+      > Could not resolve androidx.activity:activity-compose:1.10.1.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/androidx/activity/activity-compose/1.10.1/activity-compose-1.10.1.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/androidx/activity/activity-compose/1.10.1/activity-compose-1.10.1.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve androidx.activity:activity-compose:1.10.1.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/androidx/activity/activity-compose/1.10.1/activity-compose-1.10.1.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/androidx/activity/activity-compose/1.10.1/activity-compose-1.10.1.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not find androidx.compose.ui:ui:.
+     Required by:
+         project :app
+   > Could not find androidx.compose.foundation:foundation:.
+     Required by:
+         project :app
+   > Could not find androidx.compose.material3:material3:.
+     Required by:
+         project :app
+   > Could not resolve androidx.navigation:navigation-compose:2.9.0.
+     Required by:
+         project :app
+      > Could not resolve androidx.navigation:navigation-compose:2.9.0.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-compose/2.9.0/navigation-compose-2.9.0.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/androidx/navigation/navigation-compose/2.9.0/navigation-compose-2.9.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve androidx.navigation:navigation-compose:2.9.0.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/androidx/navigation/navigation-compose/2.9.0/navigation-compose-2.9.0.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/androidx/navigation/navigation-compose/2.9.0/navigation-compose-2.9.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve androidx.lifecycle:lifecycle-viewmodel-compose:2.9.0.
+     Required by:
+         project :app
+      > Could not resolve androidx.lifecycle:lifecycle-viewmodel-compose:2.9.0.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-compose/2.9.0/lifecycle-viewmodel-compose-2.9.0.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-compose/2.9.0/lifecycle-viewmodel-compose-2.9.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve androidx.lifecycle:lifecycle-viewmodel-compose:2.9.0.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/androidx/lifecycle/lifecycle-viewmodel-compose/2.9.0/lifecycle-viewmodel-compose-2.9.0.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/androidx/lifecycle/lifecycle-viewmodel-compose/2.9.0/lifecycle-viewmodel-compose-2.9.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve androidx.lifecycle:lifecycle-runtime-compose:2.9.0.
+     Required by:
+         project :app
+      > Could not resolve androidx.lifecycle:lifecycle-runtime-compose:2.9.0.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime-compose/2.9.0/lifecycle-runtime-compose-2.9.0.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime-compose/2.9.0/lifecycle-runtime-compose-2.9.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve androidx.lifecycle:lifecycle-runtime-compose:2.9.0.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/androidx/lifecycle/lifecycle-runtime-compose/2.9.0/lifecycle-runtime-compose-2.9.0.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/androidx/lifecycle/lifecycle-runtime-compose/2.9.0/lifecycle-runtime-compose-2.9.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve com.google.dagger:hilt-android:2.56.2.
+     Required by:
+         project :app
+      > Could not resolve com.google.dagger:hilt-android:2.56.2.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/com/google/dagger/hilt-android/2.56.2/hilt-android-2.56.2.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/com/google/dagger/hilt-android/2.56.2/hilt-android-2.56.2.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve com.google.dagger:hilt-android:2.56.2.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/com/google/dagger/hilt-android/2.56.2/hilt-android-2.56.2.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/com/google/dagger/hilt-android/2.56.2/hilt-android-2.56.2.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve com.squareup.retrofit2:retrofit:2.11.0.
+     Required by:
+         project :app
+      > Could not resolve com.squareup.retrofit2:retrofit:2.11.0.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/com/squareup/retrofit2/retrofit/2.11.0/retrofit-2.11.0.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/com/squareup/retrofit2/retrofit/2.11.0/retrofit-2.11.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve com.squareup.retrofit2:retrofit:2.11.0.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/com/squareup/retrofit2/retrofit/2.11.0/retrofit-2.11.0.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/com/squareup/retrofit2/retrofit/2.11.0/retrofit-2.11.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve com.squareup.retrofit2:converter-gson:2.11.0.
+     Required by:
+         project :app
+      > Could not resolve com.squareup.retrofit2:converter-gson:2.11.0.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/com/squareup/retrofit2/converter-gson/2.11.0/converter-gson-2.11.0.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/com/squareup/retrofit2/converter-gson/2.11.0/converter-gson-2.11.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve com.squareup.retrofit2:converter-gson:2.11.0.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/com/squareup/retrofit2/converter-gson/2.11.0/converter-gson-2.11.0.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/com/squareup/retrofit2/converter-gson/2.11.0/converter-gson-2.11.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve com.squareup.okhttp3:okhttp:4.12.0.
+     Required by:
+         project :app
+      > Could not resolve com.squareup.okhttp3:okhttp:4.12.0.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve com.squareup.okhttp3:okhttp:4.12.0.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve androidx.datastore:datastore-preferences:1.1.4.
+     Required by:
+         project :app
+      > Could not resolve androidx.datastore:datastore-preferences:1.1.4.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/androidx/datastore/datastore-preferences/1.1.4/datastore-preferences-1.1.4.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/androidx/datastore/datastore-preferences/1.1.4/datastore-preferences-1.1.4.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve androidx.datastore:datastore-preferences:1.1.4.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/androidx/datastore/datastore-preferences/1.1.4/datastore-preferences-1.1.4.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/androidx/datastore/datastore-preferences/1.1.4/datastore-preferences-1.1.4.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve androidx.room:room-runtime:2.7.1.
+     Required by:
+         project :app
+      > Could not resolve androidx.room:room-runtime:2.7.1.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/androidx/room/room-runtime/2.7.1/room-runtime-2.7.1.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/androidx/room/room-runtime/2.7.1/room-runtime-2.7.1.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve androidx.room:room-runtime:2.7.1.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/androidx/room/room-runtime/2.7.1/room-runtime-2.7.1.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/androidx/room/room-runtime/2.7.1/room-runtime-2.7.1.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve androidx.room:room-ktx:2.7.1.
+     Required by:
+         project :app
+      > Could not resolve androidx.room:room-ktx:2.7.1.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/androidx/room/room-ktx/2.7.1/room-ktx-2.7.1.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/androidx/room/room-ktx/2.7.1/room-ktx-2.7.1.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve androidx.room:room-ktx:2.7.1.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/androidx/room/room-ktx/2.7.1/room-ktx-2.7.1.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/androidx/room/room-ktx/2.7.1/room-ktx-2.7.1.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve androidx.work:work-runtime-ktx:2.10.1.
+     Required by:
+         project :app
+      > Could not resolve androidx.work:work-runtime-ktx:2.10.1.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/androidx/work/work-runtime-ktx/2.10.1/work-runtime-ktx-2.10.1.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/androidx/work/work-runtime-ktx/2.10.1/work-runtime-ktx-2.10.1.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve androidx.work:work-runtime-ktx:2.10.1.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/androidx/work/work-runtime-ktx/2.10.1/work-runtime-ktx-2.10.1.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/androidx/work/work-runtime-ktx/2.10.1/work-runtime-ktx-2.10.1.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve androidx.documentfile:documentfile:1.0.1.
+     Required by:
+         project :app
+      > Could not resolve androidx.documentfile:documentfile:1.0.1.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/androidx/documentfile/documentfile/1.0.1/documentfile-1.0.1.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/androidx/documentfile/documentfile/1.0.1/documentfile-1.0.1.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve androidx.documentfile:documentfile:1.0.1.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/androidx/documentfile/documentfile/1.0.1/documentfile-1.0.1.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/androidx/documentfile/documentfile/1.0.1/documentfile-1.0.1.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve com.caverock:androidsvg-aar:1.4.
+     Required by:
+         project :app
+      > Could not resolve com.caverock:androidsvg-aar:1.4.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/com/caverock/androidsvg-aar/1.4/androidsvg-aar-1.4.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/com/caverock/androidsvg-aar/1.4/androidsvg-aar-1.4.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve com.caverock:androidsvg-aar:1.4.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/com/caverock/androidsvg-aar/1.4/androidsvg-aar-1.4.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/com/caverock/androidsvg-aar/1.4/androidsvg-aar-1.4.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 51s
+1 actionable task: 1 executed

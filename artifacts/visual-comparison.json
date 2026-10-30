@@ -1,0 +1,22 @@
+{
+  "downloads": {
+    "mean_absolute_rgb_error": 5.578829223637567,
+    "interpretation": "Includes intentional live-data and BotHost label differences; not a 1:1 acceptance metric",
+    "android_crop_top": 62
+  },
+  "files": {
+    "mean_absolute_rgb_error": 5.29427466791321,
+    "interpretation": "Includes intentional live-data and BotHost label differences; not a 1:1 acceptance metric",
+    "android_crop_top": 62
+  },
+  "cloud": {
+    "mean_absolute_rgb_error": 13.088740212691363,
+    "interpretation": "Includes intentional live-data and BotHost label differences; not a 1:1 acceptance metric",
+    "android_crop_top": 62
+  },
+  "settings": {
+    "mean_absolute_rgb_error": 13.996914806591095,
+    "interpretation": "Includes intentional live-data and BotHost label differences; not a 1:1 acceptance metric",
+    "android_crop_top": 62
+  }
+}

@@ -1,0 +1,84 @@
+--------- beginning of main
+10-29 18:56:43.058   514   585 W system_server: Long monitor contention with owner binder:514_C (1319) at int com.android.server.job.JobSchedulerService.scheduleAsPackage(android.app.job.JobInfo, android.app.job.JobWorkItem, int, java.lang.String, int, java.lang.String, java.lang.String)(JobSchedulerService.java:1818) waiters=0 in void com.android.server.job.JobSchedulerService$JobHandler.handleMessage(android.os.Message) for 284ms
+10-29 18:56:43.105  2385  2385 D CompatibilityChangeReporter: Compat change id reported: 3400644; UID 10096; state: DISABLED
+10-29 18:56:43.118   514   603 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+10-29 18:56:43.169   514   514 W system_server: Long monitor contention with owner binder:514_C (1319) at int com.android.server.job.JobSchedulerService.scheduleAsPackage(android.app.job.JobInfo, android.app.job.JobWorkItem, int, java.lang.String, int, java.lang.String, java.lang.String)(JobSchedulerService.java:1818) waiters=1 in void com.android.server.job.controllers.ComponentController.updateComponentStateForPackage(int, java.lang.String) for 342ms
+--------- beginning of system
+10-29 18:56:43.171   514   514 W Looper  : Slow dispatch took 344ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@71cc311 m=0
+10-29 18:56:43.174   514   514 W Looper  : Slow delivery took 313ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@ad46c76 m=0
+10-29 18:56:43.218  1618  1744 I PermissionControllerServiceImpl: Updating user sensitive for uid 10132
+10-29 18:56:43.372   514   514 W Looper  : Slow dispatch took 188ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@ce78ee4 m=0
+10-29 18:56:43.379  2384  2384 E DEBUG   : failed to read process info: failed to open /proc/2173: No such file or directory
+10-29 18:56:43.443  2385  2385 D nativeloader: InitLlndkLibrariesProduct: libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-x86_64-android.so:libcom.android.tethering.connectivity_native.so:libdl.so:libft2.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libneuralnetworks.so:libselinux.so:libsync.so:libvndksupport.so:libvulkan.so
+10-29 18:56:43.449  2385  2385 D nativeloader: Configuring product-clns-6 for unbundled product apk /product/priv-app/Contacts/Contacts.apk. target_sdk_version=33, uses_libraries=, library_path=/product/priv-app/Contacts/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.android.contacts:/product/lib64:/system/product/lib64
+10-29 18:56:43.475  2385  2385 D nativeloader: InitVndkspLibrariesProduct: android.hardware.common-V2-ndk.so:android.hardware.common.fmq-V1-ndk.so:android.hardware.graphics.allocator-V2-ndk.so:android.hardware.graphics.common-V4-ndk.so:android.hardware.graphics.common@1.0.so:android.hardware.graphics.common@1.1.so:android.hardware.graphics.common@1.2.so:android.hardware.graphics.composer3-V1-ndk.so:android.hardware.graphics.mapper@2.0.so:android.hardware.graphics.mapper@2.1.so:android.hardware.graphics.mapper@3.0.so:android.hardware.graphics.mapper@4.0.so:android.hardware.renderscript@1.0.so:android.hidl.memory.token@1.0.so:android.hidl.memory@1.0-impl.so:android.hidl.memory@1.0.so:android.hidl.safe_union@1.0.so:libRSCpuRef.so:libRSDriver.so:libRS_internal.so:libbase.so:libbcinfo.so:libblas.so:libc++.so:libcompiler_rt.so:libcutils.so:libdmabufheap.so:libgralloctypes.so:libhardware.so:libhidlbase.so:libhidlmemory.so:libion.so:libjsoncpp.so:liblzma.so:libprocessgroup.so:libunwindstack.so:libutils.so:libutilscallstack.so:libz.so
+10-29 18:56:43.597   514   514 W Looper  : Slow dispatch took 223ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@8ff9f13 m=0
+10-29 18:56:43.632   514  1348 W system_server: Long monitor contention with owner main (514) at boolean android.os.MessageQueue.enqueueMessage(android.os.Message, long)(MessageQueue.java:600) waiters=0 in android.os.Message android.os.MessageQueue.next() for 248ms
+10-29 18:56:43.711   514   514 W Looper  : Drained
+10-29 18:56:44.029  2385  2385 V GraphicsEnvironment: Currently set values for:
+10-29 18:56:44.030  2385  2385 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-29 18:56:44.030  2385  2385 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-29 18:56:44.036  2385  2385 V GraphicsEnvironment: ANGLE GameManagerService for com.android.contacts: false
+10-29 18:56:44.037  2385  2385 V GraphicsEnvironment: com.android.contacts is not listed in per-application setting
+10-29 18:56:44.038  2385  2385 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-29 18:56:44.059   514  1384 D CompatibilityChangeReporter: Compat change id reported: 157233955; UID 10118; state: ENABLED
+10-29 18:56:44.090  1604  1619 V MediaProvider: onOpen() for internal.db
+10-29 18:56:44.134   514   514 W Looper  : Slow dispatch took 125ms main h=android.app.PropertyInvalidatedCache$AutoCorker$1 c=null m=0
+10-29 18:56:44.169   514   531 W Looper  : Slow dispatch took 260ms android.fg h=com.android.server.pm.permission.PermissionManagerServiceImpl$OnPermissionChangeListeners c=null m=1
+10-29 18:56:44.194   514   593 I RoleService: Granting default roles...
+10-29 18:56:44.254   514   541 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 1000; state: DISABLED
+10-29 18:56:44.275   514   542 W ActivityManager: Slow operation: 73ms so far, now at startProcess: asking zygote to start proc
+10-29 18:56:44.371   514   541 W ActivityManager: Slow operation: 72ms so far, now at startProcess: done starting proc!
+10-29 18:56:44.384   514  2103 W system_server: Long monitor contention with owner ActivityManager (541) at void com.android.server.am.BroadcastQueueModernImpl.checkPendingColdStartValidity()(BroadcastQueueModernImpl.java:559) waiters=3 in void com.android.server.am.ActivityManagerService.addPackageDependency(java.lang.String) for 1.303s
+10-29 18:56:44.405   514   514 W Looper  : Slow dispatch took 178ms main h=android.app.PropertyInvalidatedCache$AutoCorker$1 c=null m=0
+10-29 18:56:44.414   514   531 W system_server: Long monitor contention with owner binder:514_2 (528) at boolean android.os.MessageQueue.enqueueMessage(android.os.Message, long)(MessageQueue.java:600) waiters=0 in boolean android.os.MessageQueue.enqueueMessage(android.os.Message, long) for 244ms
+10-29 18:56:44.415   514   531 W Looper  : Slow delivery took 363ms android.fg h=android.os.Handler c=com.android.server.am.SameProcessApplicationThread$$ExternalSyntheticLambda1@38edf26 m=0
+10-29 18:56:44.415   514   531 W Looper  : Slow dispatch took 245ms android.fg h=android.os.Handler c=com.android.server.am.SameProcessApplicationThread$$ExternalSyntheticLambda1@38edf26 m=0
+10-29 18:56:44.432   514  2263 W system_server: Long monitor contention with owner ActivityManager (541) at void com.android.server.am.BroadcastQueueModernImpl.checkPendingColdStartValidity()(BroadcastQueueModernImpl.java:559) waiters=5 in void com.android.server.am.ActivityManagerService.finishReceiver(android.os.IBinder, int, java.lang.String, android.os.Bundle, boolean, int) for 1.192s
+10-29 18:56:44.544   320   320 D Zygote  : Forked child process 2411
+10-29 18:56:44.560   514   592 W system_server: Long monitor contention with owner ActivityManager (541) at void com.android.server.am.BroadcastQueueModernImpl.checkPendingColdStartValidity()(BroadcastQueueModernImpl.java:559) waiters=6 in void com.android.server.am.CachedAppOptimizer$FreezeHandler.handleMessage(android.os.Message) for 1.030s
+10-29 18:56:44.563   514   592 D ActivityManager: freezing 2212 com.android.traceur
+10-29 18:56:44.637   514   542 W ActivityManager: Slow operation: 436ms so far, now at startProcess: returned from zygote!
+10-29 18:56:44.644   514   531 W Looper  : Slow dispatch took 197ms android.fg h=android.os.Handler c=com.android.server.am.SameProcessApplicationThread$$ExternalSyntheticLambda1@936c767 m=0
+10-29 18:56:44.746   514   585 D OomAdjuster: Not killing cached processes
+10-29 18:56:44.773   514   542 W ActivityManager: Slow operation: 572ms so far, now at startProcess: done updating battery stats
+10-29 18:56:44.789   514   542 W ActivityManager: Slow operation: 588ms so far, now at startProcess: building log message
+10-29 18:56:44.790   514   542 I ActivityManager: Start proc 2411:com.android.dynsystem/1000 for broadcast {com.android.dynsystem/com.android.dynsystem.BootCompletedReceiver}
+10-29 18:56:44.790   514   542 W ActivityManager: Slow operation: 588ms so far, now at startProcess: starting to update pids map
+10-29 18:56:44.791   514   542 W ActivityManager: Slow operation: 589ms so far, now at startProcess: done updating pids map
+10-29 18:56:44.945   514   528 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10096. pid: 2385
+10-29 18:56:44.959  2411  2411 I droid.dynsystem: Using CollectorTypeCC GC.
+10-29 18:56:44.987  2411  2411 W droid.dynsystem: Unexpected CPU variant for x86: x86_64.
+10-29 18:56:44.987  2411  2411 W droid.dynsystem: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+10-29 18:56:45.045  2411  2411 E droid.dynsystem: Not starting debugger since process cannot load the jdwp agent.
+10-29 18:56:45.101   514  1422 W ContentProviderHelper: Slow operation: 215ms so far, now at getContentProviderImpl: done!
+10-29 18:56:45.199   514   514 W Looper  : Slow dispatch took 221ms main h=android.app.PropertyInvalidatedCache$AutoCorker$1 c=null m=0
+10-29 18:56:45.247   514  2103 W system_server: Long monitor contention with owner binder:514_A (938) at void com.android.server.pm.permission.PermissionManagerServiceImpl.updatePermissionFlagsInternal(java.lang.String, java.lang.String, int, int, int, int, boolean, com.android.server.pm.permission.PermissionManagerServiceImpl$PermissionCallback)(PermissionManagerServiceImpl.java:879) waiters=1 in int com.android.server.pm.permission.PermissionManagerServiceImpl.checkPermissionInternal(com.android.server.pm.pkg.AndroidPackage, boolean, java.lang.String, int) for 308ms
+10-29 18:56:45.257   514  1319 W system_server: Long monitor contention with owner binder:514_A (938) at void com.android.server.pm.permission.PermissionManagerServiceImpl.updatePermissionFlagsInternal(java.lang.String, java.lang.String, int, int, int, int, boolean, com.android.server.pm.permission.PermissionManagerServiceImpl$PermissionCallback)(PermissionManagerServiceImpl.java:879) waiters=3 in int com.android.server.pm.permission.PermissionManagerServiceImpl.checkPermissionInternal(com.android.server.pm.pkg.AndroidPackage, boolean, java.lang.String, int) for 182ms
+10-29 18:56:45.269   514   804 W system_server: Long monitor contention with owner binder:514_A (938) at void com.android.server.pm.permission.PermissionManagerServiceImpl.updatePermissionFlagsInternal(java.lang.String, java.lang.String, int, int, int, int, boolean, com.android.server.pm.permission.PermissionManagerServiceImpl$PermissionCallback)(PermissionManagerServiceImpl.java:879) waiters=2 in int com.android.server.pm.permission.PermissionManagerServiceImpl.getPermissionFlagsInternal(java.lang.String, java.lang.String, int, int) for 316ms
+10-29 18:56:45.304   514   524 W JavaBinder: BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: com.android.server.am.ActivityManagerService$14
+10-29 18:56:45.313   514   524 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+10-29 18:56:45.319   514   524 W JavaBinder: BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: com.android.server.am.ActivityManagerService$14
+10-29 18:56:45.324   514   524 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+10-29 18:56:45.416   514   532 W system_server: Long monitor contention with owner appscheduling.default (585) at void com.android.server.DeviceIdleController.checkTempAppWhitelistTimeout(int)(DeviceIdleController.java:3252) waiters=0 in void com.android.server.DeviceIdleController.addPowerSaveTempWhitelistAppDirectInternal(int, int, long, int, boolean, int, java.lang.String) for 683ms
+10-29 18:56:45.433   514   532 W Looper  : Slow dispatch took 2838ms android.ui h=com.android.server.am.ActivityManagerService$UiHandler c=null m=68
+10-29 18:56:45.435   514   532 W Looper  : Slow delivery took 967ms android.ui h=com.android.server.am.ActivityManagerService$UiHandler c=null m=68
+10-29 18:56:45.519  2044  2250 D MediaProvider: Finished migration from legacy provider
+10-29 18:56:45.628   514   531 W Looper  : Slow dispatch took 984ms android.fg h=android.os.Handler c=<recycled PooledLambda@222b37> m=0
+10-29 18:56:45.692   514   531 W Looper  : Drained
+10-29 18:56:45.911   514   514 W Looper  : Slow dispatch took 167ms main h=android.os.Handler c=null m=1
+10-29 18:56:45.976   514   532 W Looper  : Drained
+10-29 18:56:45.981   514   541 W system_server: Long monitor contention with owner appscheduling.default (585) at void com.android.server.am.ActivityManagerService$LocalService.updateDeviceIdleTempAllowlist(int[], int, boolean, long, int, int, java.lang.String, int)(ActivityManagerService.java:17647) waiters=0 in void com.android.server.am.AppProfiler$CachedAppsWatermarkData.updateCachedAppsSnapshot(long) for 394ms
+10-29 18:56:46.001   514  1436 W ActivityManager: Slow operation: 51ms so far, now at attachApplicationLocked: before bindApplication
+10-29 18:56:46.031   514  1436 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 1000; state: DISABLED
+10-29 18:56:46.061  1618  1618 I HibernationPolicy: scheduleHibernationJob with frequency 1296000000ms and threshold 7776000000ms
+10-29 18:56:46.106   514   514 W Looper  : Slow delivery took 408ms main h=android.os.Handler c=null m=1
+10-29 18:56:46.154   514  1436 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 1000; state: DISABLED
+10-29 18:56:46.155   514  1436 W ActivityManager: Slow operation: 204ms so far, now at attachApplicationLocked: immediately before bindApplication
+10-29 18:56:46.405   514  1436 W ActivityManager: Slow operation: 454ms so far, now at attachApplicationLocked: immediately after bindApplication
+10-29 18:56:46.546   514   514 W Looper  : Slow dispatch took 139ms main h=android.app.PropertyInvalidatedCache$AutoCorker$1 c=null m=0
+10-29 18:56:46.547   514  1436 W ActivityManager: Slow operation: 597ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+10-29 18:56:46.802   514   549 W system_server: Long monitor contention with owner binder:514_2 (528) at void com.android.server.pm.permission.PermissionManagerServiceImpl.updatePermissionFlagsInternal(java.lang.String, java.lang.String, int, int, int, int, boolean, com.android.server.pm.permission.PermissionManagerServiceImpl$PermissionCallback)(PermissionManagerServiceImpl.java:879) waiters=0 in int com.android.server.pm.permission.PermissionManagerServiceImpl.checkPermissionInternal(com.android.server.pm.pkg.AndroidPackage, boolean, java.lang.String, int) for 256ms
+10-29 18:56:46.851   514  1436 W ActivityManager: Slow operation: 208ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+--------- beginning of kernel
+10-29 18:56:46.885     0     0 I logd    : logdr: UID=2000 GID=2000 PID=2425 n tail=80 logMask=99 pid=0 start=0ns deadline=0ns

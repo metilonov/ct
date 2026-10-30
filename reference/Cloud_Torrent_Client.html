@@ -1,0 +1,514 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Cloud Torrent Client</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#000;--card:#10141b;--row:#1a212c;--text:#fff;--muted:#9aa3b2;--blue:#6cb0ff;--purple:#8b8cf5;--green:#7fe0a0;--btn:#263a63;--track:#363c4a;--chip:#252a33;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--card:#10141b}}
+:root[data-theme="dark"]{--bg:#000}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:Roboto,"Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+body{display:flex;justify-content:center;align-items:center;padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.app{width:100%;max-width:430px;height:100%;max-height:860px;background:var(--card);border-radius:26px;padding:32px 20px 14px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.eyebrow{font-size:14px;letter-spacing:.2px;color:#c3c9d4;text-transform:uppercase}
+h1{margin:2px 0 0;font-size:29px;font-weight:700;line-height:1.2}
+.round{width:40px;height:40px;border-radius:50%;background:#1d2430;display:grid;place-items:center;color:var(--blue);transition:.15s}
+.round:active,.row-btn:active,.dl:active,.add:active{transform:scale(.97)}
+.round svg{width:22px;height:22px}
+.view{flex:1;min-height:0;display:none;flex-direction:column;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:none}
+.view::-webkit-scrollbar{display:none}
+.view>*{flex-shrink:0}
+.view.on{display:flex}
+.cloud-row{margin-top:22px;background:var(--row);border-radius:20px;height:51px;padding:0 17px 0 15px;display:flex;align-items:center;justify-content:space-between;width:100%}
+.cloud-row .l{display:flex;align-items:center;gap:12px;font-size:19px}
+.cloud-row .l svg{width:24px;height:24px;color:var(--blue)}
+.status{display:flex;align-items:center;gap:8px;font-size:16px;color:var(--green)}
+.status svg{width:21px;height:21px}
+.status.off{color:var(--muted)}
+.sec{display:flex;justify-content:space-between;align-items:center;margin:26px 0 12px}
+.sec h2{margin:0;font-size:21px;font-weight:700}
+.badge{min-width:26px;height:26px;border-radius:13px;background:var(--chip);display:grid;place-items:center;font-size:15px;color:#e5e7ec}
+.dl{display:block;width:100%;text-align:left;background:var(--row);border-radius:22px;padding:16px 16px 14px;margin-bottom:11px;transition:.15s}
+.dl .h{display:flex;justify-content:space-between;align-items:center;gap:14px;font-size:19px;font-weight:600}
+.dl .h>span{flex:none;min-width:48px;text-align:right}
+.dl .n{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.dl .n svg{width:22px;height:22px;color:#c9ced8;flex:none}
+.dl .n span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar{height:7px;border-radius:4px;background:var(--track);margin:14px 0 11px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:4px;transition:width .4s}
+.dl .f{display:flex;justify-content:space-between;color:var(--muted);font-size:16px}
+.dl.paused{opacity:.65}
+.note{color:#8e97a6;font-size:17px;line-height:1.4;margin:14px 0 18px}
+.add{margin-top:auto;width:100%;display:flex;align-items:center;gap:14px;text-align:left;background:var(--row);border-radius:22px;padding:14px 16px;transition:.15s}
+.add .ic{flex:none;width:auto;height:auto;background:none;color:var(--blue);display:grid;place-items:center}
+.add .ic svg{width:22px;height:22px;color:#c9ced8}
+.add .tx{flex:1;min-width:0}
+.add b{display:block;font-size:19px;font-weight:600}
+.add small{display:block;margin-top:6px;font-size:16px;color:var(--muted)}
+.add .chev{flex:none;width:20px;height:20px;color:var(--muted)}
+nav{flex:none;display:flex;justify-content:space-between;padding:12px 4px 2px;margin-top:6px;background:var(--card);position:relative;z-index:2}
+nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:14px;color:#8c93a1;transition:.15s}
+nav button svg{width:25px;height:25px}
+nav button.on{color:#fff}
+.list{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.row-btn{display:flex;align-items:center;justify-content:space-between;background:var(--row);border-radius:18px;padding:15px 16px;font-size:17px;width:100%;text-align:left;transition:.15s}
+.row-btn small{color:var(--muted);font-size:14px}
+.sw{width:42px;height:24px;border-radius:12px;background:var(--track);position:relative;transition:.2s;flex:none}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}
+.sw.on{background:var(--blue)}.sw.on::after{left:21px}
+.back{display:flex;align-items:center;gap:6px;margin-top:18px;color:var(--blue);font-size:16px}.back svg{width:20px;height:20px}.sh{font-size:21px;font-weight:700;margin:20px 0 10px}.st{background:var(--row);border-radius:22px;padding:16px}.st .h{display:flex;justify-content:space-between;align-items:center}.st .t{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:600}.st .t svg{width:22px;height:22px}.pill{font-size:14px;padding:5px 12px;border-radius:14px;background:#2a303a;color:#cfd4dd}.pill.b{background:#16304f;color:#4da3ff}.st .nm{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:18px}.st .nm b{font-size:21px}.st p{margin:10px 0 0;color:#8e97a6;font-size:14px;line-height:1.4}.act{margin-top:16px;width:100%;background:var(--btn);border-radius:18px;padding:13px;font-size:17px;font-weight:600}
+.st .f{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:16px}.st .bar{margin:14px 0 12px}.st p{margin:14px 0 0}
+.seg{display:flex;margin:16px 0 12px}.seg button{flex:1;padding:14px 0;border-radius:26px;font-size:18px;font-weight:600;color:#8c8f96;transition:.2s}.seg button.on{background:#2a2b2e;color:#fff}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.stat{background:var(--row);border-radius:20px;padding:14px 16px 15px}.stat svg{width:22px;height:22px;color:#7db4ff;display:block}.stat b{display:block;font-size:28px;font-weight:700;margin:10px 0 8px;line-height:1}.stat span{color:var(--muted);font-size:15px}
+.pill.p{background:#2a2a52;color:#a9a8ff}.pill.g{background:#173a2a;color:var(--green)}.dl .n .pill{flex:none;font-size:12px;padding:3px 9px;overflow:visible}.act2{margin-top:16px;width:100%;background:#3b3a7a;border-radius:18px;padding:13px;font-size:17px;font-weight:600}
+.modal{position:absolute;inset:0;background:rgba(0,0,0,.6);display:none;align-items:flex-end;z-index:5}
+.modal.on{display:flex}
+.sheet{width:100%;background:#161c26;border-radius:26px 26px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px))}
+.sheet h3{margin:0 0 14px;font-size:20px}
+.sheet input{width:100%;background:var(--row);border:1px solid #2b3342;border-radius:14px;padding:14px;color:#fff;font:inherit;font-size:16px;outline:0}
+.sheet input:focus{border-color:var(--blue)}
+.sheet .acts{display:flex;gap:10px;margin-top:14px}
+.sheet .acts button{flex:1;padding:13px;border-radius:14px;font-size:16px;font-weight:600;background:var(--chip)}
+.sheet .acts .ok{background:var(--btn)}
+.sheet .step{display:none}.sheet .step.on{display:block}
+.grp{margin:12px 4px 0;font-size:13px;letter-spacing:.3px;text-transform:uppercase;color:var(--muted)}
+.row-btn .val{flex:none;font-size:16px;font-weight:600;color:var(--blue)}
+.row-btn>svg{flex:none;color:var(--muted)}
+.row-btn.act-row>svg{color:var(--blue)}
+.choice{display:flex;align-items:center;gap:14px;width:100%;height:78px;text-align:left;background:var(--row);border-radius:22px;padding:14px 16px;margin-bottom:11px;transition:.15s}
+.choice:active{transform:scale(.97)}
+.choice svg{width:22px;height:22px;color:#c9ced8;flex:none}
+.choice .tx{flex:1;min-width:0}
+.choice b{display:block;font-size:19px;font-weight:600}
+.choice small{display:block;margin-top:5px;font-size:16px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.choice .chev{width:20px;height:20px;color:var(--muted)}
+.sheet .cancel-full{width:100%;padding:13px;border-radius:14px;font-size:16px;font-weight:600;background:var(--chip);margin-top:3px}
+.toast{position:absolute;left:50%;bottom:92px;transform:translate(-50%,20px);background:#2b3342;padding:10px 16px;border-radius:14px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:6;white-space:nowrap}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.sheet.tall{max-height:90%;overflow-y:auto;scrollbar-width:none}
+.plan{background:var(--row);border-radius:22px;padding:16px;margin-bottom:11px;border:1px solid transparent}
+.plan.cur{border-color:#3b5f99}
+.plan .pr{font-size:26px;font-weight:700;margin:10px 0 0}.plan .pr small{font-size:14px;color:var(--muted);font-weight:500}
+.plan ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:16px}
+.plan li::before{content:"\2713";color:var(--green);margin-right:10px}
+.ad{display:block;width:100%;text-align:left;background:#1a1d24;border:1px dashed #3a4150;border-radius:18px;padding:12px 14px;margin-bottom:14px;color:var(--muted);font-size:13px}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:10px}.plan{margin-bottom:0;padding:14px 12px;display:flex;flex-direction:column}.plan .pr{font-size:24px}.plan .d{color:var(--muted);font-size:14px;margin-top:6px;min-height:36px}.plan ul{font-size:14px;gap:10px;flex:1}.plan li::before{margin-right:8px}.pb{margin-top:16px;width:100%;padding:12px 4px;border-radius:14px;font-size:15px;font-weight:600;background:var(--chip)}.pb.ok{background:var(--btn)}.pb:disabled{opacity:.5}
+.plans{gap:8px}
+#planModal .plan{background:#000;border:1.5px solid #252a33;border-radius:20px;padding:16px 13px 14px}
+#planModal #plPrem{background:#172338;border-color:#42689f}
+#planModal .plan .pill{display:inline-block;font-size:13px;font-weight:600;padding:7px 13px;border-radius:15px;background:#262626;color:#d4d4d4}
+#planModal .plan .pill.b{background:#15355c;color:#3d9bff}
+#planModal .plan .pr{font-size:30px;font-weight:700;line-height:1;margin:18px 0 0}
+#planModal .plan .pr small{font-size:13px;font-weight:600;color:#9a9ea6}
+#planModal .plan .d{font-size:14px;line-height:1.35;color:#8d9097;margin-top:16px;min-height:0}
+.dv{height:1px;background:rgba(255,255,255,.09);margin:16px 0 18px}
+#planModal .plan ul{font-size:15px;line-height:1.3;gap:14px;margin:0}
+#planModal .plan li::before{color:#2fc15f;margin-right:8px}
+#planModal .sheet{padding-left:8px;padding-right:8px}
+#planModal .plan{padding:14px 11px 12px;border-radius:18px}
+#planModal .plan .pill{align-self:flex-start;font-size:12px;padding:6px 12px}
+#planModal .plan .pr{font-size:26px;margin-top:16px}
+#planModal .plan .pr small{font-size:12px}
+#planModal .plan .d{font-size:13px;margin-top:14px}
+.dv{margin:14px 0 16px}
+#planModal .plan ul{font-size:13px;gap:12px}
+#planModal .plan li::before{margin-right:6px}
+.pb{font-size:14px;padding:11px 4px}
+
+/* ===== Файлы ===== */
+.fsum{margin-top:20px;background:var(--row);border-radius:24px;padding:18px 18px 16px}
+.fsum .big{font-size:34px;font-weight:700;line-height:1;letter-spacing:-.5px}
+.fsum .sub{margin-top:8px;font-size:15px;color:var(--muted)}
+.fs-bar{display:flex;gap:3px;height:10px;margin:18px 0 16px}
+.fs-bar i{display:block;min-width:6px;border-radius:5px;background:var(--c);transform-origin:left center;animation:fsgrow .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k)*80ms)}
+@keyframes fsgrow{from{transform:scaleX(0)}}
+.fs-leg{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+@media (max-width:380px){.fsum{padding:16px 14px 14px}.fs-leg div,.fs-leg b{font-size:13px}.fs-leg div{gap:6px}}
+.fs-leg div{white-space:nowrap;display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);min-width:0}
+.fs-leg i{width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.fs-leg b{margin-left:auto;font-weight:600;color:var(--text);font-size:14px}
+.fsearch{position:relative;margin-top:14px}
+.fsearch svg{position:absolute;left:15px;top:50%;width:20px;height:20px;margin-top:-10px;color:var(--muted);pointer-events:none}
+.fsearch input{width:100%;height:46px;border:1px solid transparent;border-radius:16px;background:var(--row);color:#fff;font:inherit;font-size:16px;padding:0 14px 0 44px;outline:0;transition:.15s}
+.fsearch input::placeholder{color:#7d8696}
+.fsearch input:focus{border-color:#3b5f99}
+.chips{display:flex;gap:8px;margin:12px 0 4px;padding:0 24px 0 0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 28px),transparent)}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;height:36px;padding:0 15px;border-radius:18px;background:var(--row);color:#b5bcc9;font-size:15px;font-weight:600;transition:.15s}
+.chips button.on{background:#fff;color:#0b0e13}
+.fgh{margin:22px 4px 9px;font-size:15px;font-weight:600;color:var(--muted)}
+.fgrp{background:var(--row);border-radius:22px;overflow:hidden}
+.fr{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:12px 14px 12px 12px;transition:background .15s}
+.fr+.fr{border-top:1px solid rgba(255,255,255,.06)}
+.fr:active{background:#222b39}
+.ft{width:46px;height:46px;border-radius:15px;background:var(--cb);color:var(--c);display:grid;place-items:center;flex:none}
+.ft svg{width:23px;height:23px}
+.fr .tx{flex:1;min-width:0}
+.fr .nm2{font-size:17px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fr .lc{display:flex;align-items:center;gap:7px;margin-top:5px;font-size:14px;color:var(--muted)}
+.fr .lc{white-space:nowrap}.fr .lc .pi{width:15px;height:15px;color:var(--purple);flex:none;margin-left:1px}
+.fr .lc b{color:#c9ced8;font-weight:600;margin-right:3px}
+.fr .lc i{width:6px;height:6px;border-radius:50%;background:var(--blue);flex:none}
+.fr .lc i.ph{background:var(--purple)}
+.fr .sz{flex:none;font-size:16px;font-weight:600;text-align:right}
+.fr .chev{flex:none;width:18px;height:18px;color:#5d6676}
+.fempty{text-align:center;padding:48px 24px 24px;color:var(--muted);line-height:1.45}
+.fempty svg{width:34px;height:34px;color:#4a5363;margin-bottom:10px}
+.fempty b{display:block;color:var(--text);font-size:18px;margin-bottom:6px}
+.t-iso{--c:#6cb0ff;--cb:rgba(108,176,255,.14)}
+.t-archive{--c:#9d9ef7;--cb:rgba(139,140,245,.16)}
+.t-video{--c:#f0b86e;--cb:rgba(240,184,110,.14)}
+.t-audio{--c:#7fe0a0;--cb:rgba(127,224,160,.13)}
+.t-other{--c:#aab2c0;--cb:rgba(170,178,192,.13)}
+.fhead{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.fhead .tx{min-width:0;flex:1}
+.fhead b{display:block;font-size:19px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fhead small{display:block;margin-top:4px;font-size:15px;color:var(--muted)}
+.fa{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--row);border-radius:18px;padding:15px 16px;margin-bottom:9px;font-size:17px;font-weight:600;transition:.15s}
+.fa:active{transform:scale(.98)}
+.fa svg{width:22px;height:22px;color:var(--blue);flex:none}
+.fa small{display:block;margin-top:3px;font-size:14px;font-weight:400;color:var(--muted)}
+.fa.ph svg{color:var(--purple)}
+.fa.del{color:#ff8f8f}.fa.del svg{color:#ff8f8f}
+.fa.dis{opacity:.6}.fa.dis svg{color:var(--green)}
+@media (prefers-reduced-motion:reduce){.fs-bar i{animation:none}}
+
+/* мягкое растворение контента под шапкой и над меню */
+.view{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 var(--ft,0px),#000 calc(100% - var(--fb,0px)),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 var(--ft,0px),#000 calc(100% - var(--fb,0px)),transparent 100%)}
+</style>
+<div class="app" id="app">
+
+<div class="top">
+  <div><div class="eyebrow">Cloud Torrent Client</div><h1 id="title">Загрузки</h1></div>
+  <button class="round" id="cloudTop" aria-label="Облако"><svg viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.2 4.2 0 0 1-.5 8.5z"/></svg></button>
+</div>
+
+<!-- Загрузки -->
+<section class="view on" id="v-downloads">
+  <button class="cloud-row" id="gcRow">
+    <span class="l"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7.5" rx="2.2"/><rect x="3" y="13.5" width="18" height="7.5" rx="2.2"/><circle cx="7" cy="6.8" r=".6"/><circle cx="7" cy="17.3" r=".6"/></svg>Google Cloud</span>
+    <span class="status" id="gcStatus"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m7.8 12.3 3 3 5.4-6"/></svg><span>Подключён</span></span>
+  </button>
+  <div class="stats"><div class="stat"><svg viewBox="0 0 24 24"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M4.5 15.5v3a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5v-3"/></svg><b id="stA">2</b><span>Активные</span></div><div class="stat"><svg viewBox="0 0 24 24"><path d="M4 14.5 6.3 6.8A2 2 0 0 1 8.2 5.5h7.6a2 2 0 0 1 1.9 1.3L20 14.5"/><rect x="3.5" y="14.5" width="17" height="5" rx="1.8"/><path d="M7.5 17h.01"/></svg><b id="stS">260 ГБ</b><span>Объём торрентов</span></div></div>
+  <div class="sec"><h2>Активные загрузки</h2><span class="badge" id="count">2</span></div>
+  <div id="dls"></div>
+  <p class="note">Демонстрационный интерфейс. Скорости и загрузки вымышленные.</p>
+  <button class="add" id="addBtn"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span class="tx"><b>Добавить торрент</b><small>Magnet / .torrent / URL</small></span><svg class="chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+</section>
+
+<!-- Файлы -->
+<section class="view" id="v-files">
+  <div class="fsum" id="fSum"></div>
+  <label class="fsearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><input id="fQ" type="search" placeholder="Поиск по файлам" autocomplete="off" aria-label="Поиск по файлам"></label>
+  <div class="chips" id="fChips"><button class="on" data-f="all">Все</button><button data-f="iso">Образы</button><button data-f="archive">Архивы</button><button data-f="video">Видео</button><button data-f="audio">Аудио</button></div>
+  <div id="fList"></div>
+</section>
+
+<!-- Облако -->
+<section class="view" id="v-cloud">
+  <div class="list">
+    <button class="row-btn" id="gcToggle"><span>Google Cloud<br><small id="gcSub">Подключён</small></span><span class="sw on" id="gcSw"></span></button>
+    <div class="st" id="quota"><div class="h"><div class="t"><svg viewBox="0 0 24 24" style="color:var(--blue)"><path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.2 4.2 0 0 1-.5 8.5z"/></svg>Хранилище</div><span class="pill b" id="qPct">60%</span></div><div class="bar"><i id="qBar" style="width:60%;background:var(--blue)"></i></div><div class="f"><span id="qTxt">1,2 ТБ из 2 ТБ</span><span id="qFree">свободно 0,8 ТБ</span></div></div>
+    <div class="grp">Автоматизация</div>
+    <button class="row-btn" id="sync"><span>Автосинхронизация<br><small>Загружать завершённые в облако</small></span><span class="sw on"></span></button>
+    <button class="row-btn" id="optAuto"><span>Автопередача на Android<br><small>Сразу после загрузки в облако</small></span><span class="sw on"></span></button>
+    <button class="row-btn" id="optDel"><span>Автоудаление из облака<br><small>Освобождать место после передачи</small></span><span class="sw"></span></button>
+    <div class="grp">Управление</div>
+    <button class="row-btn" id="limRow"><span>Одновременные загрузки<br><small>Остальные ждут в очереди</small></span><span class="val" id="limVal">2</span></button>
+    <button class="row-btn act-row" id="cleanCloud"><span>Очистить облако<br><small>Удалить завершённые загрузки</small></span><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l.8 12a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4l.8-12M10 11v5M14 11v5"/></svg></button>
+  </div>
+</section>
+
+<!-- Настройки -->
+<section class="view" id="v-settings">
+  <div class="list">
+    <div class="grp" style="margin-top:0">Google Cloud</div>
+    <button class="row-btn" id="gcApiRow"><span>Подключение по API<br><small id="gcApiSub">Не подключён</small></span><svg width="20" height="20" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+    <div class="grp">Подписка</div>
+    <button class="row-btn" id="planRow"><span>Тариф<br><small id="planSub"></small></span><span class="val" id="planVal">Free</span></button>
+    <div class="grp">Сеть и питание</div>
+    <button class="row-btn"><span>Только Wi-Fi</span><span class="sw on"></span></button>
+    <button class="row-btn" id="optSpeed"><span>Ограничить скорость</span><span class="sw"></span></button>
+    <button class="row-btn" id="spdRow"><span>Лимит скорости<br><small>Действует при включённом ограничении</small></span><span class="val" id="spdVal">10 МБ/с</span></button>
+    <button class="row-btn" id="optChg"><span>Только при зарядке<br><small>Приостанавливать при разрядке</small></span><span class="sw"></span></button>
+    <div class="grp">Загрузки</div>
+    <button class="row-btn" id="optStart"><span>Автозапуск новых<br><small>Начинать сразу после добавления</small></span><span class="sw on"></span></button>
+    <button class="row-btn act-row" id="pauseAll"><span id="pauseTxt">Приостановить все<br><small>Для всех активных загрузок</small></span><svg width="20" height="20" viewBox="0 0 24 24"><path d="M9 5.5v13M15 5.5v13"/></svg></button>
+    <button class="row-btn"><span>Уведомления</span><span class="sw on"></span></button>
+    <button class="row-btn"><span>Папка загрузок<br><small>/Downloads/Torrents</small></span><svg width="20" height="20" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+  </div>
+</section>
+
+<section class="view" id="v-detail"><button class="back" id="back"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg>Назад</button><div id="detailBody"></div></section>
+<nav>
+  <button class="on" data-tab="downloads"><svg viewBox="0 0 24 24"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M4.5 15.5v3a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5v-3"/></svg>Загрузки</button>
+  <button data-tab="files"><svg viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2.2h7a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M3.5 10.5h17"/></svg>Файлы</button>
+  <button data-tab="cloud"><svg viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.2 4.2 0 0 1-.5 8.5z"/></svg>Облако</button>
+  <button data-tab="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Настройки</button>
+</nav>
+
+<div class="modal" id="modal">
+  <div class="sheet">
+    <div class="step on" id="stepChoice">
+      <h3>Добавить торрент</h3>
+      <button class="choice" id="pickFile"><svg viewBox="0 0 24 24"><path d="M14 3H7.5A2 2 0 0 0 5.5 5v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7.5z"/><path d="M14 3v4.5h4.5"/></svg><span class="tx"><b>Файлом</b><small>Выбрать .torrent</small></span><svg class="chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+      <button class="choice" id="pickLink"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="tx"><b>Ссылкой</b><small>Magnet или URL</small></span><svg class="chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+      <button class="cancel-full" id="cancel">Отмена</button>
+    </div>
+    <div class="step" id="stepLink">
+      <h3>Добавить по ссылке</h3>
+      <input id="src" placeholder="Magnet-ссылка или URL" autocomplete="off">
+      <div class="acts"><button id="linkBack">Назад</button><button class="ok" id="ok">Добавить</button></div>
+    </div>
+    <input type="file" id="fileIn" accept=".torrent,application/x-bittorrent" hidden>
+  </div>
+</div>
+<div class="modal" id="gcModal"><div class="sheet">
+  <h3>Google Cloud API</h3>
+  <input id="gcProj" placeholder="Project ID" autocomplete="off" style="margin-bottom:10px">
+  <input id="gcKey" type="password" placeholder="API-ключ" autocomplete="off">
+  <p class="note" style="font-size:14px;margin:10px 0 0">Ключ создаётся в Google Cloud Console: API и сервисы → Учётные данные. Для проекта должен быть включён Google Drive API.</p>
+  <div class="acts"><button id="gcCancel">Отмена</button><button class="ok" id="gcOk">Подключить</button></div>
+  <button class="cancel-full" id="gcOff" style="margin-top:10px" hidden>Отключить</button>
+</div></div>
+<div class="modal" id="planModal"><div class="sheet tall">
+  <div class="plans"><div class="plan" id="plFree"><span class="pill">FREE</span><div class="pr">$0</div><div class="d">Бесплатно навсегда</div><div class="dv"></div><ul><li>1 активный торрент</li><li>До 20 ГБ на задачу</li><li>Google Drive</li><li>Базовая очередь</li><li>Реклама</li></ul><button class="pb" id="stay">Остаться</button></div>
+  <div class="plan" id="plPrem"><span class="pill b">PREMIUM</span><div class="pr">$4.99 <small>/ мес.</small></div><div class="d">Расширенные возможности</div><div class="dv"></div><ul><li>До 5 торрентов</li><li>До 500 ГБ на задачу</li><li>Google Drive + телефон</li><li>Приоритет в очереди</li><li>Без рекламы</li></ul><button class="pb ok" id="buy">Подписаться</button></div></div>
+</div></div>
+<div class="modal" id="fileModal"><div class="sheet" id="fileSheet"></div></div>
+<div class="toast" id="toast"></div>
+</div>
+
+<script>
+const ico='<svg viewBox="0 0 24 24"><path d="M14 3H7.5A2 2 0 0 0 5.5 5v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7.5z"/><path d="M14 3v4.5h4.5"/><path d="M9.5 9.5h1.5M9.5 12h1.5"/><circle cx="10" cy="16.5" r="1.3"/></svg>';
+const $=s=>document.querySelector(s);
+const opt={auto:true,autoDel:false,limit:2,speedOn:false,speed:10,autoStart:true};
+let plan='free';
+const LIM={free:{n:1,gb:20,phone:false},prem:{n:5,gb:500,phone:true}};
+const lim=()=>Math.min(opt.limit,LIM[plan].n);
+const ev=v=>opt.speedOn?Math.min(v,opt.speed):v;
+const names={downloads:'Загрузки',files:'Файлы',cloud:'Облако',settings:'Настройки'};
+let dls=[
+  {n:'Game_Archive.iso',p:68,ph:25,pv:12,phOn:true,s:'218 ГБ',v:85,c:'var(--blue)',on:true},
+  {n:'Project_Assets.zip',p:34,ph:10,pv:8,phOn:true,s:'42 ГБ',v:21,c:'var(--purple)',on:true}
+];
+function render(){
+  $('#dls').innerHTML=dls.map((d,i)=>`<button class="dl ${d.on?'':'paused'}" data-i="${i}">
+    <div class="h"><div class="n">${ico}<span>${d.n}</span><span class="pill pl ${stat(d)[1]}">${stat(d)[0]}</span></div><span class="pc">${Math.floor(prog(d)[0])}%</span></div>
+    <div class="bar"><i style="width:${prog(d)[0]}%;background:${prog(d)[1]}"></i></div>
+    <div class="f"><span>${d.s} · <span class="eta">${etaT(d)}</span></span><span class="spd">${spdT(d)}</span></div></button>`).join('');
+  renderCloud();renderPause();$('#count').textContent=dls.length;$('#stA').textContent=dls.length;$('#stS').textContent=Math.round(dls.reduce((a,d)=>a+parseFloat(d.s),0))+' ГБ';
+  renderFiles();
+}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1800)}
+function tab(t){
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+t));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
+  $('#title').textContent=names[t];
+  if(t==='files')renderFiles();
+}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+$('#cloudTop').onclick=()=>tab('cloud');
+let cur=null,dtab='server';
+function fmt(s){s=Math.ceil(s);if(s<60)return s+' с';const m=Math.ceil(s/60);if(m<60)return m+' мин';return Math.floor(m/60)+' ч '+(m%60)+' мин'}
+const qList=()=>dls.filter(d=>d.on&&d.p<100);
+const queued=d=>d.on&&d.p<100&&qList().indexOf(d)>=lim();
+function stat(d){if(!d.on)return['Пауза',''];if(queued(d))return['Очередь',''];if(d.p<100)return['Cloud','b'];if(d.ph<100)return['Android','p'];return['Готово','g']}
+function etaT(d){if(!d.on)return 'приостановлено';if(queued(d))return 'в очереди';if(d.p<100)return 'ещё ~'+fmt((100-d.p)/(ev(d.v)/200));if(d.ph<100)return d.phOn?'ещё ~'+fmt((100-d.ph)/(ev(d.pv)/200)):'ожидание';return 'готово'}
+function spdT(d){if(!d.on)return 'Пауза';if(queued(d))return '—';if(d.p<100)return ev(d.v)+' МБ/с';if(d.ph<100&&d.phOn)return ev(d.pv)+' МБ/с';return d.ph>=100?'Готово':'—'}
+function prog(d){return d.p<100?[d.p,'var(--blue)']:[d.ph,'var(--purple)']}
+function updList(){document.querySelectorAll('.dl').forEach((el,i)=>{const d=dls[i];if(!d)return;const s=stat(d),pl=el.querySelector('.pl'),pg=prog(d);pl.textContent=s[0];pl.className='pill pl '+s[1];el.querySelector('.pc').textContent=Math.floor(pg[0])+'%';const b=el.querySelector('.bar i');b.style.width=pg[0]+'%';b.style.background=pg[1];el.querySelector('.eta').textContent=etaT(d);el.querySelector('.spd').textContent=spdT(d);el.classList.toggle('paused',!d.on)})}names.detail='Загрузка';
+const nf=n=>n.toFixed(1).replace('.',',');
+function renderDetail(){
+ const d=dls[cur];if(!d)return;
+ const tot=parseFloat(d.s.replace(',','.'));
+ const card=(ttl,icon,pill,blue,pct,col,spd,note)=>`<div class="st"><div class="h"><div class="t">${icon}<span>${ttl}</span></div><span class="pill ${blue?'b':''}">${pill}</span></div><div class="nm"><span>${d.n}</span><b>${Math.floor(pct)}%</b></div><div class="bar"><i style="width:${pct}%;background:${col}"></i></div><div class="f"><span>${nf(tot*pct/100)} / ${tot} ГБ</span><span>${pct>=100?'Готово':d.on?spd+' МБ/с':'Пауза'}</span></div><p>${note}</p></div>`;
+ const cl='<svg viewBox="0 0 24 24" style="color:var(--blue)"><path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.2 4.2 0 0 1-.5 8.5"/><path d="M12 11v6m-2.5-2.5L12 17l2.5-2.5"/></svg>';
+ const ph='<svg viewBox="0 0 24 24" style="color:var(--purple)"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>';
+ const sv='<svg width="22" height="22" viewBox="0 0 24 24" style="color:var(--blue);flex:none"><rect x="3" y="3" width="18" height="7.5" rx="2.2"/><rect x="3" y="13.5" width="18" height="7.5" rx="2.2"/><circle cx="7" cy="6.8" r=".6"/><circle cx="7" cy="17.3" r=".6"/></svg>';
+ const pi='<svg width="22" height="22" viewBox="0 0 24 24" style="color:var(--purple);flex:none"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>';
+ const mk=(pct,col,spd,icon,txt)=>`<div class="st"><div class="nm" style="margin-top:0"><span style="font-size:20px;font-weight:600">${d.n}</span><b style="color:${col}">${Math.floor(pct)}%</b></div><div class="bar"><i style="width:${pct}%;background:${col}"></i></div><div class="f"><span>${pct>=100?'Готово':d.on?spd+' МБ/с':'Пауза'}</span><span>${nf(tot*pct/100)} / ${tot} ГБ</span></div><div class="f" style="margin-top:6px"><span>${pct>=100?'':d.on?'Осталось ~'+fmt((100-pct)/(spd/200)):''}</span></div><p style="display:flex;align-items:center;gap:8px;font-size:16px;color:#aab2c0">${icon}${txt}</p></div>`;
+ $('#detailBody').innerHTML=`<div class="seg"><button data-dt="server" class="${dtab==='server'?'on':''}">Cloud</button><button data-dt="phone" class="${dtab==='phone'?'on':''}">Android</button></div>`+(dtab==='server'?mk(d.p,'var(--blue)',ev(d.v),sv,'Скачивается на облачный сервер'):(d.phOn||d.ph>=100?mk(d.ph,'var(--purple)',ev(d.pv),pi,'Скачивается на Android-устройство'):`<div class="st"><div class="nm" style="margin-top:0"><span style="font-size:20px;font-weight:600">${d.n}</span><b style="color:var(--purple)">0%</b></div><div class="bar"><i style="width:0"></i></div><p style="display:flex;align-items:center;gap:8px;font-size:16px;color:#aab2c0;margin:0">${pi}Автозапуск после завершения на сервере</p><button class="act2" data-start>Скачать на Android</button></div>`))+`<button class="act">${d.on?'Приостановить':'Возобновить'}</button>`;
+}
+$('#dls').onclick=e=>{const b=e.target.closest('.dl');if(!b)return;cur=+b.dataset.i;renderDetail();tab('detail');document.querySelector('nav [data-tab=downloads]').classList.add('on')};
+$('#back').onclick=()=>tab('downloads');
+$('#detailBody').addEventListener('click',e=>{const b=e.target.closest('[data-dt]');if(b){dtab=b.dataset.dt;renderDetail()}if(e.target.closest('[data-start]')){if(!LIM[plan].phone){openPlans(true);return}dls[cur].phOn=true;renderDetail();updList();toast('Передача на Android запущена')}});
+$('#detailBody').onclick=e=>{if(e.target.closest('.act')){const d=dls[cur];d.on=!d.on;render();renderDetail();toast(d.on?'Загрузка возобновлена':'Загрузка приостановлена')}};
+setInterval(()=>{dls.forEach(d=>{if(d.p>=100&&d.ph<100&&opt.auto&&LIM[plan].phone)d.phOn=true;if(d.on&&d.phOn&&LIM[plan].phone&&d.ph<d.p)d.ph=Math.min(d.p,d.ph+ev(d.pv)/200);if(opt.autoDel&&d.ph>=100)d.cloudDel=true});updList();if($('#v-detail').classList.contains('on'))renderDetail()},1000);
+let gc=false,gcKey='',gcProj='';
+function setGc(q){
+  $('#gcStatus').className='status'+(gc?'':' off');
+  $('#gcStatus').lastElementChild.textContent=gc?'Подключён':'Не подключён';
+  $('#gcSw').classList.toggle('on',gc);$('#gcSub').textContent=gc?'Подключён':'Не подключён';$('#gcApiSub').textContent=gc?'Подключён · '+gcProj:'Не подключён';
+  if(!q)toast(gc?'Google Cloud подключён':'Google Cloud отключён');
+}
+$('#gcRow').onclick=()=>{gc?tab('settings'):openGc(true)};
+$('#gcToggle').onclick=()=>{if(gc){gc=false;setGc()}else openGc(true)};
+document.querySelectorAll('.row-btn').forEach(b=>{const s=b.querySelector('.sw');if(s&&b.id!=='gcToggle')b.addEventListener('click',()=>s.classList.toggle('on'))});
+const step=n=>{$('#stepChoice').classList.toggle('on',n==='choice');$('#stepLink').classList.toggle('on',n==='link')};
+const open=v=>{$('#modal').classList.toggle('on',v);if(v){step('choice');$('#src').value='';$('#fileIn').value=''}};
+const addTorrent=n=>{
+  const gb=Math.floor(Math.random()*50+1);
+  if(gb>LIM[plan].gb){open(false);toast('Торрент '+gb+' ГБ: на Free лимит '+LIM[plan].gb+' ГБ');setTimeout(()=>openPlans(true),1200);return}
+  dls.push({n:n.slice(0,24),p:0,ph:0,pv:10,phOn:false,s:gb+' ГБ',v:Math.floor(Math.random()*60+10),c:'var(--blue)',on:opt.autoStart});
+  open(false);render();toast('Торрент добавлен');
+};
+$('#addBtn').onclick=()=>open(true);
+$('#cancel').onclick=()=>open(false);
+$('#modal').onclick=e=>{if(e.target.id==='modal')open(false)};
+$('#pickFile').onclick=()=>$('#fileIn').click();
+$('#fileIn').onchange=e=>{const f=e.target.files[0];if(f)addTorrent(f.name.replace(/\.torrent$/i,'')||'New_Torrent')};
+$('#pickLink').onclick=()=>{step('link');setTimeout(()=>$('#src').focus(),50)};
+$('#linkBack').onclick=()=>step('choice');
+$('#ok').onclick=()=>{
+  const v=$('#src').value.trim();
+  if(!v){toast('Вставьте ссылку');return}
+  addTorrent(v.startsWith('magnet')?'New_Torrent':v.split('/').pop().split('?')[0]||'New_Torrent');
+};
+$('#src').addEventListener('keydown',e=>{if(e.key==='Enter')$('#ok').click()});
+const fmtGB=g=>g>=1000?nf(g/1000)+' ТБ':Math.round(g)+' ГБ';
+function renderCloud(){
+  const used=940+dls.filter(d=>!d.cloudDel).reduce((a,d)=>a+parseFloat(String(d.s).replace(',','.')),0);
+  const pct=Math.min(100,used/2000*100);
+  $('#qTxt').textContent=fmtGB(used)+' из 2 ТБ';$('#qFree').textContent='свободно '+fmtGB(Math.max(0,2000-used));
+  $('#qPct').textContent=Math.round(pct)+'%';$('#qBar').style.width=pct+'%';
+  $('#qBar').style.background=pct>90?'#ff7a7a':'var(--blue)';
+}
+function renderPause(){
+  const any=dls.some(d=>d.on);
+  $('#pauseTxt').innerHTML=(any?'Приостановить все':'Возобновить все')+'<br><small>'+(any?'Для всех активных загрузок':'Продолжить все загрузки')+'</small>';
+}
+const bind=(id,k)=>$('#'+id).addEventListener('click',()=>{opt[k]=$('#'+id+' .sw').classList.contains('on')});
+bind('optAuto','auto');bind('optDel','autoDel');bind('optStart','autoStart');
+$('#optSpeed').addEventListener('click',()=>{opt.speedOn=$('#optSpeed .sw').classList.contains('on');updList()});
+$('#limRow').onclick=()=>{const a=[1,2,3,5];opt.limit=a[(a.indexOf(opt.limit)+1)%a.length];$('#limVal').textContent=opt.limit;updList();toast('Одновременно: '+opt.limit)};
+$('#spdRow').onclick=()=>{const a=[5,10,25,50,100];opt.speed=a[(a.indexOf(opt.speed)+1)%a.length];$('#spdVal').textContent=opt.speed+' МБ/с';updList();toast('Лимит: '+opt.speed+' МБ/с')};
+$('#cleanCloud').onclick=()=>{const l=dls.filter(d=>d.p>=100&&!d.cloudDel);if(!l.length){toast('Нет завершённых загрузок');return}l.forEach(d=>d.cloudDel=true);renderCloud();toast('Удалено из облака: '+l.length)};
+$('#pauseAll').onclick=()=>{const any=dls.some(d=>d.on);dls.forEach(d=>d.on=!any);render();updList();toast(any?'Все загрузки приостановлены':'Все загрузки возобновлены')};
+setInterval(()=>{dls.forEach(d=>{if(d.on&&d.p<100&&!queued(d))d.p=Math.min(100,d.p+ev(d.v)/200)});updList();renderCloud()},1000);
+function renderPlan(){
+  const p=plan==='prem';
+  
+  
+  
+  $('#planVal').textContent=p?'Premium':'Free';$('#planSub').textContent=p?'$4.99 / мес':'Бесплатно, с ограничениями';
+  $('#limVal').textContent=lim();
+  $('#plFree').classList.toggle('cur',!p);$('#plPrem').classList.toggle('cur',p);
+  $('#buy').textContent=p?'Подписка активна':'Подписаться';$('#buy').disabled=p;$('#stay').textContent=p?'Перейти на Free':'Остаться';
+  updList();renderCloud();
+}
+const openPlans=(v=true)=>$('#planModal').classList.toggle('on',v);
+$('#planModal').onclick=e=>{if(e.target.id==='planModal')openPlans(false)};
+$('#planRow').onclick=()=>openPlans(true);
+$('#stay').onclick=()=>{if(plan==='prem'){plan='free';renderPlan();toast('Вы перешли на Free')}openPlans(false)};
+$('#buy').onclick=()=>{
+  /* TODO: здесь вызвать платёжный провайдер (например, Google Play Billing) и менять plan только после подтверждения оплаты */
+  if(plan==='prem')return;plan='prem';openPlans(false);renderPlan();
+  toast('Premium активирован (демо)');
+};
+$('#v-cloud').addEventListener('click',e=>{if(plan==='free'&&e.target.closest('#optAuto,#limRow')){e.stopPropagation();openPlans(true)}},true);
+function openGc(v){
+  $('#gcModal').classList.toggle('on',v);
+  if(v){$('#gcProj').value=gcProj;$('#gcKey').value=gcKey;$('#gcOk').textContent=gc?'Сохранить':'Подключить';$('#gcOff').hidden=!gc}
+}
+$('#gcModal').onclick=e=>{if(e.target.id==='gcModal')openGc(false)};
+$('#gcCancel').onclick=()=>openGc(false);
+$('#gcApiRow').onclick=()=>openGc(true);
+$('#gcOk').onclick=()=>{
+  const p=$('#gcProj').value.trim(),k=$('#gcKey').value.trim();
+  if(!p||!k){toast('Заполните Project ID и API-ключ');return}
+  if(k.length<20){toast('API-ключ слишком короткий');return}
+  /* TODO: отправить ключ на ваш сервер и проверить запросом к Google API; в клиенте ключ не хранить */
+  gcProj=p;gcKey=k;gc=true;openGc(false);setGc();
+};
+$('#gcOff').onclick=()=>{gc=false;gcKey='';openGc(false);setGc()};
+
+/* ===== Файлы ===== */
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const FT={
+ iso:{n:'Образы',i:'<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.4"/>'},
+ archive:{n:'Архивы',i:'<rect x="4.5" y="3.5" width="15" height="17" rx="2.5"/><path d="M12 3.5v3.5m0 3v2m0 2.5v1.5"/><rect x="10.3" y="15.5" width="3.4" height="3" rx="1"/>'},
+ video:{n:'Видео',i:'<rect x="3.5" y="5.5" width="17" height="13" rx="3"/><path d="m10.4 9.4 4.2 2.6-4.2 2.6z"/>'},
+ audio:{n:'Аудио',i:'<path d="M9 17.5V6.5l9-2v11"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="15.5" cy="15.5" r="2.5"/>'},
+ other:{n:'Прочее',i:'<path d="M14 3H7.5A2 2 0 0 0 5.5 5v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7.5z"/><path d="M14 3v4.5h4.5"/>'}
+};
+const ftype=n=>/\.(iso|img|dmg)$/i.test(n)?'iso':/\.(zip|rar|7z|tar|gz|tgz)$/i.test(n)?'archive':/\.(mkv|mp4|avi|mov|webm)$/i.test(n)?'video':/\.(flac|mp3|wav|aac|ogg)$/i.test(n)?'audio':'other';
+const fg=g=>g>=1000?nf(g/1000)+' ТБ':g<10&&g%1?nf(g)+' ГБ':Math.round(g)+' ГБ';
+const fsvg=t=>'<svg viewBox="0 0 24 24">'+FT[t].i+'</svg>';
+const chevS='<svg class="chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>';
+let fStatic=[
+ {id:'s1',n:'Backup_2026.zip',gb:12,g:0,ph:true},
+ {id:'s2',n:'Soundtrack.flac',gb:1.4,g:0,ph:false},
+ {id:'s3',n:'Documentary_4K.mkv',gb:58,g:1,ph:false},
+ {id:'s4',n:'Ubuntu_24.04.iso',gb:6,g:1,ph:true},
+ {id:'s5',n:'Photos_Archive.rar',gb:34,g:2,ph:false},
+ {id:'s6',n:'Lecture_Series.mp4',gb:9,g:2,ph:true}
+];
+let fFilter='all',fQuery='',fSel=null;
+const FG=['Сегодня','Вчера','Ранее'];
+const plural=(n,a,b,c)=>{const m=n%100,k=n%10;return m>10&&m<20?c:k===1?a:k>1&&k<5?b:c};
+function allFiles(){
+  const fromDl=dls.map((d,i)=>({d,i})).filter(x=>x.d.p>=100&&!x.d.cloudDel).map(x=>({id:'d'+x.i,n:x.d.n,gb:parseFloat(String(x.d.s).replace(',','.')),g:0,ph:x.d.ph>=100,d:x.d}));
+  return fromDl.concat(fStatic).map(f=>({...f,t:ftype(f.n)}));
+}
+function renderFiles(){
+  if(!$('#fSum'))return;
+  const all=allFiles(),total=all.reduce((a,f)=>a+f.gb,0);
+  const by={};all.forEach(f=>by[f.t]=(by[f.t]||0)+f.gb);
+  const keys=Object.keys(FT).filter(k=>by[k]>0).sort((a,b)=>by[b]-by[a]);
+  $('#fSum').innerHTML=`<div class="big">${fg(total)}</div><div class="sub">${all.length} ${plural(all.length,'файл','файла','файлов')} в облаке</div>
+   <div class="fs-bar">${keys.map((k,j)=>`<i class="t-${k}" style="flex:${by[k]} 1 0;--k:${j}"></i>`).join('')}</div>
+   <div class="fs-leg">${keys.map(k=>`<div class="t-${k}"><i></i>${FT[k].n}<b>${fg(by[k])}</b></div>`).join('')}</div>`;
+  const q=fQuery.trim().toLowerCase();
+  const list=all.filter(f=>(fFilter==='all'||f.t===fFilter)&&(!q||f.n.toLowerCase().includes(q)));
+  if(!list.length){
+    $('#fList').innerHTML=`<div class="fempty"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><b>Ничего не найдено</b>Измените запрос или выберите другой тип файлов.</div>`;return;
+  }
+  $('#fList').innerHTML=FG.map((g,gi)=>{
+    const items=list.filter(f=>f.g===gi);if(!items.length)return'';
+    return `<div class="fgh">${g}</div><div class="fgrp">`+items.map(f=>`<button class="fr t-${f.t}" data-id="${f.id}"><span class="ft">${fsvg(f.t)}</span><span class="tx"><div class="nm2">${esc(f.n)}</div><div class="lc"><b>${fg(f.gb)}</b><i></i>Cloud${f.ph?'<svg class="pi" viewBox="0 0 24 24" aria-label="Android"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>':''}</div></span>${chevS}</button>`).join('')+'</div>';
+  }).join('');
+}
+function openFile(id){
+  const f=allFiles().find(x=>x.id===id);if(!f)return;fSel=id;
+  $('#fileSheet').innerHTML=`<div class="fhead t-${f.t}"><span class="ft">${fsvg(f.t)}</span><span class="tx"><b>${esc(f.n)}</b><small>${fg(f.gb)}, ${FT[f.t].n.toLowerCase()}</small></span></div>
+   ${f.ph?`<div class="fa dis" style="pointer-events:none"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m7.8 12.3 3 3 5.4-6"/></svg><span>Уже на Android<small>Файл скачан на устройство</small></span></div>`
+   :`<button class="fa ph" data-a="phone"><svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 8v6m-2.5-2.5L12 14l2.5-2.5"/></svg><span>Скачать на Android<small>${LIM[plan].phone?'Передача начнётся сразу':'Доступно в Premium'}</small></span></button>`}
+   <button class="fa" data-a="share"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span>Скопировать ссылку</span></button>
+   <button class="fa del" data-a="del"><svg viewBox="0 0 24 24"><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l.8 12a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4l.8-12M10 11v5M14 11v5"/></svg><span>Удалить из облака</span></button>
+   <button class="cancel-full" data-a="close">Закрыть</button>`;
+  $('#fileModal').classList.add('on');
+}
+const closeFile=()=>{$('#fileModal').classList.remove('on');fSel=null};
+$('#fList').onclick=e=>{const b=e.target.closest('.fr');if(b)openFile(b.dataset.id)};
+$('#fileModal').onclick=e=>{
+  if(e.target.id==='fileModal')return closeFile();
+  const a=e.target.closest('[data-a]');if(!a)return;
+  const id=fSel,f=allFiles().find(x=>x.id===id),k=a.dataset.a;
+  if(k==='close')return closeFile();
+  if(!f)return closeFile();
+  if(k==='phone'){
+    if(!LIM[plan].phone){closeFile();openPlans(true);return}
+    if(f.d)f.d.ph=100;else fStatic.find(x=>x.id===id).ph=true;
+    closeFile();renderFiles();toast('Передача на Android запущена');
+  }
+  if(k==='share'){closeFile();toast('Ссылка скопирована (демо)')}
+  if(k==='del'){
+    if(f.d)f.d.cloudDel=true;else fStatic=fStatic.filter(x=>x.id!==id);
+    closeFile();render();toast('Удалено из облака');
+  }
+};
+$('#fQ').addEventListener('input',e=>{fQuery=e.target.value;renderFiles()});
+$('#fChips').onclick=e=>{const b=e.target.closest('button');if(!b)return;fFilter=b.dataset.f;document.querySelectorAll('#fChips button').forEach(x=>x.classList.toggle('on',x===b));renderFiles()};
+
+function fade(v){const m=36,t=v.scrollTop,b=v.scrollHeight-v.clientHeight-t;v.style.setProperty('--ft',Math.max(0,Math.min(t,m))+'px');v.style.setProperty('--fb',Math.max(0,Math.min(b,m))+'px')}
+document.querySelectorAll('.view').forEach(v=>v.addEventListener('scroll',()=>fade(v),{passive:true}));
+new MutationObserver(()=>document.querySelectorAll('.view.on').forEach(fade)).observe($('#app'),{subtree:true,childList:true,attributes:true,attributeFilter:['class']});
+addEventListener('resize',()=>document.querySelectorAll('.view.on').forEach(fade));
+setGc(1);render();renderPlan();document.querySelectorAll('.view.on').forEach(fade);
+</script>
+
+
+</body></html>

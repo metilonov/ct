@@ -1,0 +1,9 @@
+/workspace/cloud-torrent/scripts/scheduler_transfer.py:9: DeprecationWarning: create_torrent constructor from file_storage is deprecated
+  t=lt.create_torrent(fs,16384,flags=lt.create_torrent.v1_only);lt.set_piece_hashes(t,str(seed));raw=lt.bencode(t.generate());ti=lt.torrent_info(raw)
+{
+  "passed": true,
+  "torrent_state": "ready",
+  "workspace_removed_after_receipt": true,
+  "sink": "local verified copy, not Google Drive",
+  "bytes": 60000
+}

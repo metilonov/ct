@@ -1,0 +1,4 @@
+Copyright 2011 Google Inc. All Rights Reserved.
+Licensed under the Apache License, Version 2.0
+http://www.apache.org/licenses/LICENSE-2.0
+Pulled from the Android 14 emulator system image for reference rendering only.

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "crash_exit_code": 44,
+  "unconfirmed_data_retained": true,
+  "recovered_without_seeder": true,
+  "final_state": "ready",
+  "cleanup_after_verified_receipt": true,
+  "scope": "real libtorrent, local verified sink; not Google Drive"
+}

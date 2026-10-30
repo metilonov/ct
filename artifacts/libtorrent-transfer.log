@@ -1,0 +1,14 @@
+/workspace/cloud-torrent/scripts/local_transfer.py:16: DeprecationWarning: create_torrent constructor from file_storage is deprecated
+  t = lt.create_torrent(fs, 16384, flags=lt.create_torrent.v1_only)
+{
+  "selected_file_bytes": 60000,
+  "sha256": "f14a22a5638cee620006cc91fd75472f8a4557cc9a885105f0c7850b673f39ef",
+  "file_progress": [
+    7232,
+    60000,
+    14688
+  ],
+  "passed": true,
+  "fixture": "self-created legal text",
+  "scope": "loopback selective download, not BotHost or Google Drive"
+}

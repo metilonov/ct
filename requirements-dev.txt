@@ -1,0 +1,6 @@
+-r backend/requirements.txt
+pytest==9.2.0
+ruff==0.17.3
+playwright==1.62.0
+Pillow==12.3.0
+fonttools==4.61.1

@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "files": 208,
+  "forbidden_credential_files": [],
+  "required_project_files_present": true,
+  "zip_crc_valid": true,
+  "scope": "Archive structure/CRC, not a complete secret/security audit"
+}

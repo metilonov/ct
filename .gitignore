@@ -1,0 +1,12 @@
+data/
+.env
+*.jks
+*.keystore
+*.enc
+__pycache__/
+.pytest_cache/
+android/.gradle/
+android/local.properties
+android/**/build/
+
+.ruff_cache/

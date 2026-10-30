@@ -1,0 +1,3952 @@
+[
+  {
+    "index": 0,
+    "tag": "DIV",
+    "id": "",
+    "classes": "top",
+    "attributes": {
+      "class": "top"
+    },
+    "text": null
+  },
+  {
+    "index": 1,
+    "tag": "DIV",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 2,
+    "tag": "DIV",
+    "id": "",
+    "classes": "eyebrow",
+    "attributes": {
+      "class": "eyebrow"
+    },
+    "text": "Cloud Torrent Client"
+  },
+  {
+    "index": 3,
+    "tag": "H1",
+    "id": "title",
+    "classes": null,
+    "attributes": {
+      "id": "title"
+    },
+    "text": "Загрузки"
+  },
+  {
+    "index": 4,
+    "tag": "BUTTON",
+    "id": "cloudTop",
+    "classes": "round",
+    "attributes": {
+      "class": "round",
+      "id": "cloudTop",
+      "aria-label": "Облако"
+    },
+    "text": null
+  },
+  {
+    "index": 5,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 6,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.2 4.2 0 0 1-.5 8.5z"
+    },
+    "text": ""
+  },
+  {
+    "index": 7,
+    "tag": "SECTION",
+    "id": "v-downloads",
+    "classes": "view on",
+    "attributes": {
+      "class": "view on",
+      "id": "v-downloads",
+      "style": "--ft: 0px; --fb: 0px;"
+    },
+    "text": null
+  },
+  {
+    "index": 8,
+    "tag": "BUTTON",
+    "id": "gcRow",
+    "classes": "cloud-row",
+    "attributes": {
+      "class": "cloud-row",
+      "id": "gcRow"
+    },
+    "text": null
+  },
+  {
+    "index": 9,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "l",
+    "attributes": {
+      "class": "l"
+    },
+    "text": null
+  },
+  {
+    "index": 10,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 11,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "3",
+      "y": "3",
+      "width": "18",
+      "height": "7.5",
+      "rx": "2.2"
+    },
+    "text": ""
+  },
+  {
+    "index": 12,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "3",
+      "y": "13.5",
+      "width": "18",
+      "height": "7.5",
+      "rx": "2.2"
+    },
+    "text": ""
+  },
+  {
+    "index": 13,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "7",
+      "cy": "6.8",
+      "r": ".6"
+    },
+    "text": ""
+  },
+  {
+    "index": 14,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "7",
+      "cy": "17.3",
+      "r": ".6"
+    },
+    "text": ""
+  },
+  {
+    "index": 15,
+    "tag": "SPAN",
+    "id": "gcStatus",
+    "classes": "status off",
+    "attributes": {
+      "class": "status off",
+      "id": "gcStatus"
+    },
+    "text": null
+  },
+  {
+    "index": 16,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 17,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "12",
+      "cy": "12",
+      "r": "9.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 18,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m7.8 12.3 3 3 5.4-6"
+    },
+    "text": ""
+  },
+  {
+    "index": 19,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Не подключён"
+  },
+  {
+    "index": 20,
+    "tag": "DIV",
+    "id": "",
+    "classes": "stats",
+    "attributes": {
+      "class": "stats"
+    },
+    "text": null
+  },
+  {
+    "index": 21,
+    "tag": "DIV",
+    "id": "",
+    "classes": "stat",
+    "attributes": {
+      "class": "stat"
+    },
+    "text": null
+  },
+  {
+    "index": 22,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 23,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M12 4v11m-4.5-4.5L12 15l4.5-4.5M4.5 15.5v3a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5v-3"
+    },
+    "text": ""
+  },
+  {
+    "index": 24,
+    "tag": "B",
+    "id": "stA",
+    "classes": null,
+    "attributes": {
+      "id": "stA"
+    },
+    "text": "2"
+  },
+  {
+    "index": 25,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Активные"
+  },
+  {
+    "index": 26,
+    "tag": "DIV",
+    "id": "",
+    "classes": "stat",
+    "attributes": {
+      "class": "stat"
+    },
+    "text": null
+  },
+  {
+    "index": 27,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 28,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M4 14.5 6.3 6.8A2 2 0 0 1 8.2 5.5h7.6a2 2 0 0 1 1.9 1.3L20 14.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 29,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "3.5",
+      "y": "14.5",
+      "width": "17",
+      "height": "5",
+      "rx": "1.8"
+    },
+    "text": ""
+  },
+  {
+    "index": 30,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M7.5 17h.01"
+    },
+    "text": ""
+  },
+  {
+    "index": 31,
+    "tag": "B",
+    "id": "stS",
+    "classes": null,
+    "attributes": {
+      "id": "stS"
+    },
+    "text": "260 ГБ"
+  },
+  {
+    "index": 32,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Объём торрентов"
+  },
+  {
+    "index": 33,
+    "tag": "DIV",
+    "id": "",
+    "classes": "sec",
+    "attributes": {
+      "class": "sec"
+    },
+    "text": null
+  },
+  {
+    "index": 34,
+    "tag": "H2",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Активные загрузки"
+  },
+  {
+    "index": 35,
+    "tag": "SPAN",
+    "id": "count",
+    "classes": "badge",
+    "attributes": {
+      "class": "badge",
+      "id": "count"
+    },
+    "text": "2"
+  },
+  {
+    "index": 36,
+    "tag": "DIV",
+    "id": "dls",
+    "classes": null,
+    "attributes": {
+      "id": "dls"
+    },
+    "text": null
+  },
+  {
+    "index": 37,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "dl ",
+    "attributes": {
+      "class": "dl ",
+      "data-i": "0"
+    },
+    "text": null
+  },
+  {
+    "index": 38,
+    "tag": "DIV",
+    "id": "",
+    "classes": "h",
+    "attributes": {
+      "class": "h"
+    },
+    "text": null
+  },
+  {
+    "index": 39,
+    "tag": "DIV",
+    "id": "",
+    "classes": "n",
+    "attributes": {
+      "class": "n"
+    },
+    "text": null
+  },
+  {
+    "index": 40,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 41,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M14 3H7.5A2 2 0 0 0 5.5 5v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7.5z"
+    },
+    "text": ""
+  },
+  {
+    "index": 42,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M14 3v4.5h4.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 43,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M9.5 9.5h1.5M9.5 12h1.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 44,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "10",
+      "cy": "16.5",
+      "r": "1.3"
+    },
+    "text": ""
+  },
+  {
+    "index": 45,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Game_Archive.iso"
+  },
+  {
+    "index": 46,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "pill pl b",
+    "attributes": {
+      "class": "pill pl b"
+    },
+    "text": "Cloud"
+  },
+  {
+    "index": 47,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "pc",
+    "attributes": {
+      "class": "pc"
+    },
+    "text": "68%"
+  },
+  {
+    "index": 48,
+    "tag": "DIV",
+    "id": "",
+    "classes": "bar",
+    "attributes": {
+      "class": "bar"
+    },
+    "text": null
+  },
+  {
+    "index": 49,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "style": "width:68%;background:var(--blue)"
+    },
+    "text": ""
+  },
+  {
+    "index": 50,
+    "tag": "DIV",
+    "id": "",
+    "classes": "f",
+    "attributes": {
+      "class": "f"
+    },
+    "text": null
+  },
+  {
+    "index": 51,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 52,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "eta",
+    "attributes": {
+      "class": "eta"
+    },
+    "text": "ещё ~2 мин"
+  },
+  {
+    "index": 53,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "spd",
+    "attributes": {
+      "class": "spd"
+    },
+    "text": "85 МБ/с"
+  },
+  {
+    "index": 54,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "dl ",
+    "attributes": {
+      "class": "dl ",
+      "data-i": "1"
+    },
+    "text": null
+  },
+  {
+    "index": 55,
+    "tag": "DIV",
+    "id": "",
+    "classes": "h",
+    "attributes": {
+      "class": "h"
+    },
+    "text": null
+  },
+  {
+    "index": 56,
+    "tag": "DIV",
+    "id": "",
+    "classes": "n",
+    "attributes": {
+      "class": "n"
+    },
+    "text": null
+  },
+  {
+    "index": 57,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 58,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M14 3H7.5A2 2 0 0 0 5.5 5v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7.5z"
+    },
+    "text": ""
+  },
+  {
+    "index": 59,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M14 3v4.5h4.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 60,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M9.5 9.5h1.5M9.5 12h1.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 61,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "10",
+      "cy": "16.5",
+      "r": "1.3"
+    },
+    "text": ""
+  },
+  {
+    "index": 62,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Project_Assets.zip"
+  },
+  {
+    "index": 63,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "pill pl ",
+    "attributes": {
+      "class": "pill pl "
+    },
+    "text": "Очередь"
+  },
+  {
+    "index": 64,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "pc",
+    "attributes": {
+      "class": "pc"
+    },
+    "text": "34%"
+  },
+  {
+    "index": 65,
+    "tag": "DIV",
+    "id": "",
+    "classes": "bar",
+    "attributes": {
+      "class": "bar"
+    },
+    "text": null
+  },
+  {
+    "index": 66,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "style": "width:34%;background:var(--blue)"
+    },
+    "text": ""
+  },
+  {
+    "index": 67,
+    "tag": "DIV",
+    "id": "",
+    "classes": "f",
+    "attributes": {
+      "class": "f"
+    },
+    "text": null
+  },
+  {
+    "index": 68,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 69,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "eta",
+    "attributes": {
+      "class": "eta"
+    },
+    "text": "в очереди"
+  },
+  {
+    "index": 70,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "spd",
+    "attributes": {
+      "class": "spd"
+    },
+    "text": "—"
+  },
+  {
+    "index": 71,
+    "tag": "P",
+    "id": "",
+    "classes": "note",
+    "attributes": {
+      "class": "note"
+    },
+    "text": "Демонстрационный интерфейс. Скорости и загрузки вымышленные."
+  },
+  {
+    "index": 72,
+    "tag": "BUTTON",
+    "id": "addBtn",
+    "classes": "add",
+    "attributes": {
+      "class": "add",
+      "id": "addBtn"
+    },
+    "text": null
+  },
+  {
+    "index": 73,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "ic",
+    "attributes": {
+      "class": "ic"
+    },
+    "text": null
+  },
+  {
+    "index": 74,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 75,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M12 5v14M5 12h14"
+    },
+    "text": ""
+  },
+  {
+    "index": 76,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "tx",
+    "attributes": {
+      "class": "tx"
+    },
+    "text": null
+  },
+  {
+    "index": 77,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Добавить торрент"
+  },
+  {
+    "index": 78,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Magnet / .torrent / URL"
+  },
+  {
+    "index": 79,
+    "tag": "svg",
+    "id": "",
+    "classes": "chev",
+    "attributes": {
+      "class": "chev",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 80,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 81,
+    "tag": "SECTION",
+    "id": "v-files",
+    "classes": "view",
+    "attributes": {
+      "class": "view",
+      "id": "v-files"
+    },
+    "text": null
+  },
+  {
+    "index": 82,
+    "tag": "DIV",
+    "id": "fSum",
+    "classes": "fsum",
+    "attributes": {
+      "class": "fsum",
+      "id": "fSum"
+    },
+    "text": null
+  },
+  {
+    "index": 83,
+    "tag": "DIV",
+    "id": "",
+    "classes": "big",
+    "attributes": {
+      "class": "big"
+    },
+    "text": "120 ГБ"
+  },
+  {
+    "index": 84,
+    "tag": "DIV",
+    "id": "",
+    "classes": "sub",
+    "attributes": {
+      "class": "sub"
+    },
+    "text": "6 файлов в облаке"
+  },
+  {
+    "index": 85,
+    "tag": "DIV",
+    "id": "",
+    "classes": "fs-bar",
+    "attributes": {
+      "class": "fs-bar"
+    },
+    "text": null
+  },
+  {
+    "index": 86,
+    "tag": "I",
+    "id": "",
+    "classes": "t-video",
+    "attributes": {
+      "class": "t-video",
+      "style": "flex:67 1 0;--k:0"
+    },
+    "text": ""
+  },
+  {
+    "index": 87,
+    "tag": "I",
+    "id": "",
+    "classes": "t-archive",
+    "attributes": {
+      "class": "t-archive",
+      "style": "flex:46 1 0;--k:1"
+    },
+    "text": ""
+  },
+  {
+    "index": 88,
+    "tag": "I",
+    "id": "",
+    "classes": "t-iso",
+    "attributes": {
+      "class": "t-iso",
+      "style": "flex:6 1 0;--k:2"
+    },
+    "text": ""
+  },
+  {
+    "index": 89,
+    "tag": "I",
+    "id": "",
+    "classes": "t-audio",
+    "attributes": {
+      "class": "t-audio",
+      "style": "flex:1.4 1 0;--k:3"
+    },
+    "text": ""
+  },
+  {
+    "index": 90,
+    "tag": "DIV",
+    "id": "",
+    "classes": "fs-leg",
+    "attributes": {
+      "class": "fs-leg"
+    },
+    "text": null
+  },
+  {
+    "index": 91,
+    "tag": "DIV",
+    "id": "",
+    "classes": "t-video",
+    "attributes": {
+      "class": "t-video"
+    },
+    "text": null
+  },
+  {
+    "index": 92,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 93,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "67 ГБ"
+  },
+  {
+    "index": 94,
+    "tag": "DIV",
+    "id": "",
+    "classes": "t-archive",
+    "attributes": {
+      "class": "t-archive"
+    },
+    "text": null
+  },
+  {
+    "index": 95,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 96,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "46 ГБ"
+  },
+  {
+    "index": 97,
+    "tag": "DIV",
+    "id": "",
+    "classes": "t-iso",
+    "attributes": {
+      "class": "t-iso"
+    },
+    "text": null
+  },
+  {
+    "index": 98,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 99,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "6 ГБ"
+  },
+  {
+    "index": 100,
+    "tag": "DIV",
+    "id": "",
+    "classes": "t-audio",
+    "attributes": {
+      "class": "t-audio"
+    },
+    "text": null
+  },
+  {
+    "index": 101,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 102,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "1,4 ГБ"
+  },
+  {
+    "index": 103,
+    "tag": "LABEL",
+    "id": "",
+    "classes": "fsearch",
+    "attributes": {
+      "class": "fsearch"
+    },
+    "text": null
+  },
+  {
+    "index": 104,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 105,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "11",
+      "cy": "11",
+      "r": "6.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 106,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m16 16 4 4"
+    },
+    "text": ""
+  },
+  {
+    "index": 107,
+    "tag": "INPUT",
+    "id": "fQ",
+    "classes": null,
+    "attributes": {
+      "id": "fQ",
+      "type": "search",
+      "placeholder": "Поиск по файлам",
+      "autocomplete": "off",
+      "aria-label": "Поиск по файлам"
+    },
+    "text": ""
+  },
+  {
+    "index": 108,
+    "tag": "DIV",
+    "id": "fChips",
+    "classes": "chips",
+    "attributes": {
+      "class": "chips",
+      "id": "fChips"
+    },
+    "text": null
+  },
+  {
+    "index": 109,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "on",
+    "attributes": {
+      "class": "on",
+      "data-f": "all"
+    },
+    "text": "Все"
+  },
+  {
+    "index": 110,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "data-f": "iso"
+    },
+    "text": "Образы"
+  },
+  {
+    "index": 111,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "data-f": "archive"
+    },
+    "text": "Архивы"
+  },
+  {
+    "index": 112,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "data-f": "video"
+    },
+    "text": "Видео"
+  },
+  {
+    "index": 113,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "data-f": "audio"
+    },
+    "text": "Аудио"
+  },
+  {
+    "index": 114,
+    "tag": "DIV",
+    "id": "fList",
+    "classes": null,
+    "attributes": {
+      "id": "fList"
+    },
+    "text": null
+  },
+  {
+    "index": 115,
+    "tag": "DIV",
+    "id": "",
+    "classes": "fgh",
+    "attributes": {
+      "class": "fgh"
+    },
+    "text": "Сегодня"
+  },
+  {
+    "index": 116,
+    "tag": "DIV",
+    "id": "",
+    "classes": "fgrp",
+    "attributes": {
+      "class": "fgrp"
+    },
+    "text": null
+  },
+  {
+    "index": 117,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "fr t-archive",
+    "attributes": {
+      "class": "fr t-archive",
+      "data-id": "s1"
+    },
+    "text": null
+  },
+  {
+    "index": 118,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "ft",
+    "attributes": {
+      "class": "ft"
+    },
+    "text": null
+  },
+  {
+    "index": 119,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 120,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "4.5",
+      "y": "3.5",
+      "width": "15",
+      "height": "17",
+      "rx": "2.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 121,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M12 3.5v3.5m0 3v2m0 2.5v1.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 122,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "10.3",
+      "y": "15.5",
+      "width": "3.4",
+      "height": "3",
+      "rx": "1"
+    },
+    "text": ""
+  },
+  {
+    "index": 123,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "tx",
+    "attributes": {
+      "class": "tx"
+    },
+    "text": null
+  },
+  {
+    "index": 124,
+    "tag": "DIV",
+    "id": "",
+    "classes": "nm2",
+    "attributes": {
+      "class": "nm2"
+    },
+    "text": "Backup_2026.zip"
+  },
+  {
+    "index": 125,
+    "tag": "DIV",
+    "id": "",
+    "classes": "lc",
+    "attributes": {
+      "class": "lc"
+    },
+    "text": null
+  },
+  {
+    "index": 126,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "12 ГБ"
+  },
+  {
+    "index": 127,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 128,
+    "tag": "svg",
+    "id": "",
+    "classes": "pi",
+    "attributes": {
+      "class": "pi",
+      "viewBox": "0 0 24 24",
+      "aria-label": "Android"
+    },
+    "text": null
+  },
+  {
+    "index": 129,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "6.5",
+      "y": "2.5",
+      "width": "11",
+      "height": "19",
+      "rx": "2.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 130,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M11 18.5h2"
+    },
+    "text": ""
+  },
+  {
+    "index": 131,
+    "tag": "svg",
+    "id": "",
+    "classes": "chev",
+    "attributes": {
+      "class": "chev",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 132,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 133,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "fr t-audio",
+    "attributes": {
+      "class": "fr t-audio",
+      "data-id": "s2"
+    },
+    "text": null
+  },
+  {
+    "index": 134,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "ft",
+    "attributes": {
+      "class": "ft"
+    },
+    "text": null
+  },
+  {
+    "index": 135,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 136,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M9 17.5V6.5l9-2v11"
+    },
+    "text": ""
+  },
+  {
+    "index": 137,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "6.5",
+      "cy": "17.5",
+      "r": "2.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 138,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "15.5",
+      "cy": "15.5",
+      "r": "2.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 139,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "tx",
+    "attributes": {
+      "class": "tx"
+    },
+    "text": null
+  },
+  {
+    "index": 140,
+    "tag": "DIV",
+    "id": "",
+    "classes": "nm2",
+    "attributes": {
+      "class": "nm2"
+    },
+    "text": "Soundtrack.flac"
+  },
+  {
+    "index": 141,
+    "tag": "DIV",
+    "id": "",
+    "classes": "lc",
+    "attributes": {
+      "class": "lc"
+    },
+    "text": null
+  },
+  {
+    "index": 142,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "1,4 ГБ"
+  },
+  {
+    "index": 143,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 144,
+    "tag": "svg",
+    "id": "",
+    "classes": "chev",
+    "attributes": {
+      "class": "chev",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 145,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 146,
+    "tag": "DIV",
+    "id": "",
+    "classes": "fgh",
+    "attributes": {
+      "class": "fgh"
+    },
+    "text": "Вчера"
+  },
+  {
+    "index": 147,
+    "tag": "DIV",
+    "id": "",
+    "classes": "fgrp",
+    "attributes": {
+      "class": "fgrp"
+    },
+    "text": null
+  },
+  {
+    "index": 148,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "fr t-video",
+    "attributes": {
+      "class": "fr t-video",
+      "data-id": "s3"
+    },
+    "text": null
+  },
+  {
+    "index": 149,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "ft",
+    "attributes": {
+      "class": "ft"
+    },
+    "text": null
+  },
+  {
+    "index": 150,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 151,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "3.5",
+      "y": "5.5",
+      "width": "17",
+      "height": "13",
+      "rx": "3"
+    },
+    "text": ""
+  },
+  {
+    "index": 152,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m10.4 9.4 4.2 2.6-4.2 2.6z"
+    },
+    "text": ""
+  },
+  {
+    "index": 153,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "tx",
+    "attributes": {
+      "class": "tx"
+    },
+    "text": null
+  },
+  {
+    "index": 154,
+    "tag": "DIV",
+    "id": "",
+    "classes": "nm2",
+    "attributes": {
+      "class": "nm2"
+    },
+    "text": "Documentary_4K.mkv"
+  },
+  {
+    "index": 155,
+    "tag": "DIV",
+    "id": "",
+    "classes": "lc",
+    "attributes": {
+      "class": "lc"
+    },
+    "text": null
+  },
+  {
+    "index": 156,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "58 ГБ"
+  },
+  {
+    "index": 157,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 158,
+    "tag": "svg",
+    "id": "",
+    "classes": "chev",
+    "attributes": {
+      "class": "chev",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 159,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 160,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "fr t-iso",
+    "attributes": {
+      "class": "fr t-iso",
+      "data-id": "s4"
+    },
+    "text": null
+  },
+  {
+    "index": 161,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "ft",
+    "attributes": {
+      "class": "ft"
+    },
+    "text": null
+  },
+  {
+    "index": 162,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 163,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "12",
+      "cy": "12",
+      "r": "8.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 164,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "12",
+      "cy": "12",
+      "r": "2.4"
+    },
+    "text": ""
+  },
+  {
+    "index": 165,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "tx",
+    "attributes": {
+      "class": "tx"
+    },
+    "text": null
+  },
+  {
+    "index": 166,
+    "tag": "DIV",
+    "id": "",
+    "classes": "nm2",
+    "attributes": {
+      "class": "nm2"
+    },
+    "text": "Ubuntu_24.04.iso"
+  },
+  {
+    "index": 167,
+    "tag": "DIV",
+    "id": "",
+    "classes": "lc",
+    "attributes": {
+      "class": "lc"
+    },
+    "text": null
+  },
+  {
+    "index": 168,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "6 ГБ"
+  },
+  {
+    "index": 169,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 170,
+    "tag": "svg",
+    "id": "",
+    "classes": "pi",
+    "attributes": {
+      "class": "pi",
+      "viewBox": "0 0 24 24",
+      "aria-label": "Android"
+    },
+    "text": null
+  },
+  {
+    "index": 171,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "6.5",
+      "y": "2.5",
+      "width": "11",
+      "height": "19",
+      "rx": "2.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 172,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M11 18.5h2"
+    },
+    "text": ""
+  },
+  {
+    "index": 173,
+    "tag": "svg",
+    "id": "",
+    "classes": "chev",
+    "attributes": {
+      "class": "chev",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 174,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 175,
+    "tag": "DIV",
+    "id": "",
+    "classes": "fgh",
+    "attributes": {
+      "class": "fgh"
+    },
+    "text": "Ранее"
+  },
+  {
+    "index": 176,
+    "tag": "DIV",
+    "id": "",
+    "classes": "fgrp",
+    "attributes": {
+      "class": "fgrp"
+    },
+    "text": null
+  },
+  {
+    "index": 177,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "fr t-archive",
+    "attributes": {
+      "class": "fr t-archive",
+      "data-id": "s5"
+    },
+    "text": null
+  },
+  {
+    "index": 178,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "ft",
+    "attributes": {
+      "class": "ft"
+    },
+    "text": null
+  },
+  {
+    "index": 179,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 180,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "4.5",
+      "y": "3.5",
+      "width": "15",
+      "height": "17",
+      "rx": "2.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 181,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M12 3.5v3.5m0 3v2m0 2.5v1.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 182,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "10.3",
+      "y": "15.5",
+      "width": "3.4",
+      "height": "3",
+      "rx": "1"
+    },
+    "text": ""
+  },
+  {
+    "index": 183,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "tx",
+    "attributes": {
+      "class": "tx"
+    },
+    "text": null
+  },
+  {
+    "index": 184,
+    "tag": "DIV",
+    "id": "",
+    "classes": "nm2",
+    "attributes": {
+      "class": "nm2"
+    },
+    "text": "Photos_Archive.rar"
+  },
+  {
+    "index": 185,
+    "tag": "DIV",
+    "id": "",
+    "classes": "lc",
+    "attributes": {
+      "class": "lc"
+    },
+    "text": null
+  },
+  {
+    "index": 186,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "34 ГБ"
+  },
+  {
+    "index": 187,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 188,
+    "tag": "svg",
+    "id": "",
+    "classes": "chev",
+    "attributes": {
+      "class": "chev",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 189,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 190,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "fr t-video",
+    "attributes": {
+      "class": "fr t-video",
+      "data-id": "s6"
+    },
+    "text": null
+  },
+  {
+    "index": 191,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "ft",
+    "attributes": {
+      "class": "ft"
+    },
+    "text": null
+  },
+  {
+    "index": 192,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 193,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "3.5",
+      "y": "5.5",
+      "width": "17",
+      "height": "13",
+      "rx": "3"
+    },
+    "text": ""
+  },
+  {
+    "index": 194,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m10.4 9.4 4.2 2.6-4.2 2.6z"
+    },
+    "text": ""
+  },
+  {
+    "index": 195,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "tx",
+    "attributes": {
+      "class": "tx"
+    },
+    "text": null
+  },
+  {
+    "index": 196,
+    "tag": "DIV",
+    "id": "",
+    "classes": "nm2",
+    "attributes": {
+      "class": "nm2"
+    },
+    "text": "Lecture_Series.mp4"
+  },
+  {
+    "index": 197,
+    "tag": "DIV",
+    "id": "",
+    "classes": "lc",
+    "attributes": {
+      "class": "lc"
+    },
+    "text": null
+  },
+  {
+    "index": 198,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "9 ГБ"
+  },
+  {
+    "index": 199,
+    "tag": "I",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 200,
+    "tag": "svg",
+    "id": "",
+    "classes": "pi",
+    "attributes": {
+      "class": "pi",
+      "viewBox": "0 0 24 24",
+      "aria-label": "Android"
+    },
+    "text": null
+  },
+  {
+    "index": 201,
+    "tag": "rect",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "x": "6.5",
+      "y": "2.5",
+      "width": "11",
+      "height": "19",
+      "rx": "2.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 202,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M11 18.5h2"
+    },
+    "text": ""
+  },
+  {
+    "index": 203,
+    "tag": "svg",
+    "id": "",
+    "classes": "chev",
+    "attributes": {
+      "class": "chev",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 204,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 205,
+    "tag": "SECTION",
+    "id": "v-cloud",
+    "classes": "view",
+    "attributes": {
+      "class": "view",
+      "id": "v-cloud"
+    },
+    "text": null
+  },
+  {
+    "index": 206,
+    "tag": "DIV",
+    "id": "",
+    "classes": "list",
+    "attributes": {
+      "class": "list"
+    },
+    "text": null
+  },
+  {
+    "index": 207,
+    "tag": "BUTTON",
+    "id": "gcToggle",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "gcToggle"
+    },
+    "text": null
+  },
+  {
+    "index": 208,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 209,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 210,
+    "tag": "SMALL",
+    "id": "gcSub",
+    "classes": null,
+    "attributes": {
+      "id": "gcSub"
+    },
+    "text": "Не подключён"
+  },
+  {
+    "index": 211,
+    "tag": "SPAN",
+    "id": "gcSw",
+    "classes": "sw",
+    "attributes": {
+      "class": "sw",
+      "id": "gcSw"
+    },
+    "text": ""
+  },
+  {
+    "index": 212,
+    "tag": "DIV",
+    "id": "quota",
+    "classes": "st",
+    "attributes": {
+      "class": "st",
+      "id": "quota"
+    },
+    "text": null
+  },
+  {
+    "index": 213,
+    "tag": "DIV",
+    "id": "",
+    "classes": "h",
+    "attributes": {
+      "class": "h"
+    },
+    "text": null
+  },
+  {
+    "index": 214,
+    "tag": "DIV",
+    "id": "",
+    "classes": "t",
+    "attributes": {
+      "class": "t"
+    },
+    "text": null
+  },
+  {
+    "index": 215,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24",
+      "style": "color:var(--blue)"
+    },
+    "text": null
+  },
+  {
+    "index": 216,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.2 4.2 0 0 1-.5 8.5z"
+    },
+    "text": ""
+  },
+  {
+    "index": 217,
+    "tag": "SPAN",
+    "id": "qPct",
+    "classes": "pill b",
+    "attributes": {
+      "class": "pill b",
+      "id": "qPct"
+    },
+    "text": "60%"
+  },
+  {
+    "index": 218,
+    "tag": "DIV",
+    "id": "",
+    "classes": "bar",
+    "attributes": {
+      "class": "bar"
+    },
+    "text": null
+  },
+  {
+    "index": 219,
+    "tag": "I",
+    "id": "qBar",
+    "classes": null,
+    "attributes": {
+      "id": "qBar",
+      "style": "width:60%;background:var(--blue)"
+    },
+    "text": ""
+  },
+  {
+    "index": 220,
+    "tag": "DIV",
+    "id": "",
+    "classes": "f",
+    "attributes": {
+      "class": "f"
+    },
+    "text": null
+  },
+  {
+    "index": 221,
+    "tag": "SPAN",
+    "id": "qTxt",
+    "classes": null,
+    "attributes": {
+      "id": "qTxt"
+    },
+    "text": "1,2 ТБ из 2 ТБ"
+  },
+  {
+    "index": 222,
+    "tag": "SPAN",
+    "id": "qFree",
+    "classes": null,
+    "attributes": {
+      "id": "qFree"
+    },
+    "text": "свободно 800 ГБ"
+  },
+  {
+    "index": 223,
+    "tag": "DIV",
+    "id": "",
+    "classes": "grp",
+    "attributes": {
+      "class": "grp"
+    },
+    "text": "Автоматизация"
+  },
+  {
+    "index": 224,
+    "tag": "BUTTON",
+    "id": "sync",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "sync"
+    },
+    "text": null
+  },
+  {
+    "index": 225,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 226,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 227,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Загружать завершённые в облако"
+  },
+  {
+    "index": 228,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "sw on",
+    "attributes": {
+      "class": "sw on"
+    },
+    "text": ""
+  },
+  {
+    "index": 229,
+    "tag": "BUTTON",
+    "id": "optAuto",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "optAuto"
+    },
+    "text": null
+  },
+  {
+    "index": 230,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 231,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 232,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Сразу после загрузки в облако"
+  },
+  {
+    "index": 233,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "sw on",
+    "attributes": {
+      "class": "sw on"
+    },
+    "text": ""
+  },
+  {
+    "index": 234,
+    "tag": "BUTTON",
+    "id": "optDel",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "optDel"
+    },
+    "text": null
+  },
+  {
+    "index": 235,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 236,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 237,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Освобождать место после передачи"
+  },
+  {
+    "index": 238,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "sw",
+    "attributes": {
+      "class": "sw"
+    },
+    "text": ""
+  },
+  {
+    "index": 239,
+    "tag": "DIV",
+    "id": "",
+    "classes": "grp",
+    "attributes": {
+      "class": "grp"
+    },
+    "text": "Управление"
+  },
+  {
+    "index": 240,
+    "tag": "BUTTON",
+    "id": "limRow",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "limRow"
+    },
+    "text": null
+  },
+  {
+    "index": 241,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 242,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 243,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Остальные ждут в очереди"
+  },
+  {
+    "index": 244,
+    "tag": "SPAN",
+    "id": "limVal",
+    "classes": "val",
+    "attributes": {
+      "class": "val",
+      "id": "limVal"
+    },
+    "text": "1"
+  },
+  {
+    "index": 245,
+    "tag": "BUTTON",
+    "id": "cleanCloud",
+    "classes": "row-btn act-row",
+    "attributes": {
+      "class": "row-btn act-row",
+      "id": "cleanCloud"
+    },
+    "text": null
+  },
+  {
+    "index": 246,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 247,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 248,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Удалить завершённые загрузки"
+  },
+  {
+    "index": 249,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "width": "20",
+      "height": "20",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 250,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M4.5 7h15M9.5 7V4.5h5V7M6.5 7l.8 12a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4l.8-12M10 11v5M14 11v5"
+    },
+    "text": ""
+  },
+  {
+    "index": 251,
+    "tag": "SECTION",
+    "id": "v-settings",
+    "classes": "view",
+    "attributes": {
+      "class": "view",
+      "id": "v-settings"
+    },
+    "text": null
+  },
+  {
+    "index": 252,
+    "tag": "DIV",
+    "id": "",
+    "classes": "list",
+    "attributes": {
+      "class": "list"
+    },
+    "text": null
+  },
+  {
+    "index": 253,
+    "tag": "DIV",
+    "id": "",
+    "classes": "grp",
+    "attributes": {
+      "class": "grp",
+      "style": "margin-top:0"
+    },
+    "text": "Google Cloud"
+  },
+  {
+    "index": 254,
+    "tag": "BUTTON",
+    "id": "gcApiRow",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "gcApiRow"
+    },
+    "text": null
+  },
+  {
+    "index": 255,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 256,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 257,
+    "tag": "SMALL",
+    "id": "gcApiSub",
+    "classes": null,
+    "attributes": {
+      "id": "gcApiSub"
+    },
+    "text": "Не подключён"
+  },
+  {
+    "index": 258,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "width": "20",
+      "height": "20",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 259,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 260,
+    "tag": "DIV",
+    "id": "",
+    "classes": "grp",
+    "attributes": {
+      "class": "grp"
+    },
+    "text": "Подписка"
+  },
+  {
+    "index": 261,
+    "tag": "BUTTON",
+    "id": "planRow",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "planRow"
+    },
+    "text": null
+  },
+  {
+    "index": 262,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 263,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 264,
+    "tag": "SMALL",
+    "id": "planSub",
+    "classes": null,
+    "attributes": {
+      "id": "planSub"
+    },
+    "text": "Бесплатно, с ограничениями"
+  },
+  {
+    "index": 265,
+    "tag": "SPAN",
+    "id": "planVal",
+    "classes": "val",
+    "attributes": {
+      "class": "val",
+      "id": "planVal"
+    },
+    "text": "Free"
+  },
+  {
+    "index": 266,
+    "tag": "DIV",
+    "id": "",
+    "classes": "grp",
+    "attributes": {
+      "class": "grp"
+    },
+    "text": "Сеть и питание"
+  },
+  {
+    "index": 267,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn"
+    },
+    "text": null
+  },
+  {
+    "index": 268,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Только Wi-Fi"
+  },
+  {
+    "index": 269,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "sw on",
+    "attributes": {
+      "class": "sw on"
+    },
+    "text": ""
+  },
+  {
+    "index": 270,
+    "tag": "BUTTON",
+    "id": "optSpeed",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "optSpeed"
+    },
+    "text": null
+  },
+  {
+    "index": 271,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Ограничить скорость"
+  },
+  {
+    "index": 272,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "sw",
+    "attributes": {
+      "class": "sw"
+    },
+    "text": ""
+  },
+  {
+    "index": 273,
+    "tag": "BUTTON",
+    "id": "spdRow",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "spdRow"
+    },
+    "text": null
+  },
+  {
+    "index": 274,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 275,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 276,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Действует при включённом ограничении"
+  },
+  {
+    "index": 277,
+    "tag": "SPAN",
+    "id": "spdVal",
+    "classes": "val",
+    "attributes": {
+      "class": "val",
+      "id": "spdVal"
+    },
+    "text": "10 МБ/с"
+  },
+  {
+    "index": 278,
+    "tag": "BUTTON",
+    "id": "optChg",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "optChg"
+    },
+    "text": null
+  },
+  {
+    "index": 279,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 280,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 281,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Приостанавливать при разрядке"
+  },
+  {
+    "index": 282,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "sw",
+    "attributes": {
+      "class": "sw"
+    },
+    "text": ""
+  },
+  {
+    "index": 283,
+    "tag": "DIV",
+    "id": "",
+    "classes": "grp",
+    "attributes": {
+      "class": "grp"
+    },
+    "text": "Загрузки"
+  },
+  {
+    "index": 284,
+    "tag": "BUTTON",
+    "id": "optStart",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn",
+      "id": "optStart"
+    },
+    "text": null
+  },
+  {
+    "index": 285,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 286,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 287,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Начинать сразу после добавления"
+  },
+  {
+    "index": 288,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "sw on",
+    "attributes": {
+      "class": "sw on"
+    },
+    "text": ""
+  },
+  {
+    "index": 289,
+    "tag": "BUTTON",
+    "id": "pauseAll",
+    "classes": "row-btn act-row",
+    "attributes": {
+      "class": "row-btn act-row",
+      "id": "pauseAll"
+    },
+    "text": null
+  },
+  {
+    "index": 290,
+    "tag": "SPAN",
+    "id": "pauseTxt",
+    "classes": null,
+    "attributes": {
+      "id": "pauseTxt"
+    },
+    "text": null
+  },
+  {
+    "index": 291,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 292,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Для всех активных загрузок"
+  },
+  {
+    "index": 293,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "width": "20",
+      "height": "20",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 294,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M9 5.5v13M15 5.5v13"
+    },
+    "text": ""
+  },
+  {
+    "index": 295,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn"
+    },
+    "text": null
+  },
+  {
+    "index": 296,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Уведомления"
+  },
+  {
+    "index": 297,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "sw on",
+    "attributes": {
+      "class": "sw on"
+    },
+    "text": ""
+  },
+  {
+    "index": 298,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "row-btn",
+    "attributes": {
+      "class": "row-btn"
+    },
+    "text": null
+  },
+  {
+    "index": 299,
+    "tag": "SPAN",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 300,
+    "tag": "BR",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": ""
+  },
+  {
+    "index": 301,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "/Downloads/Torrents"
+  },
+  {
+    "index": 302,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "width": "20",
+      "height": "20",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 303,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 304,
+    "tag": "SECTION",
+    "id": "v-detail",
+    "classes": "view",
+    "attributes": {
+      "class": "view",
+      "id": "v-detail"
+    },
+    "text": null
+  },
+  {
+    "index": 305,
+    "tag": "BUTTON",
+    "id": "back",
+    "classes": "back",
+    "attributes": {
+      "class": "back",
+      "id": "back"
+    },
+    "text": null
+  },
+  {
+    "index": 306,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 307,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m15 6-6 6 6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 308,
+    "tag": "DIV",
+    "id": "detailBody",
+    "classes": null,
+    "attributes": {
+      "id": "detailBody"
+    },
+    "text": ""
+  },
+  {
+    "index": 309,
+    "tag": "NAV",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 310,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": "on",
+    "attributes": {
+      "class": "on",
+      "data-tab": "downloads"
+    },
+    "text": null
+  },
+  {
+    "index": 311,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 312,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M12 4v11m-4.5-4.5L12 15l4.5-4.5M4.5 15.5v3a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5v-3"
+    },
+    "text": ""
+  },
+  {
+    "index": 313,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "data-tab": "files"
+    },
+    "text": null
+  },
+  {
+    "index": 314,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 315,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M3.5 7.5a2 2 0 0 1 2-2h4l2 2.2h7a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"
+    },
+    "text": ""
+  },
+  {
+    "index": 316,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M3.5 10.5h17"
+    },
+    "text": ""
+  },
+  {
+    "index": 317,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "data-tab": "cloud"
+    },
+    "text": null
+  },
+  {
+    "index": 318,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 319,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.2 4.2 0 0 1-.5 8.5z"
+    },
+    "text": ""
+  },
+  {
+    "index": 320,
+    "tag": "BUTTON",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "data-tab": "settings"
+    },
+    "text": null
+  },
+  {
+    "index": 321,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 322,
+    "tag": "circle",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "cx": "12",
+      "cy": "12",
+      "r": "3"
+    },
+    "text": ""
+  },
+  {
+    "index": 323,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h0a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"
+    },
+    "text": ""
+  },
+  {
+    "index": 324,
+    "tag": "DIV",
+    "id": "modal",
+    "classes": "modal",
+    "attributes": {
+      "class": "modal",
+      "id": "modal"
+    },
+    "text": null
+  },
+  {
+    "index": 325,
+    "tag": "DIV",
+    "id": "",
+    "classes": "sheet",
+    "attributes": {
+      "class": "sheet"
+    },
+    "text": null
+  },
+  {
+    "index": 326,
+    "tag": "DIV",
+    "id": "stepChoice",
+    "classes": "step on",
+    "attributes": {
+      "class": "step on",
+      "id": "stepChoice"
+    },
+    "text": null
+  },
+  {
+    "index": 327,
+    "tag": "H3",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Добавить торрент"
+  },
+  {
+    "index": 328,
+    "tag": "BUTTON",
+    "id": "pickFile",
+    "classes": "choice",
+    "attributes": {
+      "class": "choice",
+      "id": "pickFile"
+    },
+    "text": null
+  },
+  {
+    "index": 329,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 330,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M14 3H7.5A2 2 0 0 0 5.5 5v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7.5z"
+    },
+    "text": ""
+  },
+  {
+    "index": 331,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M14 3v4.5h4.5"
+    },
+    "text": ""
+  },
+  {
+    "index": 332,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "tx",
+    "attributes": {
+      "class": "tx"
+    },
+    "text": null
+  },
+  {
+    "index": 333,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Файлом"
+  },
+  {
+    "index": 334,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Выбрать .torrent"
+  },
+  {
+    "index": 335,
+    "tag": "svg",
+    "id": "",
+    "classes": "chev",
+    "attributes": {
+      "class": "chev",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 336,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 337,
+    "tag": "BUTTON",
+    "id": "pickLink",
+    "classes": "choice",
+    "attributes": {
+      "class": "choice",
+      "id": "pickLink"
+    },
+    "text": null
+  },
+  {
+    "index": 338,
+    "tag": "svg",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 339,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"
+    },
+    "text": ""
+  },
+  {
+    "index": 340,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"
+    },
+    "text": ""
+  },
+  {
+    "index": 341,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "tx",
+    "attributes": {
+      "class": "tx"
+    },
+    "text": null
+  },
+  {
+    "index": 342,
+    "tag": "B",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Ссылкой"
+  },
+  {
+    "index": 343,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Magnet или URL"
+  },
+  {
+    "index": 344,
+    "tag": "svg",
+    "id": "",
+    "classes": "chev",
+    "attributes": {
+      "class": "chev",
+      "viewBox": "0 0 24 24"
+    },
+    "text": null
+  },
+  {
+    "index": 345,
+    "tag": "path",
+    "id": "",
+    "classes": null,
+    "attributes": {
+      "d": "m9 6 6 6-6 6"
+    },
+    "text": ""
+  },
+  {
+    "index": 346,
+    "tag": "BUTTON",
+    "id": "cancel",
+    "classes": "cancel-full",
+    "attributes": {
+      "class": "cancel-full",
+      "id": "cancel"
+    },
+    "text": "Отмена"
+  },
+  {
+    "index": 347,
+    "tag": "DIV",
+    "id": "stepLink",
+    "classes": "step",
+    "attributes": {
+      "class": "step",
+      "id": "stepLink"
+    },
+    "text": null
+  },
+  {
+    "index": 348,
+    "tag": "H3",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Добавить по ссылке"
+  },
+  {
+    "index": 349,
+    "tag": "INPUT",
+    "id": "src",
+    "classes": null,
+    "attributes": {
+      "id": "src",
+      "placeholder": "Magnet-ссылка или URL",
+      "autocomplete": "off"
+    },
+    "text": ""
+  },
+  {
+    "index": 350,
+    "tag": "DIV",
+    "id": "",
+    "classes": "acts",
+    "attributes": {
+      "class": "acts"
+    },
+    "text": null
+  },
+  {
+    "index": 351,
+    "tag": "BUTTON",
+    "id": "linkBack",
+    "classes": null,
+    "attributes": {
+      "id": "linkBack"
+    },
+    "text": "Назад"
+  },
+  {
+    "index": 352,
+    "tag": "BUTTON",
+    "id": "ok",
+    "classes": "ok",
+    "attributes": {
+      "class": "ok",
+      "id": "ok"
+    },
+    "text": "Добавить"
+  },
+  {
+    "index": 353,
+    "tag": "INPUT",
+    "id": "fileIn",
+    "classes": null,
+    "attributes": {
+      "type": "file",
+      "id": "fileIn",
+      "accept": ".torrent,application/x-bittorrent",
+      "hidden": ""
+    },
+    "text": ""
+  },
+  {
+    "index": 354,
+    "tag": "DIV",
+    "id": "gcModal",
+    "classes": "modal",
+    "attributes": {
+      "class": "modal",
+      "id": "gcModal"
+    },
+    "text": null
+  },
+  {
+    "index": 355,
+    "tag": "DIV",
+    "id": "",
+    "classes": "sheet",
+    "attributes": {
+      "class": "sheet"
+    },
+    "text": null
+  },
+  {
+    "index": 356,
+    "tag": "H3",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Google Cloud API"
+  },
+  {
+    "index": 357,
+    "tag": "INPUT",
+    "id": "gcProj",
+    "classes": null,
+    "attributes": {
+      "id": "gcProj",
+      "placeholder": "Project ID",
+      "autocomplete": "off",
+      "style": "margin-bottom:10px"
+    },
+    "text": ""
+  },
+  {
+    "index": 358,
+    "tag": "INPUT",
+    "id": "gcKey",
+    "classes": null,
+    "attributes": {
+      "id": "gcKey",
+      "type": "password",
+      "placeholder": "API-ключ",
+      "autocomplete": "off"
+    },
+    "text": ""
+  },
+  {
+    "index": 359,
+    "tag": "P",
+    "id": "",
+    "classes": "note",
+    "attributes": {
+      "class": "note",
+      "style": "font-size:14px;margin:10px 0 0"
+    },
+    "text": "Ключ создаётся в Google Cloud Console: API и сервисы → Учётные данные. Для проекта должен быть включён Google Drive API."
+  },
+  {
+    "index": 360,
+    "tag": "DIV",
+    "id": "",
+    "classes": "acts",
+    "attributes": {
+      "class": "acts"
+    },
+    "text": null
+  },
+  {
+    "index": 361,
+    "tag": "BUTTON",
+    "id": "gcCancel",
+    "classes": null,
+    "attributes": {
+      "id": "gcCancel"
+    },
+    "text": "Отмена"
+  },
+  {
+    "index": 362,
+    "tag": "BUTTON",
+    "id": "gcOk",
+    "classes": "ok",
+    "attributes": {
+      "class": "ok",
+      "id": "gcOk"
+    },
+    "text": "Подключить"
+  },
+  {
+    "index": 363,
+    "tag": "BUTTON",
+    "id": "gcOff",
+    "classes": "cancel-full",
+    "attributes": {
+      "class": "cancel-full",
+      "id": "gcOff",
+      "style": "margin-top:10px",
+      "hidden": ""
+    },
+    "text": "Отключить"
+  },
+  {
+    "index": 364,
+    "tag": "DIV",
+    "id": "planModal",
+    "classes": "modal",
+    "attributes": {
+      "class": "modal",
+      "id": "planModal"
+    },
+    "text": null
+  },
+  {
+    "index": 365,
+    "tag": "DIV",
+    "id": "",
+    "classes": "sheet tall",
+    "attributes": {
+      "class": "sheet tall"
+    },
+    "text": null
+  },
+  {
+    "index": 366,
+    "tag": "DIV",
+    "id": "",
+    "classes": "plans",
+    "attributes": {
+      "class": "plans"
+    },
+    "text": null
+  },
+  {
+    "index": 367,
+    "tag": "DIV",
+    "id": "plFree",
+    "classes": "plan cur",
+    "attributes": {
+      "class": "plan cur",
+      "id": "plFree"
+    },
+    "text": null
+  },
+  {
+    "index": 368,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "pill",
+    "attributes": {
+      "class": "pill"
+    },
+    "text": "FREE"
+  },
+  {
+    "index": 369,
+    "tag": "DIV",
+    "id": "",
+    "classes": "pr",
+    "attributes": {
+      "class": "pr"
+    },
+    "text": "$0"
+  },
+  {
+    "index": 370,
+    "tag": "DIV",
+    "id": "",
+    "classes": "d",
+    "attributes": {
+      "class": "d"
+    },
+    "text": "Бесплатно навсегда"
+  },
+  {
+    "index": 371,
+    "tag": "DIV",
+    "id": "",
+    "classes": "dv",
+    "attributes": {
+      "class": "dv"
+    },
+    "text": ""
+  },
+  {
+    "index": 372,
+    "tag": "UL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 373,
+    "tag": "LI",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "1 активный торрент"
+  },
+  {
+    "index": 374,
+    "tag": "LI",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "До 20 ГБ на задачу"
+  },
+  {
+    "index": 375,
+    "tag": "LI",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Google Drive"
+  },
+  {
+    "index": 376,
+    "tag": "LI",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Базовая очередь"
+  },
+  {
+    "index": 377,
+    "tag": "LI",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Реклама"
+  },
+  {
+    "index": 378,
+    "tag": "BUTTON",
+    "id": "stay",
+    "classes": "pb",
+    "attributes": {
+      "class": "pb",
+      "id": "stay"
+    },
+    "text": "Остаться"
+  },
+  {
+    "index": 379,
+    "tag": "DIV",
+    "id": "plPrem",
+    "classes": "plan",
+    "attributes": {
+      "class": "plan",
+      "id": "plPrem"
+    },
+    "text": null
+  },
+  {
+    "index": 380,
+    "tag": "SPAN",
+    "id": "",
+    "classes": "pill b",
+    "attributes": {
+      "class": "pill b"
+    },
+    "text": "PREMIUM"
+  },
+  {
+    "index": 381,
+    "tag": "DIV",
+    "id": "",
+    "classes": "pr",
+    "attributes": {
+      "class": "pr"
+    },
+    "text": null
+  },
+  {
+    "index": 382,
+    "tag": "SMALL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "/ мес."
+  },
+  {
+    "index": 383,
+    "tag": "DIV",
+    "id": "",
+    "classes": "d",
+    "attributes": {
+      "class": "d"
+    },
+    "text": "Расширенные возможности"
+  },
+  {
+    "index": 384,
+    "tag": "DIV",
+    "id": "",
+    "classes": "dv",
+    "attributes": {
+      "class": "dv"
+    },
+    "text": ""
+  },
+  {
+    "index": 385,
+    "tag": "UL",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": null
+  },
+  {
+    "index": 386,
+    "tag": "LI",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "До 5 торрентов"
+  },
+  {
+    "index": 387,
+    "tag": "LI",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "До 500 ГБ на задачу"
+  },
+  {
+    "index": 388,
+    "tag": "LI",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Google Drive + телефон"
+  },
+  {
+    "index": 389,
+    "tag": "LI",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Приоритет в очереди"
+  },
+  {
+    "index": 390,
+    "tag": "LI",
+    "id": "",
+    "classes": null,
+    "attributes": {},
+    "text": "Без рекламы"
+  },
+  {
+    "index": 391,
+    "tag": "BUTTON",
+    "id": "buy",
+    "classes": "pb ok",
+    "attributes": {
+      "class": "pb ok",
+      "id": "buy"
+    },
+    "text": "Подписаться"
+  },
+  {
+    "index": 392,
+    "tag": "DIV",
+    "id": "fileModal",
+    "classes": "modal",
+    "attributes": {
+      "class": "modal",
+      "id": "fileModal"
+    },
+    "text": null
+  },
+  {
+    "index": 393,
+    "tag": "DIV",
+    "id": "fileSheet",
+    "classes": "sheet",
+    "attributes": {
+      "class": "sheet",
+      "id": "fileSheet"
+    },
+    "text": ""
+  },
+  {
+    "index": 394,
+    "tag": "DIV",
+    "id": "toast",
+    "classes": "toast",
+    "attributes": {
+      "class": "toast",
+      "id": "toast"
+    },
+    "text": ""
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "android_14_install": true,
+  "launch": true,
+  "screens": [
+    "downloads",
+    "files",
+    "cloud",
+    "settings"
+  ],
+  "full_screen_acceptance": false,
+  "notes": "Genuine screenshots from an earlier build. Software emulator suffered System UI and application ANRs. Latest source changes compiled/linted but were not replayed on device."
+}

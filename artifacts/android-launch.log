@@ -1,0 +1,6 @@
+Starting: Intent { cmp=com.cloudtorrent.client/.MainActivity }
+Status: timeout
+LaunchState: UNKNOWN (-1)
+Activity: com.cloudtorrent.client/.MainActivity
+WaitTime: 16908
+Complete

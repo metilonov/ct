@@ -1,0 +1,428 @@
+[
+  {
+    "id": "app",
+    "tag": "DIV",
+    "classes": "app",
+    "text": "Cloud Torrent ClientЗагрузки\n  \n\n\n\n\n  \n    Google Cloud\n    Не подключён\n  \n  2Активные260 ГБОбъём торрентов\n  Активные загрузки2\n  \n    Game_Archive.isoCloud68%\n    \n    218 ГБ · ещё ~2 мин85 МБ/с\n  "
+  },
+  {
+    "id": "title",
+    "tag": "H1",
+    "classes": "",
+    "text": "Загрузки"
+  },
+  {
+    "id": "cloudTop",
+    "tag": "BUTTON",
+    "classes": "round",
+    "text": ""
+  },
+  {
+    "id": "v-downloads",
+    "tag": "SECTION",
+    "classes": "view on",
+    "text": "Google Cloud\n    Не подключён\n  \n  2Активные260 ГБОбъём торрентов\n  Активные загрузки2\n  \n    Game_Archive.isoCloud68%\n    \n    218 ГБ · ещё ~2 мин85 МБ/с\n    Project_Assets.zipОчередь34%\n    \n    42 "
+  },
+  {
+    "id": "gcRow",
+    "tag": "BUTTON",
+    "classes": "cloud-row",
+    "text": "Google Cloud\n    Не подключён"
+  },
+  {
+    "id": "gcStatus",
+    "tag": "SPAN",
+    "classes": "status off",
+    "text": "Не подключён"
+  },
+  {
+    "id": "stA",
+    "tag": "B",
+    "classes": "",
+    "text": "2"
+  },
+  {
+    "id": "stS",
+    "tag": "B",
+    "classes": "",
+    "text": "260 ГБ"
+  },
+  {
+    "id": "count",
+    "tag": "SPAN",
+    "classes": "badge",
+    "text": "2"
+  },
+  {
+    "id": "dls",
+    "tag": "DIV",
+    "classes": "",
+    "text": "Game_Archive.isoCloud68%\n    \n    218 ГБ · ещё ~2 мин85 МБ/с\n    Project_Assets.zipОчередь34%\n    \n    42 ГБ · в очереди—"
+  },
+  {
+    "id": "addBtn",
+    "tag": "BUTTON",
+    "classes": "add",
+    "text": "Добавить торрентMagnet / .torrent / URL"
+  },
+  {
+    "id": "v-files",
+    "tag": "SECTION",
+    "classes": "view",
+    "text": "120 ГБ6 файлов в облаке\n   \n   Видео67 ГБАрхивы46 ГБОбразы6 ГБАудио1,4 ГБ\n  \n  ВсеОбразыАрхивыВидеоАудио\n  СегодняBackup_2026.zip12 ГБCloudSoundtrack.flac1,4 ГБCloudВчераDocumentary_4K.mkv58 ГБCloudUb"
+  },
+  {
+    "id": "fSum",
+    "tag": "DIV",
+    "classes": "fsum",
+    "text": "120 ГБ6 файлов в облаке\n   \n   Видео67 ГБАрхивы46 ГБОбразы6 ГБАудио1,4 ГБ"
+  },
+  {
+    "id": "fQ",
+    "tag": "INPUT",
+    "classes": "",
+    "text": ""
+  },
+  {
+    "id": "fChips",
+    "tag": "DIV",
+    "classes": "chips",
+    "text": "ВсеОбразыАрхивыВидеоАудио"
+  },
+  {
+    "id": "fList",
+    "tag": "DIV",
+    "classes": "",
+    "text": "СегодняBackup_2026.zip12 ГБCloudSoundtrack.flac1,4 ГБCloudВчераDocumentary_4K.mkv58 ГБCloudUbuntu_24.04.iso6 ГБCloudРанееPhotos_Archive.rar34 ГБCloudLecture_Series.mp49 ГБCloud"
+  },
+  {
+    "id": "v-cloud",
+    "tag": "SECTION",
+    "classes": "view",
+    "text": "Google CloudНе подключён\n    Хранилище60%1,2 ТБ из 2 ТБсвободно 800 ГБ\n    Автоматизация\n    АвтосинхронизацияЗагружать завершённые в облако\n    Автопередача на AndroidСразу после загрузки в облако\n  "
+  },
+  {
+    "id": "gcToggle",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "Google CloudНе подключён"
+  },
+  {
+    "id": "gcSub",
+    "tag": "SMALL",
+    "classes": "",
+    "text": "Не подключён"
+  },
+  {
+    "id": "gcSw",
+    "tag": "SPAN",
+    "classes": "sw",
+    "text": ""
+  },
+  {
+    "id": "quota",
+    "tag": "DIV",
+    "classes": "st",
+    "text": "Хранилище60%1,2 ТБ из 2 ТБсвободно 800 ГБ"
+  },
+  {
+    "id": "qPct",
+    "tag": "SPAN",
+    "classes": "pill b",
+    "text": "60%"
+  },
+  {
+    "id": "qBar",
+    "tag": "I",
+    "classes": "",
+    "text": ""
+  },
+  {
+    "id": "qTxt",
+    "tag": "SPAN",
+    "classes": "",
+    "text": "1,2 ТБ из 2 ТБ"
+  },
+  {
+    "id": "qFree",
+    "tag": "SPAN",
+    "classes": "",
+    "text": "свободно 800 ГБ"
+  },
+  {
+    "id": "sync",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "АвтосинхронизацияЗагружать завершённые в облако"
+  },
+  {
+    "id": "optAuto",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "Автопередача на AndroidСразу после загрузки в облако"
+  },
+  {
+    "id": "optDel",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "Автоудаление из облакаОсвобождать место после передачи"
+  },
+  {
+    "id": "limRow",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "Одновременные загрузкиОстальные ждут в очереди1"
+  },
+  {
+    "id": "limVal",
+    "tag": "SPAN",
+    "classes": "val",
+    "text": "1"
+  },
+  {
+    "id": "cleanCloud",
+    "tag": "BUTTON",
+    "classes": "row-btn act-row",
+    "text": "Очистить облакоУдалить завершённые загрузки"
+  },
+  {
+    "id": "v-settings",
+    "tag": "SECTION",
+    "classes": "view",
+    "text": "Google Cloud\n    Подключение по APIНе подключён\n    Подписка\n    ТарифБесплатно, с ограничениямиFree\n    Сеть и питание\n    Только Wi-Fi\n    Ограничить скорость\n    Лимит скоростиДействует при включён"
+  },
+  {
+    "id": "gcApiRow",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "Подключение по APIНе подключён"
+  },
+  {
+    "id": "gcApiSub",
+    "tag": "SMALL",
+    "classes": "",
+    "text": "Не подключён"
+  },
+  {
+    "id": "planRow",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "ТарифБесплатно, с ограничениямиFree"
+  },
+  {
+    "id": "planSub",
+    "tag": "SMALL",
+    "classes": "",
+    "text": "Бесплатно, с ограничениями"
+  },
+  {
+    "id": "planVal",
+    "tag": "SPAN",
+    "classes": "val",
+    "text": "Free"
+  },
+  {
+    "id": "optSpeed",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "Ограничить скорость"
+  },
+  {
+    "id": "spdRow",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "Лимит скоростиДействует при включённом ограничении10 МБ/с"
+  },
+  {
+    "id": "spdVal",
+    "tag": "SPAN",
+    "classes": "val",
+    "text": "10 МБ/с"
+  },
+  {
+    "id": "optChg",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "Только при зарядкеПриостанавливать при разрядке"
+  },
+  {
+    "id": "optStart",
+    "tag": "BUTTON",
+    "classes": "row-btn",
+    "text": "Автозапуск новыхНачинать сразу после добавления"
+  },
+  {
+    "id": "pauseAll",
+    "tag": "BUTTON",
+    "classes": "row-btn act-row",
+    "text": "Приостановить всеДля всех активных загрузок"
+  },
+  {
+    "id": "pauseTxt",
+    "tag": "SPAN",
+    "classes": "",
+    "text": "Приостановить всеДля всех активных загрузок"
+  },
+  {
+    "id": "v-detail",
+    "tag": "SECTION",
+    "classes": "view",
+    "text": "Назад"
+  },
+  {
+    "id": "back",
+    "tag": "BUTTON",
+    "classes": "back",
+    "text": "Назад"
+  },
+  {
+    "id": "detailBody",
+    "tag": "DIV",
+    "classes": "",
+    "text": ""
+  },
+  {
+    "id": "modal",
+    "tag": "DIV",
+    "classes": "modal",
+    "text": "Добавить торрент\n      ФайломВыбрать .torrent\n      СсылкойMagnet или URL\n      Отмена\n    \n    \n      Добавить по ссылке\n      \n      НазадДобавить"
+  },
+  {
+    "id": "stepChoice",
+    "tag": "DIV",
+    "classes": "step on",
+    "text": "Добавить торрент\n      ФайломВыбрать .torrent\n      СсылкойMagnet или URL\n      Отмена"
+  },
+  {
+    "id": "pickFile",
+    "tag": "BUTTON",
+    "classes": "choice",
+    "text": "ФайломВыбрать .torrent"
+  },
+  {
+    "id": "pickLink",
+    "tag": "BUTTON",
+    "classes": "choice",
+    "text": "СсылкойMagnet или URL"
+  },
+  {
+    "id": "cancel",
+    "tag": "BUTTON",
+    "classes": "cancel-full",
+    "text": "Отмена"
+  },
+  {
+    "id": "stepLink",
+    "tag": "DIV",
+    "classes": "step",
+    "text": "Добавить по ссылке\n      \n      НазадДобавить"
+  },
+  {
+    "id": "src",
+    "tag": "INPUT",
+    "classes": "",
+    "text": ""
+  },
+  {
+    "id": "linkBack",
+    "tag": "BUTTON",
+    "classes": "",
+    "text": "Назад"
+  },
+  {
+    "id": "ok",
+    "tag": "BUTTON",
+    "classes": "ok",
+    "text": "Добавить"
+  },
+  {
+    "id": "fileIn",
+    "tag": "INPUT",
+    "classes": "",
+    "text": ""
+  },
+  {
+    "id": "gcModal",
+    "tag": "DIV",
+    "classes": "modal",
+    "text": "Google Cloud API\n  \n  \n  Ключ создаётся в Google Cloud Console: API и сервисы → Учётные данные. Для проекта должен быть включён Google Drive API.\n  ОтменаПодключить\n  Отключить"
+  },
+  {
+    "id": "gcProj",
+    "tag": "INPUT",
+    "classes": "",
+    "text": ""
+  },
+  {
+    "id": "gcKey",
+    "tag": "INPUT",
+    "classes": "",
+    "text": ""
+  },
+  {
+    "id": "gcCancel",
+    "tag": "BUTTON",
+    "classes": "",
+    "text": "Отмена"
+  },
+  {
+    "id": "gcOk",
+    "tag": "BUTTON",
+    "classes": "ok",
+    "text": "Подключить"
+  },
+  {
+    "id": "gcOff",
+    "tag": "BUTTON",
+    "classes": "cancel-full",
+    "text": "Отключить"
+  },
+  {
+    "id": "planModal",
+    "tag": "DIV",
+    "classes": "modal",
+    "text": "FREE$0Бесплатно навсегда1 активный торрентДо 20 ГБ на задачуGoogle DriveБазовая очередьРекламаОстаться\n  PREMIUM$4.99 / мес.Расширенные возможностиДо 5 торрентовДо 500 ГБ на задачуGoogle Drive + телеф"
+  },
+  {
+    "id": "plFree",
+    "tag": "DIV",
+    "classes": "plan cur",
+    "text": "FREE$0Бесплатно навсегда1 активный торрентДо 20 ГБ на задачуGoogle DriveБазовая очередьРекламаОстаться"
+  },
+  {
+    "id": "stay",
+    "tag": "BUTTON",
+    "classes": "pb",
+    "text": "Остаться"
+  },
+  {
+    "id": "plPrem",
+    "tag": "DIV",
+    "classes": "plan",
+    "text": "PREMIUM$4.99 / мес.Расширенные возможностиДо 5 торрентовДо 500 ГБ на задачуGoogle Drive + телефонПриоритет в очередиБез рекламыПодписаться"
+  },
+  {
+    "id": "buy",
+    "tag": "BUTTON",
+    "classes": "pb ok",
+    "text": "Подписаться"
+  },
+  {
+    "id": "fileModal",
+    "tag": "DIV",
+    "classes": "modal",
+    "text": ""
+  },
+  {
+    "id": "fileSheet",
+    "tag": "DIV",
+    "classes": "sheet",
+    "text": ""
+  },
+  {
+    "id": "toast",
+    "tag": "DIV",
+    "classes": "toast",
+    "text": ""
+  }
+]

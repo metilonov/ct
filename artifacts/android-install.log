@@ -1,0 +1,25 @@
+Performing Streamed Install
+adb: failed to install artifacts/Cloud-Torrent-Client-debug.apk: 
+Exception occurred while executing 'install':
+java.lang.NullPointerException: Attempt to invoke virtual method 'void android.content.pm.PackageManagerInternal.freeStorage(java.lang.String, long, int)' on a null object reference
+	at com.android.server.StorageManagerService.allocateBytes(StorageManagerService.java:4047)
+	at android.os.storage.StorageManager.allocateBytes(StorageManager.java:2286)
+	at android.os.storage.StorageManager.allocateBytes(StorageManager.java:2365)
+	at com.android.server.pm.PackageInstallerSession.doWriteInternal(PackageInstallerSession.java:1743)
+	at com.android.server.pm.PackageInstallerSession.write(PackageInstallerSession.java:1646)
+	at android.content.pm.PackageInstaller$Session.write(PackageInstaller.java:1393)
+	at com.android.server.pm.PackageManagerShellCommand.doWriteSplit(PackageManagerShellCommand.java:3886)
+	at com.android.server.pm.PackageManagerShellCommand.doWriteSplits(PackageManagerShellCommand.java:3848)
+	at com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1571)
+	at com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1523)
+	at com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:236)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.pm.PackageManagerService$IPackageManagerImpl.onShellCommand(PackageManagerService.java:6350)
+	at android.os.Binder.shellCommand(Binder.java:1068)
+	at android.os.Binder.onTransact(Binder.java:888)
+	at android.content.pm.IPackageManager$Stub.onTransact(IPackageManager.java:4352)
+	at com.android.server.pm.PackageManagerService$IPackageManagerImpl.onTransact(PackageManagerService.java:6334)
+	at android.os.Binder.execTransactInternal(Binder.java:1344)
+	at android.os.Binder.execTransact(Binder.java:1275)
+
