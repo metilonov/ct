@@ -239,7 +239,9 @@ def test_drive_resumable_upload_verifies_checksum_and_saves_session(
     assert state["completed_id"] == "uploaded"
 
 
-def test_large_metadata_is_not_rejected_by_free_workspace_limit():
+def test_large_metadata_is_not_rejected_by_free_workspace_limit(monkeypatch):
+    monkeypatch.setenv("ADMIN_MODE", "false")
+    monkeypatch.setenv("ACCOUNT_PLAN", "free")
     fs = lt.file_storage()
     fs.add_file("legal/large.bin", 150 * 1000**3)
     fs.add_file("legal/small.txt", 1024)
@@ -440,3 +442,71 @@ def test_local_response_survives_cleanup_unlink(tmp_path, monkeypatch):
     asyncio.run(TrackedFileResponse(path)(scope, receive, send))
     assert messages[0]["status"] == 206
     assert b"".join(m.get("body", b"") for m in messages) == b"test"
+
+
+def test_admin_has_no_product_quotas_even_with_free_plan(monkeypatch):
+    monkeypatch.setenv("ADMIN_MODE", "true")
+    monkeypatch.setenv("ACCOUNT_PLAN", "free")
+    limits = client.get("/account/limits", headers=H).json()
+    assert limits["admin_mode"] is True
+    assert limits["tasks"] is None
+    assert limits["selected_bytes"] is None
+    assert limits["drive_destination_bytes"] is None
+    assert limits["phone_downloads"] is True
+    assert limits["workspace_bytes"] <= 10 * 1024**3
+    assert limits["large_single_file_streaming"] is False
+    assert client.get("/account", headers=H).json()["plan"] == "admin"
+    subscription = client.get("/account/subscription", headers=H).json()
+    assert subscription["premium_monthly_usd"] is None
+    assert subscription["billing_enabled"] is False
+
+
+def test_admin_https_torrent_accepts_150gb_and_multiple_tasks(monkeypatch):
+    from backend import main
+
+    monkeypatch.setenv("ADMIN_MODE", "true")
+    monkeypatch.setenv("ACCOUNT_PLAN", "free")
+    fs = lt.file_storage()
+    fs.add_file("legal/large.bin", 150 * 1000**3)
+    t = lt.create_torrent(fs, 16 * 1024**2, flags=lt.create_torrent.v1_only)
+    for i in range(t.num_pieces()):
+        t.set_hash(i, b"x" * 20)
+    raw = lt.bencode(t.generate())
+    # A deterministic .torrent response; no external swarm or payload download is claimed.
+    monkeypatch.setattr(main, "fetch_torrent", lambda source: raw)
+    response = client.post(
+        "/torrents/metadata",
+        headers=H,
+        json={"source": "https://example.com/legal.torrent"},
+    )
+    assert response.status_code == 200, response.text
+    mid = response.json()["id"]
+    ids = []
+    try:
+        for _ in range(8):
+            response = client.post(
+                "/torrents",
+                headers=H,
+                json={"metadata_id": mid, "selected": [0], "start": False},
+            )
+            assert response.status_code == 200, response.text
+            ids.append(response.json()["id"])
+            row = db.execute(
+                "select total_bytes from tasks where id=?", (ids[-1],)
+            ).fetchone()
+            assert row["total_bytes"] == 150 * 1000**3
+    finally:
+        for tid in ids:
+            db.execute("delete from files where task_id=?", (tid,))
+            db.execute("delete from tasks where id=?", (tid,))
+        db.commit()
+
+
+def test_existing_free_configuration_defaults_to_admin(monkeypatch):
+    monkeypatch.delenv("ADMIN_MODE", raising=False)
+    monkeypatch.setenv("ACCOUNT_PLAN", "free")
+    limits = client.get("/account/limits", headers=H).json()
+    assert limits["admin_mode"] is True
+    assert limits["selected_bytes"] is None
+    assert limits["tasks"] is None
+    assert limits["phone_downloads"] is True

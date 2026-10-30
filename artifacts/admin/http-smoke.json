@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "transport": "real localhost HTTP/Uvicorn",
+  "health": {
+    "status": "ok",
+    "backend": "BotHost",
+    "version": "0.3.0"
+  },
+  "unauthorized_status": 401,
+  "status": {
+    "connected": true,
+    "backend": "BotHost",
+    "drive_connected": false,
+    "large_single_file_streaming": false,
+    "scheduler_parallelism": 1
+  },
+  "capacity_bytes": 4851781632,
+  "external_bothost_test": false
+}

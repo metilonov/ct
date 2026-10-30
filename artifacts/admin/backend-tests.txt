@@ -1,0 +1,35 @@
+.....................                                                    [100%]
+=============================== warnings summary ===============================
+../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+backend/tests/test_backend.py::test_metadata_and_shared_state
+backend/tests/test_backend.py::test_metadata_cache_is_bounded
+  /workspace/cloud-torrent/backend/tests/test_backend.py:17: DeprecationWarning: create_torrent constructor from file_storage is deprecated
+    t = lt.create_torrent(fs, 16384, flags=lt.create_torrent.v1_only)
+
+backend/tests/test_backend.py::test_metadata_and_shared_state
+backend/tests/test_backend.py::test_large_metadata_is_not_rejected_by_free_workspace_limit
+backend/tests/test_backend.py::test_metadata_cache_is_bounded
+backend/tests/test_backend.py::test_admin_https_torrent_accepts_150gb_and_multiple_tasks
+  /workspace/cloud-torrent/backend/scheduler.py:159: DeprecationWarning: files() is deprecated
+    fs = ti.files()
+
+backend/tests/test_backend.py::test_large_metadata_is_not_rejected_by_free_workspace_limit
+  /workspace/cloud-torrent/backend/tests/test_backend.py:248: DeprecationWarning: create_torrent constructor from file_storage is deprecated
+    t = lt.create_torrent(fs, 16 * 1024**2, flags=lt.create_torrent.v1_only)
+
+backend/tests/test_backend.py::test_admin_https_torrent_accepts_150gb_and_multiple_tasks
+  /workspace/cloud-torrent/backend/tests/test_backend.py:471: DeprecationWarning: create_torrent constructor from file_storage is deprecated
+    t = lt.create_torrent(fs, 16 * 1024**2, flags=lt.create_torrent.v1_only)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+21 passed, 10 warnings in 16.59s

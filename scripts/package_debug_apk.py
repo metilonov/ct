@@ -24,5 +24,5 @@ with tempfile.TemporaryDirectory() as tmp:
   assert set(before.namelist())==set(after.namelist())
   assert all(before.read(n)==after.read(n) for n in before.namelist())
  subprocess.run([str(build_tools/'apksigner'),'verify',str(out)],check=True)
- (R/'artifacts/redesign/apk-content-verification.json').write_text(json.dumps({'passed':True,'all_zip_entry_contents_unchanged':True,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'bytes':out.stat().st_size},indent=2))
+ (R/os.environ.get('APK_VERIFICATION_DIR','artifacts/redesign')/'apk-content-verification.json').write_text(json.dumps({'passed':True,'all_zip_entry_contents_unchanged':True,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'bytes':out.stat().st_size},indent=2))
  print('Verified signed debug APK:',out.stat().st_size,'bytes')

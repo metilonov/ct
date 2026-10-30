@@ -115,7 +115,7 @@ class TrackedFileResponse(FileResponse):
             await super().__call__(scope, receive, send)
 
 
-app = FastAPI(title="Cloud Torrent Client", version="0.1.0", lifespan=lifespan)
+app = FastAPI(title="Cloud Torrent Client", version="0.3.0", lifespan=lifespan)
 requests = {}
 MAX_METADATA_CACHE_BYTES = 64 * 1024 * 1024
 
@@ -172,7 +172,7 @@ async def error(request, e):
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "backend": "BotHost", "version": "0.1.0"}
+    return {"status": "ok", "backend": "BotHost", "version": "0.3.0"}
 
 
 @app.get("/server/status", dependencies=[Depends(auth)])
@@ -265,9 +265,9 @@ def create(body: CreateInput):
             raise HTTPException(422, "invalid_selection")
         total = sum(f["size"] for f in files)
         limit = limits()
-        if total > limit["selected_bytes"]:
+        if limit["selected_bytes"] is not None and total > limit["selected_bytes"]:
             raise HTTPException(403, "quota_exceeded")
-        if (
+        if limit["tasks"] is not None and (
             db.execute(
                 "select count(*) from tasks where state not in ('ready','error')"
             ).fetchone()[0]
@@ -520,23 +520,33 @@ def delete_file(fid: str):
     return {"deleted": True}
 
 
+def admin_mode():
+    # This API already permits only one administrator. Product quotas are opt-in legacy behavior.
+    return os.getenv("ADMIN_MODE", "true").strip().lower() in {"true", "1", "yes", "on"}
+
+
 @app.get("/account", dependencies=[Depends(auth)])
 def account():
     return {
         "id": "admin",
         "mode": "administrator_only",
-        "plan": os.getenv("ACCOUNT_PLAN", "free"),
+        "plan": "admin" if admin_mode() else os.getenv("ACCOUNT_PLAN", "free"),
     }
 
 
 @app.get("/account/limits", dependencies=[Depends(auth)])
 def limits():
+    administrator = admin_mode()
+    premium = os.getenv("ACCOUNT_PLAN") == "premium"
     return {
-        "tasks": 5 if os.getenv("ACCOUNT_PLAN") == "premium" else 1,
-        "selected_bytes": (500 if os.getenv("ACCOUNT_PLAN") == "premium" else 20)
-        * 1000**3,
-        "workspace_bytes": 10 * 1024**3,
-        "phone_downloads": os.getenv("ACCOUNT_PLAN") == "premium",
+        # JSON null means no product limit, rather than an arbitrarily large fake quota.
+        "tasks": None if administrator else (5 if premium else 1),
+        "selected_bytes": None if administrator else (500 if premium else 20) * 1000**3,
+        "drive_destination_bytes": None,
+        "workspace_bytes": engine.storage()["capacity_bytes"],
+        "phone_downloads": administrator or premium,
+        "admin_mode": administrator,
+        "large_single_file_streaming": False,
     }
 
 
@@ -544,7 +554,7 @@ def limits():
 def subscription():
     return {
         "plan": account()["plan"],
-        "premium_monthly_usd": "4.99",
+        "premium_monthly_usd": None if admin_mode() else "4.99",
         "billing_enabled": False,
     }
 

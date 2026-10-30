@@ -660,14 +660,21 @@ fun App(vm: ClientViewModel = viewModel()) {
                             .padding(top = 22.dp),
                         verticalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
-                        GroupLabel("Подписка", first = true)
+                        GroupLabel("Доступ", first = true)
                         Setting(
-                            "Тариф",
-                            if (s.plan.equals("premium", true)) "Расширенные возможности"
-                            else "Бесплатно, с ограничениями",
-                            s.plan,
+                            "Профиль",
+                            if (!s.online) "Подключите сервер"
+                            else if (s.limits.admin_mode) "Без тарифных ограничений"
+                            else "Обновите backend для админ-доступа",
+                            if (s.limits.admin_mode) "Admin" else s.plan,
                         ) {
-                            sheet = "plans"
+                            if (!s.online) sheet = "connect"
+                            else
+                                vm.message(
+                                    if (s.limits.admin_mode)
+                                        "Администратор: без лимита размера задач и числа задач; передача на Android разрешена"
+                                    else "Обновите backend и включите ADMIN_MODE=true на BotHost"
+                                )
                         }
                         GroupLabel("BotHost")
                         Setting(
@@ -1040,13 +1047,16 @@ fun App(vm: ClientViewModel = viewModel()) {
                                         else if (local != null)
                                             "${bytes(local.offset)} / ${bytes(local.size)}"
                                         else if (s.limits.phone_downloads) "Передача начнётся сразу"
-                                        else "Доступно в Premium",
+                                        else "Требуется админ-доступ на сервере",
                                         if (onPhone) 31 else 32,
                                         if (onPhone) Green else Purple,
                                         enabled = !onPhone,
                                     ) {
                                         if (!s.online) sheet = "connect"
-                                        else if (!s.limits.phone_downloads) sheet = "plans"
+                                        else if (!s.limits.phone_downloads)
+                                            vm.message(
+                                                "Обновите backend и включите ADMIN_MODE=true на BotHost"
+                                            )
                                         else {
                                             if (active && local != null)
                                                 androidx.work.WorkManager.getInstance(ctx)
@@ -1544,14 +1554,14 @@ fun DetailScreen(
                 .forEach { f ->
                     Setting(f.path.substringAfterLast('/'), "Скачать на Android") {
                         if (vm.state.value.limits.phone_downloads) enqueueDownload(ctx, f, vm)
-                        else vm.message("Передача на Android доступна в Premium")
+                        else vm.message("Обновите backend и включите ADMIN_MODE=true на BotHost")
                     }
                     Spacer(Modifier.height(9.dp))
                 }
         } else Action(if (t.state == "paused") "Возобновить" else "Приостановить", pause)
         t.error?.let {
             Spacer(Modifier.height(14.dp))
-            Txt(it, 14, Color(0xffff8f8f))
+            Txt(readableTaskError(it), 14, Color(0xffff8f8f))
         }
     }
 }
@@ -1659,3 +1669,14 @@ fun FileAction(
         }
     }
 }
+
+fun readableTaskError(code: String): String =
+    when (code) {
+        "workspace_or_single_file_limit" ->
+            "Файл не помещается в рабочий диск BotHost с техническим резервом. Потоковая передача такого файла ещё не поддерживается. Это физическое ограничение сервера, а не тариф."
+        "disk_safety_reserve",
+        "workspace_capacity_changed",
+        "workspace_disk_full" ->
+            "Недостаточно свободного рабочего места на BotHost. Освободите диск или увеличьте доступное пространство."
+        else -> code.replace('_', ' ')
+    }

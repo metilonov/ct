@@ -1,0 +1,17 @@
+{
+  "backend_tests": "21 passed",
+  "http_smoke": "real localhost Uvicorn passed; not BotHost",
+  "android_build": "BUILD SUCCESSFUL",
+  "lint": {
+    "Error": 0,
+    "Fatal": 0,
+    "Warning": 38
+  },
+  "version_code": 3,
+  "version_name": "0.3.0-admin",
+  "same_signing_certificate": true,
+  "apk_sha256": "5a2de031de95cd4ee8c8f7e14c6a37a0d4cba7d25ba474d53b53c4f66b2bb874",
+  "tariff_quotas_removed": true,
+  "large_single_file_streaming": false,
+  "android_device_run": "not performed for this version"
+}

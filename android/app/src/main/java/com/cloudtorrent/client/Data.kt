@@ -143,10 +143,12 @@ data class DriveFolders(val files: List<DriveFolder>)
 data class Selection(val metadata_id: String, val selected: List<Int>, val start: Boolean = true)
 
 data class Limits(
-    val tasks: Int = 0,
-    val selected_bytes: Long = 0,
+    val tasks: Int? = null,
+    val selected_bytes: Long? = null,
     val workspace_bytes: Long = 0,
     val phone_downloads: Boolean = false,
+    val admin_mode: Boolean = false,
+    val drive_destination_bytes: Long? = null,
 )
 
 interface Api {
@@ -235,7 +237,7 @@ data class UiState(
     val storage: Storage = Storage(),
     val torrents: List<Torrent> = emptyList(),
     val files: List<CloudFile> = emptyList(),
-    val plan: String = "Free",
+    val plan: String = "—",
     val message: String = "Укажите подключение BotHost в настройках",
     val metadata: Metadata? = null,
     val busy: Boolean = false,

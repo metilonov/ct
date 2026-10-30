@@ -4,7 +4,7 @@
   "health": {
     "status": "ok",
     "backend": "BotHost",
-    "version": "0.1.0"
+    "version": "0.3.0"
   },
   "unauthorized_status": 401,
   "status": {
@@ -14,6 +14,6 @@
     "large_single_file_streaming": false,
     "scheduler_parallelism": 1
   },
-  "capacity_bytes": 4407816192,
+  "capacity_bytes": 4851781632,
   "external_bothost_test": false
 }

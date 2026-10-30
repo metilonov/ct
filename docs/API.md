@@ -1,6 +1,6 @@
 # API
 
-Базовый адрес — HTTPS-домен приложения, назначенный в BotHost. `https://bothost.ru` является сайтом провайдера и не заменяет этот адрес. Версия инженерного API: 0.1.0. Схема: openapi.json; после запуска доступны /docs и /openapi.json.
+Базовый адрес — HTTPS-домен приложения, назначенный в BotHost. `https://bothost.ru` является сайтом провайдера и не заменяет этот адрес. Версия инженерного API: 0.3.0. Схема: openapi.json; после запуска доступны /docs и /openapi.json.
 
 Авторизация: `Authorization: Bearer <ADMIN_API_TOKEN>`. Это токен вашего приложения, не пароль панели BotHost. Начальная модель — один администратор; Telegram-бот использует тот же токен. Health публичен. Лимит — 120 запросов в минуту. Polling Android: 5 секунд при соединении, 15 секунд при ошибке.
 
@@ -27,6 +27,8 @@
 
 Ошибка бизнес-операции: JSON `{"error":{"code":"quota_exceeded"}}` либо иной код причины. Ошибки проверки структуры запроса FastAPI возвращают стандартный JSON 422 с `detail`. Проверяйте HTTP status и тело. HTTP URL, private IP и перенаправления при импорте .torrent отклоняются.
 
-Состояния: metadata, queued, downloading, uploading, checking, ready, paused, error; внутренние cancel_requested/cancelled используются при отмене. Большой общий размер не блокирует metadata; quota применяется к выбранным файлам. `large_single_file_streaming=false` означает отсутствие потокового режима для файла больше доступного дискового пакета.
+Состояния: metadata, queued, downloading, uploading, checking, ready, paused, error; внутренние cancel_requested/cancelled используются при отмене. Большой общий размер не блокирует metadata; В административном режиме quota выбранных файлов отсутствует (tasks/selected_bytes/drive_destination_bytes=null, phone_downloads=true). `large_single_file_streaming=false` означает отсутствие потокового режима для файла больше доступного дискового пакета.
 
 Серверная загрузка не зависит от открытого Android. Настройки Wi-Fi/зарядки телефона не изменяют торрент-очередь.
+
+Административный режим включён по умолчанию, в том числе при старом ACCOUNT_PLAN=free. Инструкция обновления сервера и физические ограничения: ADMIN.md.
